@@ -6,7 +6,7 @@ let pcpr = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "PCPR-PRCPR",
-        "#AGIR": "P10918"
+        "AGIR": "P10918"
       },
       "geometry": {
         "coordinates": [
@@ -27,7 +27,7 @@ let pcpr = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "PCPR-PRCPR",
-        "#AGIR": "P10919"
+        "AGIR": "P10919"
       },
       "geometry": {
         "coordinates": [

@@ -6,7 +6,7 @@ let eclairage = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "Voirie et éclairage",
-        "#AGIR": "P09483"
+        "AGIR": "P09483"
       },
       "geometry": {
         "coordinates": [

@@ -276,16 +276,16 @@ const C1106_Layer = L.geoJson(C1106, {
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-            <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px; text-align:center'><strong>Contrat : </strong> ${
-              feature.properties.Contrat
-            }</p>
-				<table class="table1">
-				<caption><h5>Identification et documents</h5></caption>
+    <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px; text-align:center'><strong>Contrat : </strong> ${
+      feature.properties.Contrat
+    }</p>
+    <table class="table1">
+    <caption><h5>Identification et documents</h5></caption>
 					<tr>
 						<th># Dos-d'âne</th>
 						<td>${feature.properties.Numero}</td>
-					</tr>
-                                        <tr>
+            </tr>
+            <tr>
 						<th>Devis</th>
 						<td><a href="./data/1106/1106_Cahier_Charges.pdf" target="_blank">${
               feature.properties.Devis
@@ -298,16 +298,16 @@ const C1106_Layer = L.geoJson(C1106, {
 					<tr>
 						<th>Fin travaux</th>
 						<td>${feature.properties.Fin}</td>
-					</tr>
-					<tr>
+            </tr>
+            <tr>
 						<th>Status</th>
 						<td>${feature.properties.status}</td>
-					<tr>
-				</table>
-				<br>
-				<table class="table2">
-				<caption><h5>Coordonnées du centre de dos-d'âne</h5></caption>
-					<tr>
+            <tr>
+            </table>
+            <br>
+            <table class="table2">
+            <caption><h5>Coordonnées du centre de dos-d'âne</h5></caption>
+            <tr>
 						<th colspan="2">NAD83 MTM Zone 8</th>
 						<td><strong>X </strong>${feature.properties.X}</td>
 						<td><strong>Y </strong>${feature.properties.Y}</td>
@@ -319,14 +319,32 @@ const C1106_Layer = L.geoJson(C1106, {
               7
             )}</td>
 					</tr>
-				</table>
-           `);
+          </table>
+          `);
 
     layer.on("click", function () {
       this.openPopup();
     });
   },
 }).addTo(map);
+
+/* ***************************************************************************************************************************************************** */
+
+const C_ESP_Layer = L.geoJson(esp, {
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
+        <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+        <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+	      <p style='margin:0; padding:0'><strong>Description : </strong> Remplacement des entrées de service en plomb</p>
+      `);
+    layer.on("click", function () {
+      this.openPopup();
+    });
+  },
+}).addTo(map);
+
+/* ***************************************************************************************************************************************************** */
 
 /* ***************************************************************************************************************************************************** */
 
@@ -591,8 +609,8 @@ const arrondissementsLayer = L.geoJson(arrondissements, {
 });
 
 /* ***************************************************************************************************************************************************** */
-//   Inspecteurs AGIR
-// function getColorArrondissements(feature) {
+//   Inspecteurs AGIR-CM
+// function getColorInspecteursCM(feature) {
 //   switch (feature) {
 //     case "A":
 //       return "#704709";
@@ -612,10 +630,10 @@ const arrondissementsLayer = L.geoJson(arrondissements, {
 //       return "#8cc720";
 //   }
 // }
-// function styleArrondissements(feature) {
+// function styleInspecteursCM(feature) {
 //   return {
-//     color: getColorArrondissements(feature.properties.Secteur),
-//     fillColor: getColorArrondissements(feature.properties.Secteur),
+//     color: getColorInspecteursCM(feature.properties.Secteur),
+//     fillColor: getColorInspecteursCM(feature.properties.Secteur),
 //     opacity: 1,
 //     fillOpacity: 0.4,
 //   };
@@ -835,7 +853,6 @@ function getColorRAAV(feature) {
       return "#4c9b20";
   }
 }
-
 function styleRAAV(feature) {
   if (feature.properties.TRC_TOP_RAAV == 1) {
     return {
@@ -852,7 +869,6 @@ function styleRAAV(feature) {
     };
   }
 }
-
 const raavLayer = L.geoJson(RAAV, {
   style: styleRAAV,
   onEachFeature: function (feature, layer) {
@@ -981,7 +997,7 @@ const overlaysTree = {
               label: "Corpo",
               selectAllCheckbox: true,
               children: [
-                { label: "ESP", layer: C1093_Layer },
+                { label: "ESP", layer: C_ESP_Layer },
                 { label: "PCPR-PRCPR", layer: C1096_Layer },
                 { label: "Rehab AQ", layer: C1096_Layer },
                 { label: "Rehab EG", layer: C1096_Layer },
@@ -1120,67 +1136,66 @@ const legend = L.control
     opacity: 1,
     column: 3,
     legends: [
-
-        {
-          label: "ESP",
-          type: "polyline",
-          layers: C1108_Layer,
-          color: "#3388ff",
-          fillColor: "#3388ff",
-          weight: 2,
-        },
-        {
-          label: "PCPR-PRCPR",
-          type: "polyline",
-          layers: C1108_Layer,
-          color: "#3388ff",
-          fillColor: "#3388ff",
-          weight: 2,
-        },
-        {
-          label: "Rehab AQ",
-          type: "polyline",
-          layers: C1108_Layer,
-          color: "#3388ff",
-          fillColor: "#3388ff",
-          weight: 2,
-        },
-        {
-          label: "Rehab EG",
-          type: "polyline",
-          layers: C1108_Layer,
-          color: "#3388ff",
-          fillColor: "#3388ff",
-          weight: 2,
-        },
-        {
-          label: "BRV",
-          type: "image",
-          url: "../img/speed_bump_1106_OK.svg",
-          layers: C1108_Layer,
-        },
-        {
-          label: "Voirie-Éclairage",
-          type: "polyline",
-          layers: C1108_Layer,
-          color: "#3388ff",
-          fillColor: "#3388ff",
-          weight: 2,
-        },
-        {
-          label: "PRR",
-          type: "polyline",
-          layers: C1108_Layer,
-          color: "red",
-          fillColor: "red",
-          weight: 2,
-        },
-        {
-          label: "APA",
-          type: "image",
-          url: "../img/speed_bump_1106.svg",
-          layers: C1108_Layer,
-        },
+      {
+        label: "ESP",
+        type: "polyline",
+        layers: C_ESP_Layer,
+        color: "#3388ff",
+        fillColor: "#3388ff",
+        weight: 2,
+      },
+      {
+        label: "PCPR-PRCPR",
+        type: "polyline",
+        layers: C1108_Layer,
+        color: "#3388ff",
+        fillColor: "#3388ff",
+        weight: 2,
+      },
+      {
+        label: "Rehab AQ",
+        type: "polyline",
+        layers: C1108_Layer,
+        color: "#3388ff",
+        fillColor: "#3388ff",
+        weight: 2,
+      },
+      {
+        label: "Rehab EG",
+        type: "polyline",
+        layers: C1108_Layer,
+        color: "#3388ff",
+        fillColor: "#3388ff",
+        weight: 2,
+      },
+      {
+        label: "BRV",
+        type: "image",
+        url: "../img/speed_bump_1106_OK.svg",
+        layers: C1108_Layer,
+      },
+      {
+        label: "Voirie-Éclairage",
+        type: "polyline",
+        layers: C1108_Layer,
+        color: "#3388ff",
+        fillColor: "#3388ff",
+        weight: 2,
+      },
+      {
+        label: "PRR",
+        type: "polyline",
+        layers: C1108_Layer,
+        color: "red",
+        fillColor: "red",
+        weight: 2,
+      },
+      {
+        label: "APA",
+        type: "image",
+        url: "../img/speed_bump_1106.svg",
+        layers: C1108_Layer,
+      },
     ],
   })
   .addTo(map);

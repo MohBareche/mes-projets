@@ -6,7 +6,7 @@ let rehabeg = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "Rehab EG",
-        "#AGIR": "P09683"
+        "AGIR": "P09683"
       },
       "geometry": {
         "coordinates": [
@@ -21,7 +21,7 @@ let rehabeg = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "Rehab EG",
-        "#AGIR": "P09676"
+        "AGIR": "P09676"
       },
       "geometry": {
         "coordinates": [
@@ -36,7 +36,7 @@ let rehabeg = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "Rehab EG",
-        "#AGIR": "P09668"
+        "AGIR": "P09668"
       },
       "geometry": {
         "coordinates": [
@@ -52,7 +52,7 @@ let rehabeg = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "Rehab EG",
-        "#AGIR": "P09682"
+        "AGIR": "P09682"
       },
       "geometry": {
         "coordinates": [

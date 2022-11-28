@@ -6,7 +6,7 @@ let brv = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "BRV",
-        "#AGIR": "P09751"
+        "AGIR": "P09751"
       },
       "geometry": {
         "coordinates": [-73.62701569857776, 45.59311549959264],
@@ -18,7 +18,7 @@ let brv = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "BRV",
-        "#AGIR": "P09752"
+        "AGIR": "P09752"
       },
       "geometry": {
         "coordinates": [-73.61229218657286, 45.614573163723065],
@@ -30,7 +30,7 @@ let brv = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "BRV",
-        "#AGIR": "P09753"
+        "AGIR": "P09753"
       },
       "geometry": {
         "coordinates": [-73.6333362482349, 45.58990782701974],

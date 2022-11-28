@@ -6,7 +6,7 @@ let prr = {
       "properties": {
         "Initiateur": "Arrond.",
         "type": "PRR",
-        "#AGIR": "192023-1107"
+        "AGIR": "192023-1107"
       },
       "geometry": {
         "coordinates": [

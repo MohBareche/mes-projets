@@ -6,7 +6,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10545"
+        "AGIR": "P10545"
       },
       "geometry": {
         "coordinates": [
@@ -21,7 +21,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10546"
+        "AGIR": "P10546"
       },
       "geometry": {
         "coordinates": [
@@ -36,7 +36,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10548"
+        "AGIR": "P10548"
       },
       "geometry": {
         "coordinates": [
@@ -51,7 +51,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10550"
+        "AGIR": "P10550"
       },
       "geometry": {
         "coordinates": [
@@ -66,7 +66,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10549"
+        "AGIR": "P10549"
       },
       "geometry": {
         "coordinates": [
@@ -81,7 +81,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10554"
+        "AGIR": "P10554"
       },
       "geometry": {
         "coordinates": [
@@ -97,7 +97,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10555"
+        "AGIR": "P10555"
       },
       "geometry": {
         "coordinates": [
@@ -113,7 +113,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10557"
+        "AGIR": "P10557"
       },
       "geometry": {
         "coordinates": [
@@ -130,7 +130,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10558"
+        "AGIR": "P10558"
       },
       "geometry": {
         "coordinates": [
@@ -147,7 +147,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10469"
+        "AGIR": "P10469"
       },
       "geometry": {
         "coordinates": [
@@ -162,7 +162,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10470"
+        "AGIR": "P10470"
       },
       "geometry": {
         "coordinates": [
@@ -177,7 +177,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10556"
+        "AGIR": "P10556"
       },
       "geometry": {
         "coordinates": [
@@ -193,7 +193,7 @@ let esp = {
       "properties": {
         "Initiateur": "Corpo.",
         "type": "ESP",
-        "#AGIR": "P10560"
+        "AGIR": "P10560"
       },
       "geometry": {
         "coordinates": [
