@@ -124,6 +124,18 @@ const dosDaneIcon1106_Ok = L.icon({
   iconAnchor: [15, 15],
 });
 
+const iconBRV = L.icon({
+  iconUrl:"../img/brv1.jpg",
+  iconSize: [30, 30],
+  iconAnchor:[15,15]
+})
+
+const iconAPA = L.icon({
+  iconUrl: "../img/arbre.jpg",
+  iconSize: [30, 30],
+  iconAnchor:[15,15]
+})
+
 /* ***************************************************************************************************************************************************** */
 //   C1096
 const C1096_Layer = L.geoJson(C1096, {
@@ -253,17 +265,17 @@ const C1108_Layer = L.geoJson(C1108, {
       });
     }
     layer.bindPopup(`
-            <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
-            <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/1108/1108-${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
-            <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/1108/1108_Cahier des charges .pdf" target="_blank">${feature.properties.Devis}</a></p>
-	    <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
-	    <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
-            `);
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/1108/1108-${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
+        <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/1108/1108_Cahier des charges .pdf" target="_blank">${feature.properties.Devis}</a></p>
+	      <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
+	      <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
+      `);
     layer.on("click", function () {
       this.openPopup();
     });
   },
-}).addTo(map);
+});
 
 /* ***************************************************************************************************************************************************** */
 //   C1106
@@ -326,10 +338,10 @@ const C1106_Layer = L.geoJson(C1106, {
       this.openPopup();
     });
   },
-}).addTo(map);
+});
 
 /* ***************************************************************************************************************************************************** */
-
+/* @2023 - CORPO ESP */
 const C_ESP_Layer = L.geoJson(esp, {
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -343,9 +355,129 @@ const C_ESP_Layer = L.geoJson(esp, {
     });
   },
 }).addTo(map);
-
 /* ***************************************************************************************************************************************************** */
-
+/* @2023 - CORPO PCPR-PRCPR */
+const C_PCPR_Layer = L.geoJson(pcpr, {
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
+      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0'><strong>Description : </strong> PCPR/PRCPR - Programme Complémentaire par Planage-Revêtement</p>
+    `);
+    layer.on("click", function () {
+      this.openPopup();
+    });
+  },
+}).addTo(map);
+/* ***************************************************************************************************************************************************** */
+/* @2023 - CORPO REHAB AQ */
+const C_RAQ_Layer = L.geoJson(rehabaq, {
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
+      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0'><strong>Description : </strong> Réhabilitation Aqueduc</p>
+    `);
+    layer.on("click", function () {
+      this.openPopup();
+    });
+  },
+}).addTo(map);
+/* ***************************************************************************************************************************************************** */
+/* @2023 - CORPO REHAB EG */
+const C_REG_Layer = L.geoJson(rehabeg, {
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
+      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0'><strong>Description : </strong> Réhabilitation Égout</p>
+    `);
+    layer.on("click", function () {
+      this.openPopup();
+    });
+  },
+}).addTo(map);
+/* ***************************************************************************************************************************************************** */
+/* @2023 - CORPO BRV */
+const C_BRV_Layer = L.geoJson(brv, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, { icon: iconBRV });
+  },
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
+        <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+        <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+        <p style='margin:0; padding:0'><strong>Description : </strong> Bornes de recharge pour véhicules électriques</p>
+	    `);
+    layer.on("click", function () {
+      this.openPopup();
+    });
+  },
+});
+/* ***************************************************************************************************************************************************** */
+/* @2023 - CORPO ÉCLAIRAGE */
+const C_ECL_Layer = L.geoJson(eclairage, {
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
+      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0'><strong>Description : </strong> Travaux d'éclairage </p>
+    `);
+    layer.on("click", function () {
+      this.openPopup();
+    });
+  },
+}).addTo(map);
+/* ***************************************************************************************************************************************************** */
+/* @2023 - ARROND. PRR */
+const C_PRR_Layer = L.geoJson(prr, {
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "green",
+        weight: 4,
+      });
+    }
+    layer.bindPopup(`
+      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
+      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0'><strong>Description : </strong> Travaux de réaménagement Avenue Lapierre</p>
+    `);
+    layer.on("click", function () {
+      this.openPopup();
+    });
+  },
+}).addTo(map);
+/* ***************************************************************************************************************************************************** */
+/* @2023 - ARROND. APA */
+const C_APA_Layer = L.geoJson(apa, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, { icon: iconAPA });
+  },
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "green",
+        weight: 4,
+      });
+    }
+    layer.bindPopup(`
+      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
+      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0'><strong>Description : </strong> ${feature.properties.Description}</p>
+    `);
+    layer.on("click", function () {
+      this.openPopup();
+    });
+  },
+}).addTo(map);
 /* ***************************************************************************************************************************************************** */
 
 //   Inspecteurs cadre bati
@@ -377,12 +509,12 @@ const inspectionLayer = L.geoJson(inspection, {
   style: styleInspection,
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-            <p style='width:300px; margin:0; padding:0;'><strong>Secteur : </strong>${feature.properties.Secteur}</p>
-            <p style='width:300px; margin:0; padding:0'><strong>Inspecteur :</strong> ${feature.properties.Inspecteur}</p>
-            <p style='width:300px; margin:0; padding:0'><strong>Courriel :</strong><a target="_blank" href="mailto:${feature.properties.Courriel}"> ${feature.properties.Courriel}</a></p>
-            <p style='width:300px; margin:0; padding:0'><strong>Téléphone :</strong>514 328-4000 Poste ${feature.properties.Poste}</p>
-	    <p style='width:300px; margin:0; padding:0'><strong>Cellulaire :</strong> ${feature.properties.Cell} </p>
-            `);
+        <p style='width:300px; margin:0; padding:0;'><strong>Secteur : </strong>${feature.properties.Secteur}</p>
+        <p style='width:300px; margin:0; padding:0'><strong>Inspecteur :</strong> ${feature.properties.Inspecteur}</p>
+        <p style='width:300px; margin:0; padding:0'><strong>Courriel :</strong><a target="_blank" href="mailto:${feature.properties.Courriel}"> ${feature.properties.Courriel}</a></p>
+        <p style='width:300px; margin:0; padding:0'><strong>Téléphone :</strong>514 328-4000 Poste ${feature.properties.Poste}</p>
+	      <p style='width:300px; margin:0; padding:0'><strong>Cellulaire :</strong> ${feature.properties.Cell} </p>
+      `);
     layer.on("mouseover", function () {
       this.setStyle({
         fillOpacity: 0.4,
@@ -425,14 +557,14 @@ const collectesLayer = L.geoJson(collectes, {
   style: styleCollectes,
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-            <p style='margin:0; padding:0;'><strong>Secteur : </strong>${feature.properties.Secteur}</p>
-            <p style='margin:0; padding:0'><strong>Recyclage :</strong> ${feature.properties.Recyclage}</p>
-            <p style='margin:0; padding:0'><strong>Ordures ménagères :</strong> ${feature.properties.OrduresMenageres}</p>
-            <p style='margin:0; padding:0'><strong>Résidus alimentaires :</strong> ${feature.properties.ResidusAlimentaires}</p>
-	    <p style='margin:0; padding:0'><strong>Encombrants :</strong> ${feature.properties.Encombrants}</p>
-	    <p style='margin:0; padding:0'><strong>Résidus verts :</strong> ${feature.properties.ResidusVerts}</p>
-	    <p style='margin:0; padding:0'><strong>9 Logements + :</strong> ${feature.properties.NeufLogements}</p>
-            `);
+        <p style='margin:0; padding:0;'><strong>Secteur : </strong>${feature.properties.Secteur}</p>
+        <p style='margin:0; padding:0'><strong>Recyclage :</strong> ${feature.properties.Recyclage}</p>
+        <p style='margin:0; padding:0'><strong>Ordures ménagères :</strong> ${feature.properties.OrduresMenageres}</p>
+        <p style='margin:0; padding:0'><strong>Résidus alimentaires :</strong> ${feature.properties.ResidusAlimentaires}</p>
+	      <p style='margin:0; padding:0'><strong>Encombrants :</strong> ${feature.properties.Encombrants}</p>
+	      <p style='margin:0; padding:0'><strong>Résidus verts :</strong> ${feature.properties.ResidusVerts}</p>
+	      <p style='margin:0; padding:0'><strong>9 Logements + :</strong> ${feature.properties.NeufLogements}</p>
+      `);
     layer.on("mouseover", function () {
       this.setStyle({
         fillOpacity: 0.2,
@@ -966,7 +1098,16 @@ const baseTree = {
   ],
 };
 
-const layers2023 = L.featureGroup([C1108_Layer, C1106_Layer]).addTo(map);
+const layers2023 = L.featureGroup([
+  C_APA_Layer,
+  C_PRR_Layer,
+  C_BRV_Layer,
+  C_ECL_Layer,
+  C_ESP_Layer,
+  C_PCPR_Layer,
+  C_RAQ_Layer,
+  C_REG_Layer,
+]).addTo(map);
 map.fitBounds(layers2023.getBounds());
 
 const overlaysTree = {
@@ -998,19 +1139,19 @@ const overlaysTree = {
               selectAllCheckbox: true,
               children: [
                 { label: "ESP", layer: C_ESP_Layer },
-                { label: "PCPR-PRCPR", layer: C1096_Layer },
-                { label: "Rehab AQ", layer: C1096_Layer },
-                { label: "Rehab EG", layer: C1096_Layer },
-                { label: "BRV", layer: C1096_Layer },
-                { label: "Voirie-Éclairage", layer: C1096_Layer },
+                { label: "PCPR-PRCPR", layer: C_PCPR_Layer },
+                { label: "Rehab AQ", layer: C_RAQ_Layer },
+                { label: "Rehab EG", layer: C_REG_Layer },
+                { label: "BRV", layer: C_BRV_Layer },
+                { label: "Voirie-Éclairage", layer: C_ECL_Layer },
               ],
             },
             {
               label: "Arrondissement",
               selectAllCheckbox: true,
               children: [
-                { label: "PRR", layer: C1093_Layer },
-                { label: "APA", layer: C1096_Layer },
+                { label: "PRR", layer: C_PRR_Layer },
+                { label: "APA", layer: C_APA_Layer },
               ],
             },
           ],
@@ -1044,7 +1185,7 @@ const lay = L.control.layers.tree(baseTree, overlaysTree, {
   collapsed: false,
 });
 
-lay.addTo(map).collapseTree(true).expandSelected(true);
+// lay.addTo(map).collapseTree(true).expandSelected(true);
 L.control
   .locate({
     flyTo: true,
@@ -1063,7 +1204,7 @@ map.addControl(
 );
 
 // Google Street View
-L.streetView({ position: "topright" }).addTo(map);
+// L.streetView({ position: "topright" }).addTo(map);
 
 // Draw Tools
 // const drawnItems = new L.FeatureGroup();
@@ -1147,7 +1288,7 @@ const legend = L.control
       {
         label: "PCPR-PRCPR",
         type: "polyline",
-        layers: C1108_Layer,
+        layers: C_PCPR_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
         weight: 2,
@@ -1155,7 +1296,7 @@ const legend = L.control
       {
         label: "Rehab AQ",
         type: "polyline",
-        layers: C1108_Layer,
+        layers: C_RAQ_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
         weight: 2,
@@ -1163,7 +1304,7 @@ const legend = L.control
       {
         label: "Rehab EG",
         type: "polyline",
-        layers: C1108_Layer,
+        layers: C_REG_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
         weight: 2,
@@ -1171,13 +1312,13 @@ const legend = L.control
       {
         label: "BRV",
         type: "image",
-        url: "../img/speed_bump_1106_OK.svg",
-        layers: C1108_Layer,
+        url: "../img/brv1.jpg",
+        layers: C_BRV_Layer,
       },
       {
         label: "Voirie-Éclairage",
         type: "polyline",
-        layers: C1108_Layer,
+        layers: C_ECL_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
         weight: 2,
@@ -1185,16 +1326,32 @@ const legend = L.control
       {
         label: "PRR",
         type: "polyline",
-        layers: C1108_Layer,
-        color: "red",
-        fillColor: "red",
+        layers: C_PRR_Layer,
+        color: "green",
+        fillColor: "green",
         weight: 2,
       },
       {
         label: "APA",
         type: "image",
-        url: "../img/speed_bump_1106.svg",
-        layers: C1108_Layer,
+        url: "../img/arbre.jpg",
+        layers: C_APA_Layer,
+      },
+      {
+        label: "Corpo",
+        type: "rectangle",
+        color: "#3388ff",
+        fillColor: "#3388ff",
+        weight: 2,
+        layers:[C_ESP_Layer,C_ECL_Layer]
+      },
+      {
+        label: "Arrondissement",
+        type: "rectangle",
+        color: "green",
+        fillColor: "green",
+        weight: 2,
+        layers:[C_PRR_Layer, C_APA_Layer]
       },
     ],
   })

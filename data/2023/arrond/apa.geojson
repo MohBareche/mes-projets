@@ -25,7 +25,7 @@ let apa = {
         "Initiateur": "Arrond.",
         "type": "APA",
         "AGIR": "N/A",
-        "Description": "Pavé Alvéo. ruelle verte"
+        "Description": "Installation Pavé Alvéole dans ruelle verte"
       },
       "geometry": {
         "coordinates": [
@@ -41,7 +41,7 @@ let apa = {
         "Initiateur": "Arrond.",
         "type": "APA",
         "AGIR": "N/A",
-        "Description": "Place de l'Archevêque"
+        "Description": "Aménagement Place de l'Archevêque"
       },
       "geometry": {
         "coordinates": [
@@ -62,7 +62,7 @@ let apa = {
         "Initiateur": "Arrond.",
         "type": "APA",
         "AGIR": "N/A",
-        "Description": "Clôture Parc Oscar"
+        "Description": "Installation de la Clôture Parc Oscar"
       },
       "geometry": {
         "coordinates": [
@@ -135,6 +135,50 @@ let apa = {
       "geometry": {
         "coordinates": [-73.6317370279054, 45.59650280235766],
         "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Initiateur": "Arrond.",
+        "type": "APA",
+        "AGIR": "N/A",
+        "Description": "Plantation fôret verte"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -73.64347071267406,
+              45.59565931796371
+            ],
+            [
+              -73.64317321146083,
+              45.595402578329214
+            ],
+            [
+              -73.64294512719506,
+              45.59565931796749
+            ],
+            [
+              -73.64291041872032,
+              45.59579809565909
+            ],
+            [
+              -73.64299966908408,
+              45.59591605642737
+            ],
+            [
+              -73.64313354462973,
+              45.59604789463896
+            ],
+            [
+              -73.64347071267406,
+              45.59565931796371
+            ]
+          ]
+        ],
+        "type": "Polygon"
       }
     }
   ]
