@@ -125,16 +125,16 @@ const dosDaneIcon1106_Ok = L.icon({
 });
 
 const iconBRV = L.icon({
-  iconUrl:"../img/brv1.jpg",
+  iconUrl: "../img/brv1.jpg",
   iconSize: [30, 30],
-  iconAnchor:[15,15]
-})
+  iconAnchor: [15, 15],
+});
 
 const iconAPA = L.icon({
-  iconUrl: "../img/arbre.jpg",
+  iconUrl: "../img/arbre1.png",
   iconSize: [30, 30],
-  iconAnchor:[15,15]
-})
+  iconAnchor: [15, 15],
+});
 
 /* ***************************************************************************************************************************************************** */
 //   C1096
@@ -1283,7 +1283,7 @@ const legend = L.control
         layers: C_ESP_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
-        weight: 2,
+        weight: 3,
       },
       {
         label: "PCPR-PRCPR",
@@ -1291,7 +1291,7 @@ const legend = L.control
         layers: C_PCPR_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
-        weight: 2,
+        weight: 3,
       },
       {
         label: "Rehab AQ",
@@ -1299,7 +1299,7 @@ const legend = L.control
         layers: C_RAQ_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
-        weight: 2,
+        weight: 3,
       },
       {
         label: "Rehab EG",
@@ -1307,7 +1307,7 @@ const legend = L.control
         layers: C_REG_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
-        weight: 2,
+        weight: 3,
       },
       {
         label: "BRV",
@@ -1321,7 +1321,7 @@ const legend = L.control
         layers: C_ECL_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
-        weight: 2,
+        weight: 3,
       },
       {
         label: "PRR",
@@ -1329,12 +1329,12 @@ const legend = L.control
         layers: C_PRR_Layer,
         color: "green",
         fillColor: "green",
-        weight: 2,
+        weight: 3,
       },
       {
         label: "APA",
         type: "image",
-        url: "../img/arbre.jpg",
+        url: "../img/arbre1.png",
         layers: C_APA_Layer,
       },
       {
@@ -1342,16 +1342,23 @@ const legend = L.control
         type: "rectangle",
         color: "#3388ff",
         fillColor: "#3388ff",
-        weight: 2,
-        layers:[C_ESP_Layer,C_ECL_Layer]
+        weight: 3,
+        layers: [
+          C_ESP_Layer,
+          C_ECL_Layer,
+          C_BRV_Layer,
+          C_PCPR_Layer,
+          C_RAQ_Layer,
+          C_REG_Layer,
+        ],
       },
       {
         label: "Arrondissement",
         type: "rectangle",
         color: "green",
         fillColor: "green",
-        weight: 2,
-        layers:[C_PRR_Layer, C_APA_Layer]
+        weight: 3,
+        layers: [C_PRR_Layer, C_APA_Layer],
       },
     ],
   })
