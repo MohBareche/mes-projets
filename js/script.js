@@ -1,5 +1,5 @@
 const map = L.mapbox
-  .map("mapDIV", null, {zoomControl: false})
+  .map("mapDIV", null, { zoomControl: false })
   .setView([45.55, -73.66], 10);
 const zoomHome = L.Control.zoomHome().addTo(map);
 // L.mapbox.accessToken =
@@ -16,27 +16,36 @@ const Outdoors = L.mapbox.styleLayer("mapbox://styles/mapbox/outdoors-v11");
 const Satellite = L.mapbox.styleLayer("mapbox://styles/mapbox/satellite-v9");
 
 const googleStreets = L.tileLayer(
-        "http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
-        {
-          maxZoom: 20,
-          subdomains: ["mt0", "mt1", "mt2", "mt3"],
-        }
-      )
-
-const googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+  "http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
+  {
     maxZoom: 20,
-    subdomains:['mt0','mt1','mt2','mt3']
-})
+    subdomains: ["mt0", "mt1", "mt2", "mt3"],
+  }
+);
 
-const googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+const googleSat = L.tileLayer(
+  "http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+  {
     maxZoom: 20,
-    subdomains:['mt0','mt1','mt2','mt3']
-});
+    subdomains: ["mt0", "mt1", "mt2", "mt3"],
+  }
+);
 
-const googleTerrain = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}',{
+const googleHybrid = L.tileLayer(
+  "http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
+  {
     maxZoom: 20,
-    subdomains:['mt0','mt1','mt2','mt3']
-});
+    subdomains: ["mt0", "mt1", "mt2", "mt3"],
+  }
+);
+
+const googleTerrain = L.tileLayer(
+  "http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}",
+  {
+    maxZoom: 20,
+    subdomains: ["mt0", "mt1", "mt2", "mt3"],
+  }
+);
 
 const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18,
@@ -68,25 +77,25 @@ const travIcon = L.icon({
 });
 
 const dosDaneIcon1104 = L.icon({
-  iconUrl:"../img/speed_bump_1104.svg",
+  iconUrl: "../img/speed_bump_1104.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
 });
 
 const dosDaneIcon1104Nar = L.icon({
-  iconUrl:"../img/speed_bump_1104_nar.svg",
+  iconUrl: "../img/speed_bump_1104_nar.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
 });
 
 const dosDaneIcon1093Nar = L.icon({
-  iconUrl:"../img/speed_bump_1093_nar.svg",
+  iconUrl: "../img/speed_bump_1093_nar.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
 });
 
 const dosDaneIcon1096Nar = L.icon({
-  iconUrl:"../img/speed_bump_1096_nar.svg",
+  iconUrl: "../img/speed_bump_1096_nar.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
 });
@@ -119,40 +128,39 @@ const dosDaneIcon1106_Ok = L.icon({
 //   C1096
 const C1096_Layer = L.geoJson(C1096, {
   pointToLayer: function (feature, latlng) {
-    if(feature.properties.Plan == 2){
-      return L.marker(latlng, {icon: dosDaneIcon1096Nar})
+    if (feature.properties.Plan == 2) {
+      return L.marker(latlng, { icon: dosDaneIcon1096Nar });
     }
   },
   onEachFeature: function (feature, layer) {
-      
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        "color": "#1fddd0",
-        "weight": 5
+        color: "#1fddd0",
+        weight: 5,
       });
-    };
-	  
-    if (feature.properties.Plan == "N/A"){
-	 layer.bindPopup(`
+    }
+
+    if (feature.properties.Plan == "N/A") {
+      layer.bindPopup(`
            <p style='margin:0; padding:0; color:#4ef54a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
            <p style='margin:0; padding:0'><strong>Plan : </strong> Aucun </p>
            <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/1096/1096_Cahier des charges.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	   <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	   <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
          `);
-      }
-     if (feature.properties.Plan !== "N/A"){
-	 layer.bindPopup(`
+    }
+    if (feature.properties.Plan !== "N/A") {
+      layer.bindPopup(`
            <p style='margin:0; padding:0; color:#4ef54a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
            <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/1096/1096-${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
            <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/1096/1096_Cahier des charges.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	   <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	   <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
          `);
-      } 
+    }
 
-    if(layer instanceof L.Marker){
-       layer.bindPopup(`
+    if (layer instanceof L.Marker) {
+      layer.bindPopup(`
           <p style='margin:0; padding:0; color:#4ef54a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
           <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/1096/1096-2.pdf" target="_blank">2</a></p>
           <p style='margin:0; padding:0'><strong>Détail : </strong> <a href="./data/1096/1096-3.pdf" target="_blank">${feature.properties.Détail}</a></p>
@@ -161,18 +169,18 @@ const C1096_Layer = L.geoJson(C1096, {
 	  <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
        `);
     }
-    
+
     layer.on("click", function () {
       this.openPopup();
     });
-  }
+  },
 });
 
 /* ***************************************************************************************************************************************************** */
 //   C1093
 const C1093_Layer = L.geoJson(C1093, {
   pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {icon: dosDaneIcon1093Nar});
+    return L.marker(latlng, { icon: dosDaneIcon1093Nar });
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -192,10 +200,10 @@ const C1093_Layer = L.geoJson(C1093, {
 //   C1104
 const C1104_Layer = L.geoJson(C1104, {
   pointToLayer: function (feature, latlng) {
-    if(feature.properties.Plan==1 || feature.properties.Plan==2){
-      return L.marker(latlng, {icon: dosDaneIcon1104Nar})
-    }        
-    return L.marker(latlng, {icon: dosDaneIcon1104});
+    if (feature.properties.Plan == 1 || feature.properties.Plan == 2) {
+      return L.marker(latlng, { icon: dosDaneIcon1104Nar });
+    }
+    return L.marker(latlng, { icon: dosDaneIcon1104 });
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -215,7 +223,7 @@ const C1104_Layer = L.geoJson(C1104, {
 //   C1105
 const C1105_Layer = L.geoJson(C1105, {
   pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {icon: dosDaneIcon1105});
+    return L.marker(latlng, { icon: dosDaneIcon1105 });
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -235,14 +243,14 @@ const C1105_Layer = L.geoJson(C1105, {
 //   C1108
 const C1108_Layer = L.geoJson(C1108, {
   pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {icon: dosDaneIcon1108});
+    return L.marker(latlng, { icon: dosDaneIcon1108 });
   },
   onEachFeature: function (feature, layer) {
-    if(layer instanceof L.Polyline ){
+    if (layer instanceof L.Polyline) {
       layer.setStyle({
-        "color":"#3388ff",
-        "weight":5
-      })
+        color: "#3388ff",
+        weight: 5,
+      });
     }
     layer.bindPopup(`
             <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
@@ -261,12 +269,16 @@ const C1108_Layer = L.geoJson(C1108, {
 //   C1106
 const C1106_Layer = L.geoJson(C1106, {
   pointToLayer: function (feature, latlng) {
-          if (feature.properties.status === "Terminé") return L.marker(latlng, {icon: dosDaneIcon1106_Ok});
-	  if (feature.properties.status === "Non") return L.marker(latlng, {icon: dosDaneIcon1106});
+    if (feature.properties.status === "Terminé")
+      return L.marker(latlng, { icon: dosDaneIcon1106_Ok });
+    if (feature.properties.status === "Non")
+      return L.marker(latlng, { icon: dosDaneIcon1106 });
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-            <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px; text-align:center'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+            <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px; text-align:center'><strong>Contrat : </strong> ${
+              feature.properties.Contrat
+            }</p>
 				<table class="table1">
 				<caption><h5>Identification et documents</h5></caption>
 					<tr>
@@ -275,7 +287,9 @@ const C1106_Layer = L.geoJson(C1106, {
 					</tr>
                                         <tr>
 						<th>Devis</th>
-						<td><a href="./data/1106/1106_Cahier_Charges.pdf" target="_blank">${feature.properties.Devis}</a></td>
+						<td><a href="./data/1106/1106_Cahier_Charges.pdf" target="_blank">${
+              feature.properties.Devis
+            }</a></td>
 					</tr>
 					<tr>
 						<th>Début travaux</th>
@@ -296,20 +310,22 @@ const C1106_Layer = L.geoJson(C1106, {
 					<tr>
 						<th colspan="2">NAD83 MTM Zone 8</th>
 						<td><strong>X </strong>${feature.properties.X}</td>
-						<td><strong>Y </strong>${feature.properties.Y}</td>		
+						<td><strong>Y </strong>${feature.properties.Y}</td>
 					</tr>
 					<tr>
 						<th colspan="2">WGS 84 (GPS)</th>
 						<td><strong>Latitude </strong>${feature.geometry.coordinates[1].toFixed(7)}	</td>
-						<td><strong>Longitude </strong>${feature.geometry.coordinates[0].toFixed(7)}</td>
+						<td><strong>Longitude </strong>${feature.geometry.coordinates[0].toFixed(
+              7
+            )}</td>
 					</tr>
 				</table>
            `);
-	  
+
     layer.on("click", function () {
       this.openPopup();
-    })
-  }
+    });
+  },
 }).addTo(map);
 
 /* ***************************************************************************************************************************************************** */
@@ -333,7 +349,7 @@ function getColorInspection(feature) {
 }
 function styleInspection(feature) {
   return {
-    color: '#807f89',
+    color: "#807f89",
     fillColor: getColorInspection(feature.properties.Secteur),
     opacity: 1,
     fillOpacity: 0.8,
@@ -414,91 +430,90 @@ const collectesLayer = L.geoJson(collectes, {
   },
 });
 
-
 /* ***************************************************************************************************************************************************** */
 //   Ruelles vertes
-const ruellesVertesLayer = L.geoJson(ruelles_vertes, {
-  onEachFeature: function (feature, layer) {
-    layer.setStyle({ color: "green" });
-    layer.bindPopup(`
-            <p style='margin:0; padding:0;'><strong>Ruelle verte</strong></p>
-            `);
-    layer.on("mouseover", function () {
-      this.openPopup();
-    });
-    layer.on("mouseout", function () {
-      this.closePopup();
-    });
-  },
-});
+// const ruellesVertesLayer = L.geoJson(ruelles_vertes, {
+//   onEachFeature: function (feature, layer) {
+//     layer.setStyle({ color: "green" });
+//     layer.bindPopup(`
+//             <p style='margin:0; padding:0;'><strong>Ruelle verte</strong></p>
+//             `);
+//     layer.on("mouseover", function () {
+//       this.openPopup();
+//     });
+//     layer.on("mouseout", function () {
+//       this.closePopup();
+//     });
+//   },
+// });
 
 /* ***************************************************************************************************************************************************** */
 //   Axe_mob2021
-const axeMobLayer = L.geoJson(axe_mob2021, {
-  onEachFeature: function (feature, layer) {
-    layer.setStyle({ color: "blue" });
-    layer.bindPopup(`
-            <p style='margin:0; padding:0;'><strong>Axe de mobilité 2021</strong></p>
-            `);
-    layer.on("mouseover", function () {
-      this.openPopup();
-    });
-    layer.on("mouseout", function () {
-      this.closePopup();
-    });
-  },
-});
+// const axeMobLayer = L.geoJson(axe_mob2021, {
+//   onEachFeature: function (feature, layer) {
+//     layer.setStyle({ color: "blue" });
+//     layer.bindPopup(`
+//             <p style='margin:0; padding:0;'><strong>Axe de mobilité 2021</strong></p>
+//             `);
+//     layer.on("mouseover", function () {
+//       this.openPopup();
+//     });
+//     layer.on("mouseout", function () {
+//       this.closePopup();
+//     });
+//   },
+// });
 
 /* ***************************************************************************************************************************************************** */
 //   Axe_sensible2021
-const axeSensibleLayer = L.geoJson(axe_sensible2021, {
-  onEachFeature: function (feature, layer) {
-    layer.setStyle({ color: "red" });
-    layer.bindPopup(`
-            <p style='margin:0; padding:0;'><strong>Axe sensible 2021</strong></p>
-            `);
-    layer.on("mouseover", function () {
-      this.openPopup();
-    });
-    layer.on("mouseout", function () {
-      this.closePopup();
-    });
-  },
-});
+// const axeSensibleLayer = L.geoJson(axe_sensible2021, {
+//   onEachFeature: function (feature, layer) {
+//     layer.setStyle({ color: "red" });
+//     layer.bindPopup(`
+//             <p style='margin:0; padding:0;'><strong>Axe sensible 2021</strong></p>
+//             `);
+//     layer.on("mouseover", function () {
+//       this.openPopup();
+//     });
+//     layer.on("mouseout", function () {
+//       this.closePopup();
+//     });
+//   },
+// });
 
 /* ***************************************************************************************************************************************************** */
 //   Patrimoine
-const patrimoineLayer = L.geoJson(patrimoine, {
-  onEachFeature: function (feature, layer) {
-    layer.setStyle({
-      fillColor: "magenta",
-      color: "magenta",
-      opacity: 1,
-      fillOpacity: 0.2,
-    });
-    layer.bindPopup(`
-            <p style='margin:0; padding:0;'><strong>Patrimoine</strong></p>
-            `);
-    layer.on("mouseover", function () {
-      this.setStyle({
-        color: "red",
-        fillColor: "red",
-        opacity: 1,
-        fillOpacity: 0.2,
-      });
-      this.openPopup();
-    });
-    layer.on("mouseout", function () {
-      this.setStyle({
-        color: "magenta",
-        fillColor: "magenta",
-        opacity: 1,
-        fillOpacity: 0.2,
-      });
-      this.closePopup();
-    });
-  },
-});
+// const patrimoineLayer = L.geoJson(patrimoine, {
+//   onEachFeature: function (feature, layer) {
+//     layer.setStyle({
+//       fillColor: "magenta",
+//       color: "magenta",
+//       opacity: 1,
+//       fillOpacity: 0.2,
+//     });
+//     layer.bindPopup(`
+//             <p style='margin:0; padding:0;'><strong>Patrimoine</strong></p>
+//             `);
+//     layer.on("mouseover", function () {
+//       this.setStyle({
+//         color: "red",
+//         fillColor: "red",
+//         opacity: 1,
+//         fillOpacity: 0.2,
+//       });
+//       this.openPopup();
+//     });
+//     layer.on("mouseout", function () {
+//       this.setStyle({
+//         color: "magenta",
+//         fillColor: "magenta",
+//         opacity: 1,
+//         fillOpacity: 0.2,
+//       });
+//       this.closePopup();
+//     });
+//   },
+// });
 
 /* ***************************************************************************************************************************************************** */
 //   Arrondissements
@@ -577,7 +592,7 @@ const arrondissementsLayer = L.geoJson(arrondissements, {
 
 /* ***************************************************************************************************************************************************** */
 //   Inspecteurs
-function getColorInspecteurs(feature) {
+function getColorArrondissements(feature) {
   switch (feature) {
     case "A":
       return "#704709";
@@ -597,16 +612,16 @@ function getColorInspecteurs(feature) {
       return "#8cc720";
   }
 }
-function styleInspecteurs(feature) {
+function styleArrondissements(feature) {
   return {
-    color: getColorInspecteurs(feature.properties.Secteur),
-    fillColor: getColorInspecteurs(feature.properties.Secteur),
+    color: getColorArrondissements(feature.properties.Secteur),
+    fillColor: getColorArrondissements(feature.properties.Secteur),
     opacity: 1,
     fillOpacity: 0.4,
   };
 }
 const inspecteursLayer = L.geoJson(arrondissements, {
-  style: styleInspecteurs,
+  style: styleArrondissements,
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
             <p style='margin:0; padding:0;'><strong>Arrond. : </strong>${feature.properties.name}</p>
@@ -632,117 +647,117 @@ const inspecteursLayer = L.geoJson(arrondissements, {
 
 /* ***************************************************************************************************************************************************** */
 //   Horticulteurs
-function getColorHorticulteurs(feature) {
-  switch (feature) {
-    case "A":
-      return "#704709";
-    case "B":
-      return "red";
-    case "C":
-      return "#940043";
-    case "D":
-      return "#9004e0";
-    case "E":
-      return "#0B7A75";
-    case "F":
-      return "#147ec9";
-    case "G":
-      return "black";
-    case "H":
-      return "#8cc720";
-  }
-}
-function styleHorticulteurs(feature) {
-  return {
-    color: getColorHorticulteurs(feature.properties.Secteur),
-    fillColor: getColorHorticulteurs(feature.properties.Secteur),
-    opacity: 1,
-    fillOpacity: 0.4,
-  };
-}
-const horticulteursLayer = L.geoJson(arrondissements, {
-  style: styleHorticulteurs,
-  onEachFeature: function (feature, layer) {
-    if (feature.properties.Horticulteur2 !== "") {
-      layer.bindPopup(`
-            <p style='margin:0; padding:0;'><strong>Arrond. : </strong>${feature.properties.name}</p>
-            <p style='margin:0; padding:0'><strong>Horticulteur 1 :</strong> ${feature.properties.Horticulteur1}</p>
-            <p style='margin:0; padding:0'><strong>Courriel :</strong> ${feature.properties.Courriel1}</p>
-            <p style='margin:0; padding:0'><strong>Téléphone :</strong> ${feature.properties.Téléphone1}</p>
-            <br>
-            <p style='margin:0; padding:0'><strong>Horticulteur 2 :</strong> ${feature.properties.Horticulteur2}</p>
-            <p style='margin:0; padding:0'><strong>Courriel :</strong> ${feature.properties.Courriel2}</p>
-            <p style='margin:0; padding:0'><strong>Téléphone :</strong> ${feature.properties.Téléphone2}</p>
-            `);
-    } else {
-      layer.bindPopup(`
-            <p style='margin:0; padding:0;'><strong>Arrond. : </strong>${feature.properties.name}</p>
-            <p style='margin:0; padding:0'><strong>Horticulteur :</strong> ${feature.properties.Horticulteur1}</p>
-            <p style='margin:0; padding:0'><strong>Courriel :</strong> ${feature.properties.Courriel1}</p>
-            <p style='margin:0; padding:0'><strong>Téléphone :</strong> ${feature.properties.Téléphone1}</p>
-      `);
-    }
-    layer.on("mouseover", function () {
-      this.setStyle({
-        fillOpacity: 0.2,
-        opacity: 1,
-      });
-    });
-    layer.on("mouseout", function () {
-      this.setStyle({
-        fillOpacity: 0.4,
-        opacity: 1,
-      });
-    });
-  },
-});
+// function getColorHorticulteurs(feature) {
+//   switch (feature) {
+//     case "A":
+//       return "#704709";
+//     case "B":
+//       return "red";
+//     case "C":
+//       return "#940043";
+//     case "D":
+//       return "#9004e0";
+//     case "E":
+//       return "#0B7A75";
+//     case "F":
+//       return "#147ec9";
+//     case "G":
+//       return "black";
+//     case "H":
+//       return "#8cc720";
+//   }
+// }
+// function styleHorticulteurs(feature) {
+//   return {
+//     color: getColorHorticulteurs(feature.properties.Secteur),
+//     fillColor: getColorHorticulteurs(feature.properties.Secteur),
+//     opacity: 1,
+//     fillOpacity: 0.4,
+//   };
+// }
+// const horticulteursLayer = L.geoJson(arrondissements, {
+//   style: styleHorticulteurs,
+//   onEachFeature: function (feature, layer) {
+//     if (feature.properties.Horticulteur2 !== "") {
+//       layer.bindPopup(`
+//             <p style='margin:0; padding:0;'><strong>Arrond. : </strong>${feature.properties.name}</p>
+//             <p style='margin:0; padding:0'><strong>Horticulteur 1 :</strong> ${feature.properties.Horticulteur1}</p>
+//             <p style='margin:0; padding:0'><strong>Courriel :</strong> ${feature.properties.Courriel1}</p>
+//             <p style='margin:0; padding:0'><strong>Téléphone :</strong> ${feature.properties.Téléphone1}</p>
+//             <br>
+//             <p style='margin:0; padding:0'><strong>Horticulteur 2 :</strong> ${feature.properties.Horticulteur2}</p>
+//             <p style='margin:0; padding:0'><strong>Courriel :</strong> ${feature.properties.Courriel2}</p>
+//             <p style='margin:0; padding:0'><strong>Téléphone :</strong> ${feature.properties.Téléphone2}</p>
+//             `);
+//     } else {
+//       layer.bindPopup(`
+//             <p style='margin:0; padding:0;'><strong>Arrond. : </strong>${feature.properties.name}</p>
+//             <p style='margin:0; padding:0'><strong>Horticulteur :</strong> ${feature.properties.Horticulteur1}</p>
+//             <p style='margin:0; padding:0'><strong>Courriel :</strong> ${feature.properties.Courriel1}</p>
+//             <p style='margin:0; padding:0'><strong>Téléphone :</strong> ${feature.properties.Téléphone1}</p>
+//       `);
+//     }
+//     layer.on("mouseover", function () {
+//       this.setStyle({
+//         fillOpacity: 0.2,
+//         opacity: 1,
+//       });
+//     });
+//     layer.on("mouseout", function () {
+//       this.setStyle({
+//         fillOpacity: 0.4,
+//         opacity: 1,
+//       });
+//     });
+//   },
+// });
 
 /* ***************************************************************************************************************************************************** */
 //    Secteurs AGIR
-function getColorSecteurs(feature) {
-  switch (feature) {
-    case 1:
-      return "orange";
-    case 2:
-      return "#92d14d";
-    case 3:
-      return "#4293f5";
-    case 4:
-      return "yellow";
-  }
-}
-function styleSecteurs(feature) {
-  return {
-    color: getColorSecteurs(feature.properties.Secteur),
-    fillColor: getColorSecteurs(feature.properties.Secteur),
-    opacity: 1,
-    fillOpacity: 0.7,
-  };
-}
-const secteursAgirLayer = L.geoJson(secteurs_agir, {
-  style: styleSecteurs,
-  onEachFeature: function (feature, layer) {
-    layer.bindPopup(`
-            <p style='margin:0; padding:0'><strong>Arrond. : </strong>${feature.properties.NOM_ARRON}</p>
-            <p style='margin:0; padding:0'><strong>Secteur : </strong> ${feature.properties.Secteur}</p>
-            <p style='margin:0; padding:0'><strong>Ing. : </strong> ${feature.properties.Contact.Ing}</p>
-            <p style='margin:0; padding:0'><strong>Ag.T : </strong> ${feature.properties.Contact.AgT}</p>
-            `);
+// function getColorSecteurs(feature) {
+//   switch (feature) {
+//     case 1:
+//       return "orange";
+//     case 2:
+//       return "#92d14d";
+//     case 3:
+//       return "#4293f5";
+//     case 4:
+//       return "yellow";
+//   }
+// }
+// function styleSecteurs(feature) {
+//   return {
+//     color: getColorSecteurs(feature.properties.Secteur),
+//     fillColor: getColorSecteurs(feature.properties.Secteur),
+//     opacity: 1,
+//     fillOpacity: 0.7,
+//   };
+// }
+// const secteursAgirLayer = L.geoJson(secteurs_agir, {
+//   style: styleSecteurs,
+//   onEachFeature: function (feature, layer) {
+//     layer.bindPopup(`
+//             <p style='margin:0; padding:0'><strong>Arrond. : </strong>${feature.properties.NOM_ARRON}</p>
+//             <p style='margin:0; padding:0'><strong>Secteur : </strong> ${feature.properties.Secteur}</p>
+//             <p style='margin:0; padding:0'><strong>Ing. : </strong> ${feature.properties.Contact.Ing}</p>
+//             <p style='margin:0; padding:0'><strong>Ag.T : </strong> ${feature.properties.Contact.AgT}</p>
+//             `);
 
-    layer.on("mouseover", function () {
-      this.setStyle({
-        opacity: 1,
-        fillOpacity: 0.3,
-      });
-    });
-    layer.on("mouseout", function () {
-      this.setStyle({
-        opacity: 1,
-        fillOpacity: 0.7,
-      });
-    });
-  },
-});
+//     layer.on("mouseover", function () {
+//       this.setStyle({
+//         opacity: 1,
+//         fillOpacity: 0.3,
+//       });
+//     });
+//     layer.on("mouseout", function () {
+//       this.setStyle({
+//         opacity: 1,
+//         fillOpacity: 0.7,
+//       });
+//     });
+//   },
+// });
 
 /* ***************************************************************************************************************************************************** */
 //  Casernes
@@ -780,7 +795,7 @@ map.fitBounds(markersCasernes.getBounds());
 const markersBR = L.markerClusterGroup();
 const geoJsonLayerBR = L.geoJson(BR, {
   onEachFeature: function (feature, layer) {
-     layer.bindPopup(`
+    layer.bindPopup(`
        <div>
          <p style='margin:0; padding:0; color:#4ef54a; background-color: black; padding:0 5px; border-radius:5px'><strong>Nom de la borne :</strong> ${feature.properties.Nom_Borne}</p>
 	 <p style='margin:0; padding:0;'><strong>Nom_du_parc :</strong> ${feature.properties.Nom_du_parc}</p>
@@ -796,13 +811,13 @@ const geoJsonLayerBR = L.geoJson(BR, {
 	 <p style='margin:0; padding:0;'><strong>Puissance :</strong> ${feature.properties.Puissance} (kW)</p>
        </div>
      `);
-     layer.on("mouseover", function () {
-       this.openPopup();
-     });
-     layer.on("mouseout", function () {
-       this.closePopup();
-     });
-  }
+    layer.on("mouseover", function () {
+      this.openPopup();
+    });
+    layer.on("mouseout", function () {
+      this.closePopup();
+    });
+  },
 });
 
 const BRMarkers = markersBR.addLayer(geoJsonLayerBR);
@@ -822,21 +837,20 @@ function getColorRAAV(feature) {
 }
 
 function styleRAAV(feature) {
- if(feature.properties.TRC_TOP_RAAV == 1){
-   return {
-    color: getColorRAAV(feature.properties.TRC_TOP_RAAV),
-    fillColor: getColorRAAV(feature.properties.TRC_TOP_RAAV),
-    weight: 5,
-    opacity: 1
-  };
- } else {
+  if (feature.properties.TRC_TOP_RAAV == 1) {
     return {
-    color: getColorRAAV(feature.properties.TRC_TOP_RAAV),
-    fillColor: getColorRAAV(feature.properties.TRC_TOP_RAAV),
-    opacity: 1
-  };	 
- }  
-  
+      color: getColorRAAV(feature.properties.TRC_TOP_RAAV),
+      fillColor: getColorRAAV(feature.properties.TRC_TOP_RAAV),
+      weight: 5,
+      opacity: 1,
+    };
+  } else {
+    return {
+      color: getColorRAAV(feature.properties.TRC_TOP_RAAV),
+      fillColor: getColorRAAV(feature.properties.TRC_TOP_RAAV),
+      opacity: 1,
+    };
+  }
 }
 
 const raavLayer = L.geoJson(RAAV, {
@@ -857,20 +871,20 @@ const raavLayer = L.geoJson(RAAV, {
 /* ***************************************************************************************************************************************************** */
 
 //   Camionnage 15/11/2022
-const camionnageLayer = L.geoJson(camionnage, {
-  onEachFeature: function (feature, layer) {
-    layer.setStyle({ color: "green" });
-    layer.bindPopup(`
-            <p style='margin:0; padding:0;'><strong>Camionnage</strong></p>
-            `);
-    layer.on("mouseover", function () {
-      this.openPopup();
-    });
-    layer.on("mouseout", function () {
-      this.closePopup();
-    });
-  },
-});
+// const camionnageLayer = L.geoJson(camionnage, {
+//   onEachFeature: function (feature, layer) {
+//     layer.setStyle({ color: "green" });
+//     layer.bindPopup(`
+//             <p style='margin:0; padding:0;'><strong>Camionnage</strong></p>
+//             `);
+//     layer.on("mouseover", function () {
+//       this.openPopup();
+//     });
+//     layer.on("mouseout", function () {
+//       this.closePopup();
+//     });
+//   },
+// });
 
 /* ***************************************************************************************************************************************************** */
 
@@ -890,120 +904,121 @@ map.on("move", function () {
 
 //  Control Groups et overlays
 const baseMaps = {
-//   "Mapbox Light": Light,
-//   "Mapbox Streets": Streets,
-//   "Mapbox Outdoors": Outdoors,
-//   "Mapbox Satellite": Satellite,
-//   "Google Streets": googleStreets,
-//   "Google Satellite": googleSat,
-//   "Google Hybrid": googleHybrid,
-//   "Google Terrain": googleTerrain ,
-//   "ISRI Streets": esriTile,
-//   "Open Street Map": osm,
+  //   "Mapbox Light": Light,
+  //   "Mapbox Streets": Streets,
+  //   "Mapbox Outdoors": Outdoors,
+  //   "Mapbox Satellite": Satellite,
+  //   "Google Streets": googleStreets,
+  //   "Google Satellite": googleSat,
+  //   "Google Hybrid": googleHybrid,
+  //   "Google Terrain": googleTerrain ,
+  //   "ISRI Streets": esriTile,
+  //   "Open Street Map": osm,
 };
 
 const overlayMaps = {
-//   "Contrat 1093":C1093_Layer,
-//   "Contrat 1096":C1096_Layer,
-//   "Contrat 1104":C1104_Layer,
-//   "Contrat 1105":C1105_Layer,
-//   "Contrat 1106":C1106_Layer,
-//   "Contrat 1108":C1108_Layer,
-//   "Inspecteurs": inspectionLayer,	
-//   Arrondissement: arrondissementsLayer,
-//   "Axes mobilité sans trav.": axeMobLayer,
-//   "Axes sensibles avec trav.": axeSensibleLayer,
-//   Patrimoine: patrimoineLayer,
-//   "Ruelles vertes": ruellesVertesLayer,
-//   Casernes: casernesMarkers,
-//   "Secteurs AGIR": secteursAgirLayer,
-//   Inspecteurs: inspecteursLayer,
-//   Horticulteurs: horticulteursLayer,
-//   "Google Street View": markerGSV,
+  //   "Contrat 1093":C1093_Layer,
+  //   "Contrat 1096":C1096_Layer,
+  //   "Contrat 1104":C1104_Layer,
+  //   "Contrat 1105":C1105_Layer,
+  //   "Contrat 1106":C1106_Layer,
+  //   "Contrat 1108":C1108_Layer,
+  //   "Inspecteurs": inspectionLayer,
+  //   Arrondissement: arrondissementsLayer,
+  //   "Axes mobilité sans trav.": axeMobLayer,
+  //   "Axes sensibles avec trav.": axeSensibleLayer,
+  //   Patrimoine: patrimoineLayer,
+  //   "Ruelles vertes": ruellesVertesLayer,
+  //   Casernes: casernesMarkers,
+  //   "Secteurs AGIR": secteursAgirLayer,
+  //   Inspecteurs: inspecteursLayer,
+  //   Horticulteurs: horticulteursLayer,
+  //   "Google Street View": markerGSV,
 };
 
 // L.control.layers(baseMaps, overlayMaps, { collapsed: true }).addTo(map);
 
 const baseTree = {
-    label: 'Couches de base',
-    children: [
-            { label: 'Mapbox Light', layer: Light },
-            { label: 'Mapbox Streets', layer: Streets },
-            { label: 'Google Streets', layer: googleStreets },
-	    { label: 'Google Satellite', layer: googleSat },
-	    { label: 'ISRI Streets', layer: esriTile },
-	    { label: 'Open Street Map', layer: osm }
-    ]
+  label: "Fonds de carte",
+  children: [
+    { label: "Mapbox Light", layer: Light },
+    { label: "Mapbox Streets", layer: Streets },
+    { label: "Google Streets", layer: googleStreets },
+    { label: "Google Satellite", layer: googleSat },
+    { label: "ISRI Streets", layer: esriTile },
+    { label: "Open Street Map", layer: osm },
+  ],
 };
 
 const layers2023 = L.featureGroup([C1108_Layer, C1106_Layer]).addTo(map);
 map.fitBounds(layers2023.getBounds());
 
-var overlaysTree = {
-    label: 'Couches de travail',
-    selectAllCheckbox: 'Un/select all',
-    children: [
+const overlaysTree = {
+  label: "Calques de travail",
+  selectAllCheckbox: "Un/select all",
+  children: [
+    {
+      label: "Projets",
+      selectAllCheckbox: true,
+      children: [
         {
-            label: 'Projets',
-            selectAllCheckbox: true,
-            children: [
-                {
-                    label: '2022',
-                    selectAllCheckbox: true,
-                    children: [
-                        { label: 'Contrat 1093', layer: C1093_Layer },
-                        { label: 'Contrat 1096', layer: C1096_Layer },
-			{ label: 'Contrat 1104', layer: C1104_Layer },
-			{ label: 'Contrat 1105', layer: C1105_Layer },
-// 			{ label: 'Contrat 1106', layer: C1106_Layer },
-// 			{ label: 'Contrat 1108', layer: C1108_Layer }
-                    ]
-                },
-		{
-                   label: '2023',
-                   selectAllCheckbox: true,
-                   children: [
-                        { label: 'Projets COPRO', layer: C1108_Layer },
-                        { label: 'Projets Arrondissement', layer: C1106_Layer }
-                   ]
-               }
-            ]
-        }, {
-            label: 'Autres',
-            selectAllCheckbox: true,
-            children: [
-                        { label: "Secteurs d'inspection", layer: inspectionLayer },
-                        { label: 'Réseau RAAV', layer: raavLayer },
-		    	{ label: 'Camionnage', layer: camionnageLayer },
-		    	{ label: 'Arrondissements', layer: arrondissementsLayer },
-		    	{ label: 'Casernes pompiers', layer: casernesMarkers },
-		   	{ label: 'Bornes de recharge', layer: BRMarkers },
-		    	{ label: 'Secteurs des Collectes', layer: collectesLayer },
-		        { label: 'Google Street View', layer: markerGSV }
-		    
-                    ]
-        }
-    ]
-}
+          label: "2022",
+          selectAllCheckbox: true,
+          children: [
+            { label: "Contrat 1093", layer: C1093_Layer },
+            { label: "Contrat 1096", layer: C1096_Layer },
+            { label: "Contrat 1104", layer: C1104_Layer },
+            { label: "Contrat 1105", layer: C1105_Layer },
+            // 			{ label: 'Contrat 1106', layer: C1106_Layer },
+            // 			{ label: 'Contrat 1108', layer: C1108_Layer }
+          ],
+        },
+        {
+          label: "2023",
+          selectAllCheckbox: true,
+          children: [
+            { label: "Projets COPRO", layer: C1108_Layer },
+            { label: "Projets Arrondissement", layer: C1106_Layer },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Autres",
+      selectAllCheckbox: true,
+      children: [
+        { label: "Secteurs d'inspection", layer: inspectionLayer },
+        { label: "Réseau RAAV", layer: raavLayer },
+        // { label: "Camionnage", layer: camionnageLayer },
+        { label: "Arrondissements", layer: arrondissementsLayer },
+        { label: "Casernes pompiers", layer: casernesMarkers },
+        { label: "Bornes de recharge", layer: BRMarkers },
+        { label: "Secteurs des Collectes", layer: collectesLayer },
+        { label: "Google Street View", layer: markerGSV },
+      ],
+    },
+  ],
+};
 
 const lay = L.control.layers.tree(baseTree, overlaysTree, {
-                namedToggle: true,
-		selectorBack: false,
-                closedSymbol: '&#8862; &#x1f5c0;',
-                openedSymbol: '&#8863; &#x1f5c1;',
-                collapseAll: 'Réduire tout',
-                expandAll: 'Développer tout',
-		collapsed: false
-            });
+  namedToggle: true,
+  selectorBack: false,
+  closedSymbol: "&#8862; &#x1f5c0;",
+  openedSymbol: "&#8863; &#x1f5c1;",
+  collapseAll: "Réduire tout",
+  expandAll: "Développer tout",
+  collapsed: false,
+});
 
 lay.addTo(map).collapseTree(true).expandSelected(true);
-L.control.locate(
-{
-    flyTo:true,
+L.control
+  .locate({
+    flyTo: true,
     strings: {
-        title: "Montre-moi où je suis !"
-    }
-}).addTo(map);
+      title: "Montre-moi où je suis !",
+    },
+  })
+  .addTo(map);
 map.addControl(
   new L.Control.Fullscreen({
     title: {
@@ -1072,32 +1087,35 @@ searchControl.on("results", function (data) {
   results.clearLayers();
   for (let i = data.results.length - 1; i >= 0; i--) {
     results.addLayer(L.marker(data.results[i].latlng, { icon: travIcon }));
-	  
   }
 });
 
 // Échelle à droite en bas
 L.control.scale({ position: "bottomright" }).addTo(map);
 
-const legend = L.control.Legend({
-            position: "bottomleft",
-            title:"Légende",
-            collapsed: false,
-            symbolWidth: 24,
-            opacity: 1,
-            column: 2,
-            legends: [{
-                label: "Dos d'âne",
-                type: "image",
-		url: "../img/speed_bump_1106_OK.svg",
-                layers: C1106_Layer
-            }, {
-                label: "Article 85",
-                type: "polyline",
-		layers: C1108_Layer,
-                color: "#3388ff",
-                fillColor: "#3388ff",
-                weight: 2
-            }]
-        })
-        .addTo(map);
+const legend = L.control
+  .Legend({
+    position: "bottomleft",
+    title: "Légende",
+    collapsed: false,
+    symbolWidth: 24,
+    opacity: 1,
+    column: 2,
+    legends: [
+      {
+        label: "Dos d'âne",
+        type: "image",
+        url: "../img/speed_bump_1106_OK.svg",
+        layers: C1106_Layer,
+      },
+      {
+        label: "Article 85",
+        type: "polyline",
+        layers: C1108_Layer,
+        color: "#3388ff",
+        fillColor: "#3388ff",
+        weight: 2,
+      },
+    ],
+  })
+  .addTo(map);
