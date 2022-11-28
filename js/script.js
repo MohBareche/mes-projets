@@ -411,7 +411,7 @@ const C_BRV_Layer = L.geoJson(brv, {
         <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
         <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
         <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
-        <p style='margin:0; padding:0'><strong>Description : </strong> Bornes de recharge pour véhicules électriques</p>
+        <p style='margin:0; padding:0'><strong>Description : </strong> Borne de recharge pour véhicules électriques</p>
 	    `);
     layer.on("click", function () {
       this.openPopup();
