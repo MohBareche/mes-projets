@@ -591,59 +591,59 @@ const arrondissementsLayer = L.geoJson(arrondissements, {
 });
 
 /* ***************************************************************************************************************************************************** */
-//   Inspecteurs
-function getColorArrondissements(feature) {
-  switch (feature) {
-    case "A":
-      return "#704709";
-    case "B":
-      return "red";
-    case "C":
-      return "#940043";
-    case "D":
-      return "#9004e0";
-    case "E":
-      return "#0B7A75";
-    case "F":
-      return "#147ec9";
-    case "G":
-      return "black";
-    case "H":
-      return "#8cc720";
-  }
-}
-function styleArrondissements(feature) {
-  return {
-    color: getColorArrondissements(feature.properties.Secteur),
-    fillColor: getColorArrondissements(feature.properties.Secteur),
-    opacity: 1,
-    fillOpacity: 0.4,
-  };
-}
-const inspecteursLayer = L.geoJson(arrondissements, {
-  style: styleArrondissements,
-  onEachFeature: function (feature, layer) {
-    layer.bindPopup(`
-            <p style='margin:0; padding:0;'><strong>Arrond. : </strong>${feature.properties.name}</p>
-            <p style='margin:0; padding:0;'><strong>Secteur : </strong>${feature.properties.Secteur}</p>
-            <p style='margin:0; padding:0'><strong>Inspecteur :</strong> ${feature.properties.Inspecteur}</p>
-            <p style='margin:0; padding:0'><strong>Courriel :</strong> ${feature.properties.Email}</p>
-            <p style='margin:0; padding:0'><strong>Téléphone :</strong> ${feature.properties.Téléph}</p>
-            `);
-    layer.on("mouseover", function () {
-      this.setStyle({
-        fillOpacity: 0.2,
-        opacity: 1,
-      });
-    });
-    layer.on("mouseout", function () {
-      this.setStyle({
-        fillOpacity: 0.4,
-        opacity: 1,
-      });
-    });
-  },
-});
+//   Inspecteurs AGIR
+// function getColorArrondissements(feature) {
+//   switch (feature) {
+//     case "A":
+//       return "#704709";
+//     case "B":
+//       return "red";
+//     case "C":
+//       return "#940043";
+//     case "D":
+//       return "#9004e0";
+//     case "E":
+//       return "#0B7A75";
+//     case "F":
+//       return "#147ec9";
+//     case "G":
+//       return "black";
+//     case "H":
+//       return "#8cc720";
+//   }
+// }
+// function styleArrondissements(feature) {
+//   return {
+//     color: getColorArrondissements(feature.properties.Secteur),
+//     fillColor: getColorArrondissements(feature.properties.Secteur),
+//     opacity: 1,
+//     fillOpacity: 0.4,
+//   };
+// }
+// const inspecteursLayer = L.geoJson(arrondissements, {
+//   style: styleArrondissements,
+//   onEachFeature: function (feature, layer) {
+//     layer.bindPopup(`
+//             <p style='margin:0; padding:0;'><strong>Arrond. : </strong>${feature.properties.name}</p>
+//             <p style='margin:0; padding:0;'><strong>Secteur : </strong>${feature.properties.Secteur}</p>
+//             <p style='margin:0; padding:0'><strong>Inspecteur :</strong> ${feature.properties.Inspecteur}</p>
+//             <p style='margin:0; padding:0'><strong>Courriel :</strong> ${feature.properties.Email}</p>
+//             <p style='margin:0; padding:0'><strong>Téléphone :</strong> ${feature.properties.Téléph}</p>
+//             `);
+//     layer.on("mouseover", function () {
+//       this.setStyle({
+//         fillOpacity: 0.2,
+//         opacity: 1,
+//       });
+//     });
+//     layer.on("mouseout", function () {
+//       this.setStyle({
+//         fillOpacity: 0.4,
+//         opacity: 1,
+//       });
+//     });
+//   },
+// });
 
 /* ***************************************************************************************************************************************************** */
 //   Horticulteurs
@@ -969,16 +969,34 @@ const overlaysTree = {
             { label: "Contrat 1096", layer: C1096_Layer },
             { label: "Contrat 1104", layer: C1104_Layer },
             { label: "Contrat 1105", layer: C1105_Layer },
-            // 			{ label: 'Contrat 1106', layer: C1106_Layer },
-            // 			{ label: 'Contrat 1108', layer: C1108_Layer }
+            { label: "Contrat 1106", layer: C1106_Layer },
+            { label: "Contrat 1108", layer: C1108_Layer },
           ],
         },
         {
           label: "2023",
           selectAllCheckbox: true,
           children: [
-            { label: "Projets COPRO", layer: C1108_Layer },
-            { label: "Projets Arrondissement", layer: C1106_Layer },
+            {
+              label: "Corpo",
+              selectAllCheckbox: true,
+              children: [
+                { label: "ESP", layer: C1093_Layer },
+                { label: "PCPR-PRCPR", layer: C1096_Layer },
+                { label: "Rehab AQ", layer: C1096_Layer },
+                { label: "Rehab EG", layer: C1096_Layer },
+                { label: "BRV", layer: C1096_Layer },
+                { label: "Voirie-Éclairage", layer: C1096_Layer },
+              ],
+            },
+            {
+              label: "Arrondissement",
+              selectAllCheckbox: true,
+              children: [
+                { label: "PRR", layer: C1093_Layer },
+                { label: "APA", layer: C1096_Layer },
+              ],
+            },
           ],
         },
       ],
@@ -1100,22 +1118,69 @@ const legend = L.control
     collapsed: false,
     symbolWidth: 24,
     opacity: 1,
-    column: 2,
+    column: 3,
     legends: [
-      {
-        label: "Dos d'âne",
-        type: "image",
-        url: "../img/speed_bump_1106_OK.svg",
-        layers: C1106_Layer,
-      },
-      {
-        label: "Article 85",
-        type: "polyline",
-        layers: C1108_Layer,
-        color: "#3388ff",
-        fillColor: "#3388ff",
-        weight: 2,
-      },
+
+        {
+          label: "ESP",
+          type: "polyline",
+          layers: C1108_Layer,
+          color: "#3388ff",
+          fillColor: "#3388ff",
+          weight: 2,
+        },
+        {
+          label: "PCPR-PRCPR",
+          type: "polyline",
+          layers: C1108_Layer,
+          color: "#3388ff",
+          fillColor: "#3388ff",
+          weight: 2,
+        },
+        {
+          label: "Rehab AQ",
+          type: "polyline",
+          layers: C1108_Layer,
+          color: "#3388ff",
+          fillColor: "#3388ff",
+          weight: 2,
+        },
+        {
+          label: "Rehab EG",
+          type: "polyline",
+          layers: C1108_Layer,
+          color: "#3388ff",
+          fillColor: "#3388ff",
+          weight: 2,
+        },
+        {
+          label: "BRV",
+          type: "image",
+          url: "../img/speed_bump_1106_OK.svg",
+          layers: C1108_Layer,
+        },
+        {
+          label: "Voirie-Éclairage",
+          type: "polyline",
+          layers: C1108_Layer,
+          color: "#3388ff",
+          fillColor: "#3388ff",
+          weight: 2,
+        },
+        {
+          label: "PRR",
+          type: "polyline",
+          layers: C1108_Layer,
+          color: "red",
+          fillColor: "red",
+          weight: 2,
+        },
+        {
+          label: "APA",
+          type: "image",
+          url: "../img/speed_bump_1106.svg",
+          layers: C1108_Layer,
+        },
     ],
   })
   .addTo(map);
