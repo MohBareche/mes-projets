@@ -344,11 +344,17 @@ const C1106_Layer = L.geoJson(C1106, {
 /* @2023 - CORPO ESP */
 const C_ESP_Layer = L.geoJson(esp, {
   onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#f50d12",
+        weight: 4,
+      });
+    }
     layer.bindPopup(`
-        <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
-        <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
-        <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
-	      <p style='margin:0; padding:0'><strong>Description : </strong> Remplacement des entrées de service en plomb</p>
+        <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+        <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+        <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+	      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Remplacement des entrées de service en plomb</p>
       `);
     layer.on("click", function () {
       this.openPopup();
@@ -359,11 +365,17 @@ const C_ESP_Layer = L.geoJson(esp, {
 /* @2023 - CORPO PCPR-PRCPR */
 const C_PCPR_Layer = L.geoJson(pcpr, {
   onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#1a1a1a",
+        weight: 4,
+      });
+    }
     layer.bindPopup(`
-      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
-      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
-      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
-      <p style='margin:0; padding:0'><strong>Description : </strong> PCPR/PRCPR - Programme Complémentaire par Planage-Revêtement</p>
+      <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> PCPR/PRCPR - Programme Complémentaire par Planage-Revêtement</p>
     `);
     layer.on("click", function () {
       this.openPopup();
@@ -374,11 +386,17 @@ const C_PCPR_Layer = L.geoJson(pcpr, {
 /* @2023 - CORPO REHAB AQ */
 const C_RAQ_Layer = L.geoJson(rehabaq, {
   onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#3388ff",
+        weight: 4,
+      });
+    }
     layer.bindPopup(`
-      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
-      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
-      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
-      <p style='margin:0; padding:0'><strong>Description : </strong> Réhabilitation Aqueduc</p>
+      <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Réhabilitation Aqueduc</p>
     `);
     layer.on("click", function () {
       this.openPopup();
@@ -389,11 +407,17 @@ const C_RAQ_Layer = L.geoJson(rehabaq, {
 /* @2023 - CORPO REHAB EG */
 const C_REG_Layer = L.geoJson(rehabeg, {
   onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#b4b400",
+        weight: 4,
+      });
+    }
     layer.bindPopup(`
-      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
-      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
-      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
-      <p style='margin:0; padding:0'><strong>Description : </strong> Réhabilitation Égout</p>
+      <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Réhabilitation Égout</p>
     `);
     layer.on("click", function () {
       this.openPopup();
@@ -408,10 +432,10 @@ const C_BRV_Layer = L.geoJson(brv, {
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-        <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
-        <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
-        <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
-        <p style='margin:0; padding:0'><strong>Description : </strong> Borne de recharge pour véhicules électriques</p>
+        <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+        <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+        <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+        <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Borne de recharge pour véhicules électriques</p>
 	    `);
     layer.on("click", function () {
       this.openPopup();
@@ -422,11 +446,17 @@ const C_BRV_Layer = L.geoJson(brv, {
 /* @2023 - CORPO ÉCLAIRAGE */
 const C_ECL_Layer = L.geoJson(eclairage, {
   onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#810081",
+        weight: 4,
+      });
+    }
     layer.bindPopup(`
-      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
-      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
-      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
-      <p style='margin:0; padding:0'><strong>Description : </strong> Travaux d'éclairage </p>
+      <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Travaux d'éclairage </p>
     `);
     layer.on("click", function () {
       this.openPopup();
@@ -444,10 +474,10 @@ const C_PRR_Layer = L.geoJson(prr, {
       });
     }
     layer.bindPopup(`
-      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
-      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
-      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
-      <p style='margin:0; padding:0'><strong>Description : </strong> Travaux de réaménagement Avenue Lapierre</p>
+      <p class='arrond-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> Travaux de réaménagement Avenue Lapierre</p>
     `);
     layer.on("click", function () {
       this.openPopup();
@@ -468,10 +498,10 @@ const C_APA_Layer = L.geoJson(apa, {
       });
     }
     layer.bindPopup(`
-      <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Projet : </strong> ${feature.properties.type}</p>
-      <p style='margin:0; padding:0'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
-      <p style='margin:0; padding:0'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
-      <p style='margin:0; padding:0'><strong>Description : </strong> ${feature.properties.Description}</p>
+      <p class='arrond-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> ${feature.properties.Description}</p>
     `);
     layer.on("click", function () {
       this.openPopup();
@@ -1271,7 +1301,7 @@ L.control.scale({ position: "bottomright" }).addTo(map);
 const legend = L.control
   .Legend({
     position: "bottomleft",
-    title: "Légende",
+    title: "Légende (Travaux 2023)",
     collapsed: false,
     symbolWidth: 24,
     opacity: 1,
@@ -1281,17 +1311,17 @@ const legend = L.control
         label: "ESP",
         type: "polyline",
         layers: C_ESP_Layer,
-        color: "#3388ff",
-        fillColor: "#3388ff",
-        weight: 3,
+        color: "#f50d12",
+        fillColor: "#f50d12",
+        weight: 4,
       },
       {
         label: "PCPR-PRCPR",
         type: "polyline",
         layers: C_PCPR_Layer,
-        color: "#3388ff",
-        fillColor: "#3388ff",
-        weight: 3,
+        color: "#1a1a1a",
+        fillColor: "#1a1a1a",
+        weight: 4,
       },
       {
         label: "Rehab AQ",
@@ -1299,15 +1329,15 @@ const legend = L.control
         layers: C_RAQ_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
-        weight: 3,
+        weight: 4,
       },
       {
         label: "Rehab EG",
         type: "polyline",
         layers: C_REG_Layer,
-        color: "#3388ff",
-        fillColor: "#3388ff",
-        weight: 3,
+        color: "#b4b400",
+        fillColor: "#b4b400",
+        weight: 4,
       },
       {
         label: "BRV",
@@ -1316,12 +1346,12 @@ const legend = L.control
         layers: C_BRV_Layer,
       },
       {
-        label: "Voirie-Éclairage",
+        label: "Éclairage",
         type: "polyline",
         layers: C_ECL_Layer,
-        color: "#3388ff",
-        fillColor: "#3388ff",
-        weight: 3,
+        color: "#810081",
+        fillColor: "#810081",
+        weight: 4,
       },
       {
         label: "PRR",
@@ -1329,10 +1359,10 @@ const legend = L.control
         layers: C_PRR_Layer,
         color: "green",
         fillColor: "green",
-        weight: 3,
+        weight: 4,
       },
       {
-        label: "APA",
+        label: "Arch.Paysage",
         type: "image",
         url: "../img/arbre1.png",
         layers: C_APA_Layer,
@@ -1340,9 +1370,9 @@ const legend = L.control
       {
         label: "Corpo",
         type: "rectangle",
-        color: "#3388ff",
-        fillColor: "#3388ff",
-        weight: 3,
+        color: "#0d12f5",
+        fillColor: "#0d12f5",
+        weight: 4,
         layers: [
           C_ESP_Layer,
           C_ECL_Layer,
@@ -1357,7 +1387,7 @@ const legend = L.control
         type: "rectangle",
         color: "green",
         fillColor: "green",
-        weight: 3,
+        weight: 4,
         layers: [C_PRR_Layer, C_APA_Layer],
       },
     ],

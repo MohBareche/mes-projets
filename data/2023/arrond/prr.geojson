@@ -4,7 +4,7 @@ let prr = {
     {
       "type": "Feature",
       "properties": {
-        "Initiateur": "Arrond.",
+        "Initiateur": "Arrondissement",
         "type": "PRR",
         "AGIR": "192023-1107"
       },
