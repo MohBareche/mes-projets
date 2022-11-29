@@ -347,7 +347,7 @@ const C_ESP_Layer = L.geoJson(esp, {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
         color: "#f50d12",
-        weight: 4,
+        weight: 6,
       });
     }
     layer.bindPopup(`
@@ -368,7 +368,7 @@ const C_PCPR_Layer = L.geoJson(pcpr, {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
         color: "#1a1a1a",
-        weight: 4,
+        weight: 6,
       });
     }
     layer.bindPopup(`
@@ -389,7 +389,7 @@ const C_RAQ_Layer = L.geoJson(rehabaq, {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
         color: "#3388ff",
-        weight: 4,
+        weight: 6,
       });
     }
     layer.bindPopup(`
@@ -409,8 +409,8 @@ const C_REG_Layer = L.geoJson(rehabeg, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "#b4b400",
-        weight: 4,
+        color: "#964b00",
+        weight: 6,
       });
     }
     layer.bindPopup(`
@@ -449,7 +449,7 @@ const C_ECL_Layer = L.geoJson(eclairage, {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
         color: "#810081",
-        weight: 4,
+        weight: 6,
       });
     }
     layer.bindPopup(`
@@ -469,8 +469,8 @@ const C_PRR_Layer = L.geoJson(prr, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "green",
-        weight: 4,
+        color: "#65fe08",
+        weight: 6,
       });
     }
     layer.bindPopup(`
@@ -494,7 +494,7 @@ const C_APA_Layer = L.geoJson(apa, {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
         color: "green",
-        weight: 4,
+        weight: 6,
       });
     }
     layer.bindPopup(`
@@ -1298,14 +1298,14 @@ searchControl.on("results", function (data) {
 // Échelle à droite en bas
 L.control.scale({ position: "bottomright" }).addTo(map);
 
-const legend = L.control
+const legend1 = L.control
   .Legend({
     position: "bottomleft",
-    title: "Légende (Travaux 2023)",
+    title: "Légende (Corpo 2023)",
     collapsed: false,
     symbolWidth: 24,
     opacity: 1,
-    column: 3,
+    column: 2,
     legends: [
       {
         label: "ESP",
@@ -1313,7 +1313,7 @@ const legend = L.control
         layers: C_ESP_Layer,
         color: "#f50d12",
         fillColor: "#f50d12",
-        weight: 4,
+        weight: 6,
       },
       {
         label: "PCPR-PRCPR",
@@ -1321,7 +1321,7 @@ const legend = L.control
         layers: C_PCPR_Layer,
         color: "#1a1a1a",
         fillColor: "#1a1a1a",
-        weight: 4,
+        weight: 6,
       },
       {
         label: "Rehab AQ",
@@ -1329,15 +1329,15 @@ const legend = L.control
         layers: C_RAQ_Layer,
         color: "#3388ff",
         fillColor: "#3388ff",
-        weight: 4,
+        weight: 6,
       },
       {
         label: "Rehab EG",
         type: "polyline",
         layers: C_REG_Layer,
-        color: "#b4b400",
-        fillColor: "#b4b400",
-        weight: 4,
+        color: "#964b00",
+        fillColor: "#964b00",
+        weight: 6,
       },
       {
         label: "BRV",
@@ -1351,28 +1351,14 @@ const legend = L.control
         layers: C_ECL_Layer,
         color: "#810081",
         fillColor: "#810081",
-        weight: 4,
-      },
-      {
-        label: "PRR",
-        type: "polyline",
-        layers: C_PRR_Layer,
-        color: "green",
-        fillColor: "green",
-        weight: 4,
-      },
-      {
-        label: "Arch.Paysage",
-        type: "image",
-        url: "../img/arbre1.png",
-        layers: C_APA_Layer,
+        weight: 6,
       },
       {
         label: "Corpo",
         type: "rectangle",
         color: "#0d12f5",
         fillColor: "#0d12f5",
-        weight: 4,
+        weight: 6,
         layers: [
           C_ESP_Layer,
           C_ECL_Layer,
@@ -1381,6 +1367,33 @@ const legend = L.control
           C_RAQ_Layer,
           C_REG_Layer,
         ],
+      },
+    ],
+  })
+  .addTo(map);
+
+const legend2 = L.control
+  .Legend({
+    position: "bottomleft",
+    title: "Légende (Arrond. 2023)",
+    collapsed: false,
+    symbolWidth: 24,
+    opacity: 1,
+    column: 1,
+    legends: [
+      {
+        label: "PRR",
+        type: "polyline",
+        layers: C_PRR_Layer,
+        color: "#65fe08",
+        fillColor: "#65fe08",
+        weight: 6,
+      },
+      {
+        label: "Arch.Paysage",
+        type: "image",
+        url: "../img/arbre1.png",
+        layers: C_APA_Layer,
       },
       {
         label: "Arrondissement",
