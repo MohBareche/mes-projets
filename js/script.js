@@ -1413,9 +1413,3 @@ const legend2 = L.control
     ],
   })
   .addTo(map);
-
-  map.on('click', function(ev){
-    var latlng = map.mouseEventToLatLng(ev.originalEvent);
-    console.log(map.getZoom())
-    alert(latlng.lat + ', ' + latlng.lng);
-  });
