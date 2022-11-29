@@ -737,10 +737,6 @@ const arrondLayer = L.geoJson(limites_arr, {
       });
     });
 
-    layer.bindPopup(`
-            <p style='margin:0; padding:0;'>LImites de l'arrondissement Montréal-Nord</p>
-            `);
-
     layer.on("mouseout", function () {
       this.setStyle({
         fillOpacity: 0,
