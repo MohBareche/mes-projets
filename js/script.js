@@ -706,6 +706,52 @@ const collectesLayer = L.geoJson(collectes, {
 
 /* ***************************************************************************************************************************************************** */
 //   Arrondissements
+
+function styleArrondissements(feature) {
+  return {
+    color: getColorArrondissements(feature.properties.name),
+    fillColor: getColorArrondissements(feature.properties.name),
+    opacity: 1,
+    fillOpacity: 0.7,
+  };
+}
+const arrondLayer = L.geoJson(limites_arr, {
+  style: {
+    fillColor: "ddd",
+    weight: 2,
+    opacity: 1,
+    color: "black",
+    dashArray: "5",
+    fillOpacity: 0.7,
+  },
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+            <p style='margin:0; padding:0;'><strong>Code: </strong>${feature.properties.name}</p>
+            <p style='margin:0; padding:0'><strong>Description:</strong> ${feature.properties.description}</p>
+            `);
+
+    layer.on("mouseover", function () {
+      this.setStyle({
+        fillOpacity: 0,
+        opacity: 1,
+      });
+    });
+
+    layer.bindPopup(`
+            <p style='margin:0; padding:0;'>LImites de l'arrondissement Montréal-Nord</p>
+            `);
+
+    layer.on("mouseout", function () {
+      this.setStyle({
+        fillOpacity: 0,
+        opacity: 1,
+      });
+    });
+  },
+}).addTo(map);
+/* ***************************************************************************************************************************************************** */
+
+//   Arrondissements
 function getColorArrondissements(feature) {
   switch (feature) {
     case "AHU":
