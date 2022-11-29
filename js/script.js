@@ -1,7 +1,16 @@
 const map = L.mapbox
-  .map("mapDIV", null, { zoomControl: false })
-  .setView([45.55, -73.66], 10);
-const zoomHome = L.Control.zoomHome().addTo(map);
+  .map("mapDIV", null, {
+    zoomControl: false,
+    rotate: true,
+    touchRotate: true,
+    rotateControl: {
+      closeOnZeroBearing: false,
+    },
+    bearing: 45,
+  })
+
+  .setView([45.601437906913894, -73.63368298681777], 14);
+const zoomHome = L.Control.zoomHome();
 // L.mapbox.accessToken =
 //   "pk.eyJ1IjoibWJhcmVjaGUiLCJhIjoiY2pkbHpqZjQ3MGVibzJycWhka203dDNtYiJ9.GLpfZW2gcYULhuIa6vwgFw";
 
@@ -967,7 +976,7 @@ const geoJsonLayerCasernes = L.geoJson(casernes, {
   },
 });
 const casernesMarkers = markersCasernes.addLayer(geoJsonLayerCasernes);
-map.fitBounds(markersCasernes.getBounds());
+// map.fitBounds(markersCasernes.getBounds());
 
 /* ***************************************************************************************************************************************************** */
 //    Bornes de recharges
@@ -1001,7 +1010,7 @@ const geoJsonLayerBR = L.geoJson(BR, {
 });
 
 const BRMarkers = markersBR.addLayer(geoJsonLayerBR);
-map.fitBounds(markersBR.getBounds());
+// map.fitBounds(markersBR.getBounds());
 
 /* ***************************************************************************************************************************************************** */
 
@@ -1138,7 +1147,7 @@ const layers2023 = L.featureGroup([
   C_RAQ_Layer,
   C_REG_Layer,
 ]).addTo(map);
-map.fitBounds(layers2023.getBounds());
+// map.fitBounds(layers2023.getBounds());
 
 const overlaysTree = {
   label: "Calques de travail",
@@ -1216,22 +1225,20 @@ const lay = L.control.layers.tree(baseTree, overlaysTree, {
 });
 
 // lay.addTo(map).collapseTree(true).expandSelected(true);
-L.control
-  .locate({
-    flyTo: true,
-    strings: {
-      title: "Montre-moi où je suis !",
-    },
-  })
-  .addTo(map);
-map.addControl(
-  new L.Control.Fullscreen({
-    title: {
-      false: "Afficher plein écran",
-      true: "Quitter le plein écran",
-    },
-  })
-);
+L.control.locate({
+  flyTo: true,
+  strings: {
+    title: "Montre-moi où je suis !",
+  },
+});
+// map.addControl(
+//   new L.Control.Fullscreen({
+//     title: {
+//       false: "Afficher plein écran",
+//       true: "Quitter le plein écran",
+//     },
+//   })
+// );
 
 // Google Street View
 // L.streetView({ position: "topright" }).addTo(map);
@@ -1286,7 +1293,7 @@ const searchControl = L.esri.Geocoding.geosearch({
   placeholder: "Rechercher des lieux ou des adresses...",
   title: "Recherche d'emplacement",
   providers: [arcgisOnline],
-}).addTo(map);
+});
 
 searchControl.on("results", function (data) {
   results.clearLayers();
@@ -1406,3 +1413,9 @@ const legend2 = L.control
     ],
   })
   .addTo(map);
+
+  map.on('click', function(ev){
+    var latlng = map.mouseEventToLatLng(ev.originalEvent);
+    console.log(map.getZoom())
+    alert(latlng.lat + ', ' + latlng.lng);
+  });
