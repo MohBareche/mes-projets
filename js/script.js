@@ -1381,7 +1381,7 @@ const legend1 = L.control
 
 const legend2 = L.control
   .Legend({
-    position: "bottomleft",
+    position: "bottomright",
     title: "Légende (Arrond. 2023)",
     collapsed: false,
     symbolWidth: 24,
