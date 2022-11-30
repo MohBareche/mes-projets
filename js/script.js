@@ -848,21 +848,21 @@ const C_Saillie_1108_Layer = L.geoJson(saillie_1108, {
 //     fillOpacity: 0.7,
 //   };
 // }
-// const arrondLayer = L.geoJson(limites_arr, {
-//   style: {
-//     fillColor: "000",
-//     weight: 2,
-//     opacity: 1,
-//     color: "black",
-//     dashArray: "5",
-//     fillOpacity: 0,
-//   },
-//   onEachFeature: function (feature, layer) {
-//     layer.bindPopup(`
-//             <p style='margin:0; padding:0;'><strong>Arrondissement: </strong>${feature.properties.name}</p>
-//           `);
-//   },
-// }).addTo(map);
+const arrondLayer = L.geoJson(limites_arr, {
+  style: {
+    fillColor: "#000",
+    weight: 2,
+    opacity: 1,
+    color: "black",
+    dashArray: "5",
+    fillOpacity: 0,
+  },
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+            <p style='margin:0; padding:0;'><strong>Arrondissement: </strong>${feature.properties.name}</p>
+          `);
+  },
+}).addTo(map);
 /* ***************************************************************************************************************************************************** */
 
 //   Arrondissements
