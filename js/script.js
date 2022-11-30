@@ -76,13 +76,13 @@ const esriTile = L.esri.basemapLayer("Streets");
 // });
 
 // create an empty layer group to store the results and add it to the map
-const results = L.layerGroup().addTo(map);
-L.easyPrint({
-  sizeModes: ["Current", "A4Landscape", "A4Portrait", ""],
-  filename: "Ma carte",
-  exportOnly: true,
-  hideControlContainer: true,
-}).addTo(map);
+// const results = L.layerGroup().addTo(map);
+// L.easyPrint({
+//   sizeModes: ["Current", "A4Landscape", "A4Portrait", ""],
+//   filename: "Ma carte",
+//   exportOnly: true,
+//   hideControlContainer: true,
+// }).addTo(map);
 
 // listen for the results event and add every result to the map
 const travIcon = L.icon({
@@ -145,8 +145,14 @@ const iconBRV = L.icon({
   iconAnchor: [15, 15],
 });
 
-const iconAPA = L.icon({
+const icon_APA_1104 = L.icon({
   iconUrl: "../img/arbre1.png",
+  iconSize: [30, 30],
+  iconAnchor: [15, 15],
+});
+
+const icon_APA_1108 = L.icon({
+  iconUrl: "../img/arbre2.jpg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
 });
@@ -478,6 +484,9 @@ const C_ECL_Layer = L.geoJson(eclairage, {
     });
   },
 }).addTo(map);
+
+
+
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. PRR Lapierre */
 const C_PRR_Layer = L.geoJson(prr, {
@@ -526,7 +535,7 @@ const C_PaveRV_Layer = L.geoJson(paveRV, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "green",
+        color: "#89BC81",
         weight: 6,
       });
     }
@@ -547,7 +556,7 @@ const C_PlaceArchev_Layer = L.geoJson(place_Archev, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "#20b2aa",
+        color: "#043C15",
         weight: 6,
       });
     }
@@ -568,7 +577,7 @@ const C_Cloture_Layer = L.geoJson(cloture, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "#42ae99",
+        color: "#30FCB6",
         weight: 6,
       });
     }
@@ -587,15 +596,49 @@ const C_Cloture_Layer = L.geoJson(cloture, {
 /* @2023 - ARROND. SAILLIES 1104 */
 const C_Saillie_1104_Layer = L.geoJson(saillie_1104, {
   pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: iconAPA });
+    return L.marker(latlng, { icon: icon_APA_1104 });
   },
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+      <p class='arrond-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> ${feature.properties.Description}</p>
+    `);
+    layer.on("click", function () {
+      this.openPopup();
+    });
+  },
+}).addTo(map);
+/* ***************************************************************************************************************************************************** */
+/* @2023 - ARROND. SAILLIES 1104 */
+const C_Foret_Layer = L.geoJson(foret, {
+
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "green",
+        color: "#20b2aa",
         weight: 6,
       });
     }
+    layer.bindPopup(`
+      <p class='arrond-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> ${feature.properties.Description}</p>
+    `);
+    layer.on("click", function () {
+      this.openPopup();
+    });
+  },
+}).addTo(map);
+/* ***************************************************************************************************************************************************** */
+/* @2023 - ARROND. SAILLIES 1104 */
+const C_Saillie_1108_Layer = L.geoJson(saillie_1108, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, { icon: icon_APA_1108 });
+  },
+  onEachFeature: function (feature, layer) {
     layer.bindPopup(`
       <p class='arrond-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
@@ -1254,15 +1297,15 @@ const C_Saillie_1104_Layer = L.geoJson(saillie_1104, {
 //   ],
 // };
 
-const layers2023 = L.featureGroup([
-  C_PRR_Layer,
-  C_BRV_Layer,
-  C_ECL_Layer,
-  C_ESP_Layer,
-  C_PCPR_Layer,
-  C_RAQ_Layer,
-  C_REG_Layer,
-]).addTo(map);
+// const layers2023 = L.featureGroup([
+//   C_PRR_Layer,
+//   C_BRV_Layer,
+//   C_ECL_Layer,
+//   C_ESP_Layer,
+//   C_PCPR_Layer,
+//   C_RAQ_Layer,
+//   C_REG_Layer,
+// ]).addTo(map);
 // map.fitBounds(layers2023.getBounds());
 
 // const overlaysTree = {
@@ -1508,47 +1551,43 @@ const legend2 = L.control
       {
         label: "Amén. Place l'Archevêque",
         type: "polyline",
-        layers: C_PaveRV_Layer,
-        color: "#20b2aa",
-        fillColor: "#20b2aa",
+        layers: C_PlaceArchev_Layer,
+        color: "#043C15",
+        fillColor: "#043C15",
         weight: 6,
       },
       {
         label: "Pavé Alvéolé Ruelle verte",
         type: "polyline",
-        layers: C_PlaceArchev_Layer,
-        color: "#20b2aa",
-        fillColor: "#20b2aa",
+        layers: C_PaveRV_Layer,
+        color: "#89BC81",
+        fillColor: "#89BC81",
         weight: 6,
       },
       {
         label: "Végét. Saillie 1104",
-        type: "polyline",
+        type: "image",
         layers: C_Saillie_1104_Layer,
-        color: "#20b2aa",
-        fillColor: "#20b2aa",
-        weight: 6,
+        url: "./img/arbre1.png",
       },
       {
         label: "Végét. Saillie 1108",
-        type: "polyline",
-        layers: C_PlaceArchev_Layer,
-        color: "#20b2aa",
-        fillColor: "#20b2aa",
-        weight: 6,
+        type: "image",
+        layers: C_Saillie_1108_Layer,
+        url: "./img/arbre2.jpg",
       },
       {
         label: "Install. Clôture Parc Oscar",
         type: "polyline",
-        layers: C_PlaceArchev_Layer,
-        color: "#20b2aa",
-        fillColor: "#20b2aa",
+        layers: C_Cloture_Layer,
+        color: "#30FCB6",
+        fillColor: "#30FCB6",
         weight: 6,
       },
       {
         label: "Mini forêt",
         type: "polyline",
-        layers: C_PlaceArchev_Layer,
+        layers: C_Foret_Layer,
         color: "#20b2aa",
         fillColor: "#20b2aa",
         weight: 6,
