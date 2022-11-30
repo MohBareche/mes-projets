@@ -6,7 +6,8 @@ let prr = {
       "properties": {
         "Initiateur": "Arrondissement",
         "type": "PRR",
-        "AGIR": "192023-1107"
+        "AGIR": "192023-1107",
+        "Description":"Réaménagement de l'avenue Lapierre entre Pascal et Maurice-Duplessis"
       },
       "geometry": {
         "coordinates": [
