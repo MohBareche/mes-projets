@@ -462,7 +462,7 @@ const C_BRV_Layer = L.geoJson(brv, {
       this.openPopup();
     });
   },
-});
+}).addTo(map);
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO ÉCLAIRAGE */
 const C_ECL_Layer = L.geoJson(eclairage, {
@@ -484,8 +484,6 @@ const C_ECL_Layer = L.geoJson(eclairage, {
     });
   },
 }).addTo(map);
-
-
 
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. PRR Lapierre */
@@ -554,9 +552,9 @@ const C_PaveRV_Layer = L.geoJson(paveRV, {
 /* @2023 - ARROND. AMÉNAGEMENT PLACE ARCHEVÊQUE */
 const C_PlaceArchev_Layer = L.geoJson(place_Archev, {
   onEachFeature: function (feature, layer) {
-    if (layer instanceof L.Polyline) {
+    if (layer instanceof L.Polygon) {
       layer.setStyle({
-        color: "#043C15",
+        color: "#FCC330",
         weight: 6,
       });
     }
@@ -613,7 +611,6 @@ const C_Saillie_1104_Layer = L.geoJson(saillie_1104, {
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. SAILLIES 1104 */
 const C_Foret_Layer = L.geoJson(foret, {
-
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
@@ -850,16 +847,16 @@ const C_Saillie_1108_Layer = L.geoJson(saillie_1108, {
 // }
 const arrondLayer = L.geoJson(limites_arr, {
   style: {
-    fillColor: "#000",
     weight: 2,
-    opacity: 1,
+    opacity: 0.8,
     color: "black",
     dashArray: "5",
     fillOpacity: 0,
+    fill: false,
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-            <p style='margin:0; padding:0;'><strong>Arrondissement: </strong>${feature.properties.name}</p>
+            <p style='margin:0; padding:0;'>Limites Arrondissement ${feature.properties.name}</p>
           `);
   },
 }).addTo(map);
@@ -1552,8 +1549,8 @@ const legend2 = L.control
         label: "Amén. Place l'Archevêque",
         type: "polyline",
         layers: C_PlaceArchev_Layer,
-        color: "#043C15",
-        fillColor: "#043C15",
+        color: "#FCC330",
+        fillColor: "#FCC330",
         weight: 6,
       },
       {
