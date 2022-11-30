@@ -388,8 +388,8 @@ const C_PCPR_Layer = L.geoJson(pcpr, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "#1a1a1a",
-        weight: 6,
+        color: "#504C43",
+        weight: 4,
       });
     }
     layer.bindPopup(`
@@ -1482,9 +1482,9 @@ const legend1 = L.control
         label: "PCPR-PRCPR",
         type: "polyline",
         layers: C_PCPR_Layer,
-        color: "#1a1a1a",
-        fillColor: "#1a1a1a",
-        weight: 6,
+        color: "#504C43",
+        fillColor: "#504C43",
+        weight: 4,
       },
       {
         label: "Rehab AQ",

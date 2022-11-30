@@ -7,7 +7,7 @@ let saillie_1104 = {
         "Initiateur": "Arrondissement",
         "type": "Arch. Paysage",
         "AGIR": "N/A",
-        "Description": "Végétalisation Saillie 1104"
+        "Description": "Végétalisation Saillie 1104 - Balzac"
       },
       "geometry": {
         "coordinates": [-73.63706960086257, 45.59902719745915],
@@ -20,20 +20,7 @@ let saillie_1104 = {
         "Initiateur": "Arrondissement",
         "type": "Arch. Paysage",
         "AGIR": "N/A",
-        "Description": "Végétalisation Saillie 1104"
-      },
-      "geometry": {
-        "coordinates": [-73.63875450578317, 45.5972863317449],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Initiateur": "Arrondissement",
-        "type": "Arch. Paysage",
-        "AGIR": "N/A",
-        "Description": "Végétalisation Saillie 1104"
+        "Description": "Végétalisation Saillie 1104 - Charleroi / Balzac"
       },
       "geometry": {
         "coordinates": [-73.63327573653551, 45.59569461091667],
@@ -46,7 +33,7 @@ let saillie_1104 = {
         "Initiateur": "Arrondissement",
         "type": "Arch. Paysage",
         "AGIR": "N/A",
-        "Description": "Végétalisation Saillie 1104"
+        "Description": "Végétalisation Saillie 1104 - Charleroi / Éthier"
       },
       "geometry": {
         "coordinates": [-73.6317370279054, 45.59650280235766],
