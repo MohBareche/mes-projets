@@ -8,60 +8,44 @@ const map = L.mapbox
     },
     bearing: 45,
   })
-  .setView([45.60187729035522, -73.63153768308611], 14);
-const zoomHome = L.Control.zoomHome().addTo(map);
+  .setView([45.60187729035522, -73.63153768308611], 14)
+const zoomHome = L.Control.zoomHome().addTo(map)
 // L.mapbox.accessToken =
 //   "pk.eyJ1IjoibWJhcmVjaGUiLCJhIjoiY2pkbHpqZjQ3MGVibzJycWhka203dDNtYiJ9.GLpfZW2gcYULhuIa6vwgFw";
 
-L.mapbox.accessToken =
-  "pk.eyJ1IjoiYWJlbmZhdHRvdW0iLCJhIjoiY2ozY3l6MWV5MDAwZjMybnc0NmdhNDBpeSJ9.oYZEToeffGVafaQRotTLVg";
+L.mapbox.accessToken = "pk.eyJ1IjoiYWJlbmZhdHRvdW0iLCJhIjoiY2ozY3l6MWV5MDAwZjMybnc0NmdhNDBpeSJ9.oYZEToeffGVafaQRotTLVg"
 
-const Light = L.mapbox
-  .styleLayer("mapbox://styles/mapbox/light-v10")
-  .addTo(map);
-const Streets = L.mapbox.styleLayer("mapbox://styles/mapbox/streets-v11");
-const Outdoors = L.mapbox.styleLayer("mapbox://styles/mapbox/outdoors-v11");
-const Satellite = L.mapbox.styleLayer("mapbox://styles/mapbox/satellite-v9");
+const Light = L.mapbox.styleLayer("mapbox://styles/mapbox/light-v10").addTo(map)
+const Streets = L.mapbox.styleLayer("mapbox://styles/mapbox/streets-v11")
+const Outdoors = L.mapbox.styleLayer("mapbox://styles/mapbox/outdoors-v11")
+const Satellite = L.mapbox.styleLayer("mapbox://styles/mapbox/satellite-v9")
 
-const googleStreets = L.tileLayer(
-  "http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
-  {
-    maxZoom: 20,
-    subdomains: ["mt0", "mt1", "mt2", "mt3"],
-  }
-);
+const googleStreets = L.tileLayer("http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
+  maxZoom: 20,
+  subdomains: ["mt0", "mt1", "mt2", "mt3"],
+})
 
-const googleSat = L.tileLayer(
-  "http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
-  {
-    maxZoom: 20,
-    subdomains: ["mt0", "mt1", "mt2", "mt3"],
-  }
-);
+const googleSat = L.tileLayer("http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}", {
+  maxZoom: 20,
+  subdomains: ["mt0", "mt1", "mt2", "mt3"],
+})
 
-const googleHybrid = L.tileLayer(
-  "http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
-  {
-    maxZoom: 20,
-    subdomains: ["mt0", "mt1", "mt2", "mt3"],
-  }
-);
+const googleHybrid = L.tileLayer("http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}", {
+  maxZoom: 20,
+  subdomains: ["mt0", "mt1", "mt2", "mt3"],
+})
 
-const googleTerrain = L.tileLayer(
-  "http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}",
-  {
-    maxZoom: 20,
-    subdomains: ["mt0", "mt1", "mt2", "mt3"],
-  }
-);
+const googleTerrain = L.tileLayer("http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}", {
+  maxZoom: 20,
+  subdomains: ["mt0", "mt1", "mt2", "mt3"],
+})
 
 const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18,
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-});
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+})
 
-const esriTile = L.esri.basemapLayer("Streets");
+const esriTile = L.esri.basemapLayer("Streets")
 
 // create the geocoding control and add it to the map
 // const searchControl = L.esri.Geocoding.geosearch({
@@ -88,80 +72,80 @@ const travIcon = L.icon({
   iconUrl: "../img/trav.png",
   iconSize: [40, 40],
   iconAnchor: [20, 20],
-});
+})
 
 const dosDaneIcon1104 = L.icon({
   iconUrl: "../img/speed_bump_1104.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
 const dosDaneIcon1104Nar = L.icon({
   iconUrl: "../img/speed_bump_1104_nar.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
 const dosDaneIcon1093Nar = L.icon({
   iconUrl: "../img/speed_bump_1093_nar.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
 const dosDaneIcon1096Nar = L.icon({
   iconUrl: "../img/speed_bump_1096_nar.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
 const dosDaneIcon1105 = L.icon({
   iconUrl: "../img/speed_bump_1105.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
 const dosDaneIcon1108 = L.icon({
   iconUrl: "../img/speed_bump_1108.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
 const dosDaneIcon1106 = L.icon({
   iconUrl: "../img/speed_bump_1106.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
 const dosDaneIcon1106_Ok = L.icon({
   iconUrl: "../img/speed_bump_1106_OK.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
 const iconBRV = L.icon({
   iconUrl: "../img/brv1.jpg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
 const icon_APA_1104 = L.icon({
   iconUrl: "../img/arbre1.png",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
 const icon_APA_1108 = L.icon({
   iconUrl: "../img/arbre2.jpg",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
-});
+})
 
-/* ***************************************************************************************************************************************************** */
+/* ************************************************************************************************************************************************ */
 //   C1096
 const C1096_Layer = L.geoJson(C1096, {
   pointToLayer: function (feature, latlng) {
     if (feature.properties.Plan == 2) {
-      return L.marker(latlng, { icon: dosDaneIcon1096Nar });
+      return L.marker(latlng, { icon: dosDaneIcon1096Nar })
     }
   },
   onEachFeature: function (feature, layer) {
@@ -169,7 +153,7 @@ const C1096_Layer = L.geoJson(C1096, {
       layer.setStyle({
         color: "#1fddd0",
         weight: 5,
-      });
+      })
     }
 
     if (feature.properties.Plan == "N/A") {
@@ -179,7 +163,7 @@ const C1096_Layer = L.geoJson(C1096, {
            <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1096/1096_Cahier des charges.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	   <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	   <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
-         `);
+         `)
     }
     if (feature.properties.Plan !== "N/A") {
       layer.bindPopup(`
@@ -188,7 +172,7 @@ const C1096_Layer = L.geoJson(C1096, {
            <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1096/1096_Cahier des charges.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	   <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	   <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
-         `);
+         `)
     }
 
     if (layer instanceof L.Marker) {
@@ -199,20 +183,20 @@ const C1096_Layer = L.geoJson(C1096, {
           <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1096/1096_Cahier des charges.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	  <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	  <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
-       `);
+       `)
     }
 
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-});
+})
 
 /* ***************************************************************************************************************************************************** */
 //   C1093
 const C1093_Layer = L.geoJson(C1093, {
   pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: dosDaneIcon1093Nar });
+    return L.marker(latlng, { icon: dosDaneIcon1093Nar })
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -221,21 +205,21 @@ const C1093_Layer = L.geoJson(C1093, {
             <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1093/1093_AO.pdf" target="_blank">${feature.properties.Devis}</a></p>
             <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	    <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
-	    `);
+	    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-});
+})
 
 /* ***************************************************************************************************************************************************** */
 //   C1104
 const C1104_Layer = L.geoJson(C1104, {
   pointToLayer: function (feature, latlng) {
     if (feature.properties.Plan == 1 || feature.properties.Plan == 2) {
-      return L.marker(latlng, { icon: dosDaneIcon1104Nar });
+      return L.marker(latlng, { icon: dosDaneIcon1104Nar })
     }
-    return L.marker(latlng, { icon: dosDaneIcon1104 });
+    return L.marker(latlng, { icon: dosDaneIcon1104 })
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -244,18 +228,18 @@ const C1104_Layer = L.geoJson(C1104, {
             <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1104/1104_Cahier_Charges .pdf" target="_blank">${feature.properties.Devis}</a></p>
 	    <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	    <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
-            `);
+            `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-});
+})
 
 /* ***************************************************************************************************************************************************** */
 //   C1105
 const C1105_Layer = L.geoJson(C1105, {
   pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: dosDaneIcon1105 });
+    return L.marker(latlng, { icon: dosDaneIcon1105 })
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -264,25 +248,25 @@ const C1105_Layer = L.geoJson(C1105, {
             <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1105/1105_Cahier_Charges .pdf" target="_blank">${feature.properties.Devis}</a></p>
 	    <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	    <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
-            `);
+            `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-});
+})
 
 /* ***************************************************************************************************************************************************** */
 //   C1108
 const C1108_Layer = L.geoJson(C1108, {
   pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: dosDaneIcon1108 });
+    return L.marker(latlng, { icon: dosDaneIcon1108 })
   },
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
         color: "#3388ff",
         weight: 5,
-      });
+      })
     }
     layer.bindPopup(`
         <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
@@ -290,21 +274,19 @@ const C1108_Layer = L.geoJson(C1108, {
         <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1108/1108_Cahier des charges .pdf" target="_blank">${feature.properties.Devis}</a></p>
 	      <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	      <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
-      `);
+      `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-});
+})
 
 /* ***************************************************************************************************************************************************** */
 //   C1106
 const C1106_Layer = L.geoJson(C1106, {
   pointToLayer: function (feature, latlng) {
-    if (feature.properties.status === "Terminé")
-      return L.marker(latlng, { icon: dosDaneIcon1106_Ok });
-    if (feature.properties.status === "Non")
-      return L.marker(latlng, { icon: dosDaneIcon1106 });
+    if (feature.properties.status === "Terminé") return L.marker(latlng, { icon: dosDaneIcon1106_Ok })
+    if (feature.properties.status === "Non") return L.marker(latlng, { icon: dosDaneIcon1106 })
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -319,9 +301,7 @@ const C1106_Layer = L.geoJson(C1106, {
             </tr>
             <tr>
 						<th>Devis</th>
-						<td><a href="./data/2022/1106/1106_Cahier_Charges.pdf" target="_blank">${
-              feature.properties.Devis
-            }</a></td>
+						<td><a href="./data/2022/1106/1106_Cahier_Charges.pdf" target="_blank">${feature.properties.Devis}</a></td>
 					</tr>
 					<tr>
 						<th>Début travaux</th>
@@ -347,18 +327,16 @@ const C1106_Layer = L.geoJson(C1106, {
 					<tr>
 						<th colspan="2">WGS 84 (GPS)</th>
 						<td><strong>Latitude </strong>${feature.geometry.coordinates[1].toFixed(7)}	</td>
-						<td><strong>Longitude </strong>${feature.geometry.coordinates[0].toFixed(
-              7
-            )}</td>
+						<td><strong>Longitude </strong>${feature.geometry.coordinates[0].toFixed(7)}</td>
 					</tr>
           </table>
-          `);
+          `)
 
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-});
+})
 
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO ESP */
@@ -368,19 +346,19 @@ const C_ESP_Layer = L.geoJson(esp, {
       layer.setStyle({
         color: "#f50d12",
         weight: 6,
-      });
+      })
     }
     layer.bindPopup(`
         <p class='corpo-title'>Projet : ${feature.properties.type}</p>
         <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
         <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
 	      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Remplacement des entrées de service en plomb</p>
-      `);
+      `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO PCPR-PRCPR */
 const C_PCPR_Layer = L.geoJson(pcpr, {
@@ -389,19 +367,19 @@ const C_PCPR_Layer = L.geoJson(pcpr, {
       layer.setStyle({
         color: "#504C43",
         weight: 4,
-      });
+      })
     }
     layer.bindPopup(`
       <p class='corpo-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> PCPR/PRCPR - Programme Complémentaire par Planage-Revêtement</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO REHAB AQ */
 const C_RAQ_Layer = L.geoJson(rehabaq, {
@@ -410,19 +388,19 @@ const C_RAQ_Layer = L.geoJson(rehabaq, {
       layer.setStyle({
         color: "#3388ff",
         weight: 6,
-      });
+      })
     }
     layer.bindPopup(`
       <p class='corpo-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Réhabilitation Aqueduc</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO REHAB EG */
 const C_REG_Layer = L.geoJson(rehabeg, {
@@ -431,24 +409,24 @@ const C_REG_Layer = L.geoJson(rehabeg, {
       layer.setStyle({
         color: "#964b00",
         weight: 6,
-      });
+      })
     }
     layer.bindPopup(`
       <p class='corpo-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Réhabilitation Égout</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO BRV */
 const C_BRV_Layer = L.geoJson(brv, {
   pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: iconBRV });
+    return L.marker(latlng, { icon: iconBRV })
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -456,12 +434,12 @@ const C_BRV_Layer = L.geoJson(brv, {
         <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
         <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
         <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Borne de recharge pour véhicules électriques</p>
-	    `);
+	    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO ÉCLAIRAGE */
 const C_ECL_Layer = L.geoJson(eclairage, {
@@ -470,19 +448,19 @@ const C_ECL_Layer = L.geoJson(eclairage, {
       layer.setStyle({
         color: "#810081",
         weight: 6,
-      });
+      })
     }
     layer.bindPopup(`
       <p class='corpo-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Travaux d'éclairage </p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. PRR Lapierre */
@@ -492,19 +470,19 @@ const C_PRR_Layer = L.geoJson(prr, {
       layer.setStyle({
         color: "#65fe08",
         weight: 6,
-      });
+      })
     }
     layer.bindPopup(`
       <p class='arrond-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> Travaux de réaménagement Avenue Lapierre</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. Place Pierre */
 const C_PlacePierre_Layer = L.geoJson(place_pierre, {
@@ -513,19 +491,19 @@ const C_PlacePierre_Layer = L.geoJson(place_pierre, {
       layer.setStyle({
         color: "green",
         weight: 6,
-      });
+      })
     }
     layer.bindPopup(`
       <p class='arrond-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> ${feature.properties.Description}</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. PAVÉ ALVÉOLÉ RUELLE VERTE */
 const C_PaveRV_Layer = L.geoJson(paveRV, {
@@ -534,19 +512,19 @@ const C_PaveRV_Layer = L.geoJson(paveRV, {
       layer.setStyle({
         color: "#89BC81",
         weight: 6,
-      });
+      })
     }
     layer.bindPopup(`
       <p class='arrond-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> ${feature.properties.Description}</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. AMÉNAGEMENT PLACE ARCHEVÊQUE */
 const C_PlaceArchev_Layer = L.geoJson(place_Archev, {
@@ -555,19 +533,19 @@ const C_PlaceArchev_Layer = L.geoJson(place_Archev, {
       layer.setStyle({
         color: "#FCC330",
         weight: 6,
-      });
+      })
     }
     layer.bindPopup(`
       <p class='arrond-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> ${feature.properties.Description}</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. INSTALLATION CLÔTURE PARC OSCAR */
 const C_Cloture_Layer = L.geoJson(cloture, {
@@ -576,24 +554,24 @@ const C_Cloture_Layer = L.geoJson(cloture, {
       layer.setStyle({
         color: "#30FCB6",
         weight: 6,
-      });
+      })
     }
     layer.bindPopup(`
       <p class='arrond-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> ${feature.properties.Description}</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. SAILLIES 1104 */
 const C_Saillie_1104_Layer = L.geoJson(saillie_1104, {
   pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: icon_APA_1104 });
+    return L.marker(latlng, { icon: icon_APA_1104 })
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -601,12 +579,12 @@ const C_Saillie_1104_Layer = L.geoJson(saillie_1104, {
       <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> ${feature.properties.Description}</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. SAILLIES 1104 */
 const C_Foret_Layer = L.geoJson(foret, {
@@ -615,24 +593,24 @@ const C_Foret_Layer = L.geoJson(foret, {
       layer.setStyle({
         color: "#20b2aa",
         weight: 6,
-      });
+      })
     }
     layer.bindPopup(`
       <p class='arrond-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> ${feature.properties.Description}</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. SAILLIES 1104 */
 const C_Saillie_1108_Layer = L.geoJson(saillie_1108, {
   pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: icon_APA_1108 });
+    return L.marker(latlng, { icon: icon_APA_1108 })
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -640,29 +618,29 @@ const C_Saillie_1108_Layer = L.geoJson(saillie_1108, {
       <p style='margin:0; padding:0; color:green;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:green;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
       <p style='margin:0; padding:0; color:green;'><strong>Description : </strong> ${feature.properties.Description}</p>
-    `);
+    `)
     layer.on("click", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 
 //   Inspecteurs cadre bati
 function getColorInspection(feature) {
   switch (feature) {
     case "1":
-      return "#BCFFF7";
+      return "#BCFFF7"
     case "2":
-      return "#FFBCFE";
+      return "#FFBCFE"
     case "3":
-      return "#adeab8";
+      return "#adeab8"
     case "4":
-      return "#eaadc1";
+      return "#eaadc1"
     case "5":
-      return "#abb29b";
+      return "#abb29b"
     case "6":
-      return "#b09bc7";
+      return "#b09bc7"
   }
 }
 function styleInspection(feature) {
@@ -671,7 +649,7 @@ function styleInspection(feature) {
     fillColor: getColorInspection(feature.properties.Secteur),
     opacity: 1,
     fillOpacity: 0.8,
-  };
+  }
 }
 const inspectionLayer = L.geoJson(inspection, {
   style: styleInspection,
@@ -682,34 +660,34 @@ const inspectionLayer = L.geoJson(inspection, {
         <p style='width:300px; margin:0; padding:0'><strong>Courriel :</strong><a target="_blank" href="mailto:${feature.properties.Courriel}"> ${feature.properties.Courriel}</a></p>
         <p style='width:300px; margin:0; padding:0'><strong>Téléphone :</strong>514 328-4000 Poste ${feature.properties.Poste}</p>
 	      <p style='width:300px; margin:0; padding:0'><strong>Cellulaire :</strong> ${feature.properties.Cell} </p>
-      `);
+      `)
     layer.on("mouseover", function () {
       this.setStyle({
         fillOpacity: 0.4,
         opacity: 1,
-      });
-    });
+      })
+    })
     layer.on("mouseout", function () {
       this.setStyle({
         fillOpacity: 0.6,
         opacity: 1,
-      });
-    });
+      })
+    })
   },
-});
+})
 
 /* ***************************************************************************************************************************************************** */
 // Secteurs Collectes
 function getColorCollectes(feature) {
   switch (feature) {
     case 1:
-      return "#704709";
+      return "#704709"
     case 2:
-      return "#0B7A75";
+      return "#0B7A75"
     case 3:
-      return "#940043";
+      return "#940043"
     case 4:
-      return "#9004e0";
+      return "#9004e0"
   }
 }
 function styleCollectes(feature) {
@@ -718,7 +696,7 @@ function styleCollectes(feature) {
     fillColor: getColorCollectes(feature.properties.Secteur),
     opacity: 1,
     fillOpacity: 0.4,
-  };
+  }
 }
 const collectesLayer = L.geoJson(collectes, {
   style: styleCollectes,
@@ -731,21 +709,21 @@ const collectesLayer = L.geoJson(collectes, {
 	      <p style='margin:0; padding:0'><strong>Encombrants :</strong> ${feature.properties.Encombrants}</p>
 	      <p style='margin:0; padding:0'><strong>Résidus verts :</strong> ${feature.properties.ResidusVerts}</p>
 	      <p style='margin:0; padding:0'><strong>9 Logements + :</strong> ${feature.properties.NeufLogements}</p>
-      `);
+      `)
     layer.on("mouseover", function () {
       this.setStyle({
         fillOpacity: 0.2,
         opacity: 1,
-      });
-    });
+      })
+    })
     layer.on("mouseout", function () {
       this.setStyle({
         fillOpacity: 0.4,
         opacity: 1,
-      });
-    });
+      })
+    })
   },
-});
+})
 
 /* ***************************************************************************************************************************************************** */
 //   Ruelles vertes
@@ -855,52 +833,52 @@ const arrondLayer = L.geoJson(limites_arr, {
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
             <p style='margin:0; padding:0;'>Limites Arrondissement ${feature.properties.name}</p>
-          `);
+          `)
   },
-}).addTo(map);
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 
 //   Arrondissements
 function getColorArrondissements(feature) {
   switch (feature) {
     case "AHU":
-      return "#33658a";
+      return "#33658a"
     case "ANJ":
-      return "#f6ae2d";
+      return "#f6ae2d"
     case "CDN":
-      return "#488b49";
+      return "#488b49"
     case "IBI":
-      return "#639a88";
+      return "#639a88"
     case "LAC":
-      return "#F71E37";
+      return "#F71E37"
     case "LAS":
-      return "#087E8B";
+      return "#087E8B"
     case "LSO":
-      return "#8b635c";
+      return "#8b635c"
     case "MHM":
-      return "#60594d";
+      return "#60594d"
     case "MTN":
-      return "#6c4b5e";
+      return "#6c4b5e"
     case "OUT":
-      return "#040663";
+      return "#040663"
     case "PLA":
-      return "#C799A6";
+      return "#C799A6"
     case "PRF":
-      return "#2E294E";
+      return "#2E294E"
     case "RDP":
-      return "#C17767";
+      return "#C17767"
     case "RPP":
-      return "#17C3B2";
+      return "#17C3B2"
     case "STL":
-      return "#296EB4";
+      return "#296EB4"
     case "VER":
-      return "#754668";
+      return "#754668"
     case "VIM":
-      return "#587D71";
+      return "#587D71"
     case "VSE":
-      return "#E15A97";
+      return "#E15A97"
     case "VSL":
-      return "#861388";
+      return "#861388"
   }
 }
 function styleArrondissements(feature) {
@@ -909,7 +887,7 @@ function styleArrondissements(feature) {
     fillColor: getColorArrondissements(feature.properties.name),
     opacity: 1,
     fillOpacity: 0.7,
-  };
+  }
 }
 const arrondissementsLayer = L.geoJson(arrondissements, {
   style: styleArrondissements,
@@ -917,22 +895,22 @@ const arrondissementsLayer = L.geoJson(arrondissements, {
     layer.bindPopup(`
             <p style='margin:0; padding:0;'><strong>Code: </strong>${feature.properties.name}</p>
             <p style='margin:0; padding:0'><strong>Description:</strong> ${feature.properties.description}</p>
-            `);
+            `)
 
     layer.on("mouseover", function () {
       this.setStyle({
         fillOpacity: 0.3,
         opacity: 1,
-      });
-    });
+      })
+    })
     layer.on("mouseout", function () {
       this.setStyle({
         fillOpacity: 0.7,
         opacity: 1,
-      });
-    });
+      })
+    })
   },
-});
+})
 
 /* ***************************************************************************************************************************************************** */
 //   Inspecteurs AGIR-CM
@@ -1105,7 +1083,7 @@ const arrondissementsLayer = L.geoJson(arrondissements, {
 
 /* ***************************************************************************************************************************************************** */
 //  Casernes
-const markersCasernes = L.markerClusterGroup();
+const markersCasernes = L.markerClusterGroup()
 const geoJsonLayerCasernes = L.geoJson(casernes, {
   onEachFeature: function (feature, layer) {
     if (feature.properties.ARRONDISSEMENT !== null) {
@@ -1114,29 +1092,29 @@ const geoJsonLayerCasernes = L.geoJson(casernes, {
               <p style='margin:0; padding:0'><strong>Caserne :</strong> ${feature.properties.CASERNE}</p>
               <p style='margin:0; padding:0'><strong>Arrond.:</strong> ${feature.properties.ARRONDISSEMENT}</p>
             </div>
-            `);
+            `)
     } else {
       layer.bindPopup(`
       <div>
         <p><strong>Caserne :</strong> ${feature.properties.CASERNE}</p>
         <p><strong>Ville: </strong> ${feature.properties.VILLE}</p>
-      </div>`);
+      </div>`)
     }
     layer.on("mouseover", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
     layer.on("mouseout", function () {
-      this.closePopup();
-    });
+      this.closePopup()
+    })
   },
-});
-const casernesMarkers = markersCasernes.addLayer(geoJsonLayerCasernes);
+})
+const casernesMarkers = markersCasernes.addLayer(geoJsonLayerCasernes)
 // map.fitBounds(markersCasernes.getBounds());
 
 /* ***************************************************************************************************************************************************** */
 //    Bornes de recharges
 //    BR_15_11_2022
-const markersBR = L.markerClusterGroup();
+const markersBR = L.markerClusterGroup()
 const geoJsonLayerBR = L.geoJson(BR, {
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
@@ -1154,17 +1132,17 @@ const geoJsonLayerBR = L.geoJson(BR, {
 	 <p style='margin:0; padding:0;'><strong>Type d'emplacement :</strong> ${feature.properties.Type_Emplacement}</p>
 	 <p style='margin:0; padding:0;'><strong>Puissance :</strong> ${feature.properties.Puissance} (kW)</p>
        </div>
-     `);
+     `)
     layer.on("mouseover", function () {
-      this.openPopup();
-    });
+      this.openPopup()
+    })
     layer.on("mouseout", function () {
-      this.closePopup();
-    });
+      this.closePopup()
+    })
   },
-});
+})
 
-const BRMarkers = markersBR.addLayer(geoJsonLayerBR);
+const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
 // map.fitBounds(markersBR.getBounds());
 
 /* ***************************************************************************************************************************************************** */
@@ -1174,9 +1152,9 @@ const BRMarkers = markersBR.addLayer(geoJsonLayerBR);
 function getColorRAAV(feature) {
   switch (feature) {
     case 1:
-      return "#4933d5";
+      return "#4933d5"
     case 0:
-      return "#4c9b20";
+      return "#4c9b20"
   }
 }
 function styleRAAV(feature) {
@@ -1186,13 +1164,13 @@ function styleRAAV(feature) {
       fillColor: getColorRAAV(feature.properties.TRC_TOP_RAAV),
       weight: 5,
       opacity: 1,
-    };
+    }
   } else {
     return {
       color: getColorRAAV(feature.properties.TRC_TOP_RAAV),
       fillColor: getColorRAAV(feature.properties.TRC_TOP_RAAV),
       opacity: 1,
-    };
+    }
   }
 }
 const raavLayer = L.geoJson(RAAV, {
@@ -1201,14 +1179,14 @@ const raavLayer = L.geoJson(RAAV, {
     if (feature.properties.TRC_TOP_RAAV == 1) {
       layer.bindPopup(`
             <p style='margin:0; padding:0;'><strong>Type : </strong>RAAV</p>
-            `);
+            `)
     } else {
       layer.bindPopup(`
         <p style='margin:0; padding:0;'><strong>Type : </strong>Local</p>
-      `);
+      `)
     }
   },
-});
+})
 
 /* ***************************************************************************************************************************************************** */
 
@@ -1235,15 +1213,15 @@ const pegmanIcon = L.icon({
   iconUrl: "../img/google-street-view.png",
   iconSize: [40, 40],
   iconAnchor: [20, 20],
-});
+})
 
 // Add a marker to the center of the map
-const markerGSV = L.marker(map.getCenter(), { icon: pegmanIcon });
+const markerGSV = L.marker(map.getCenter(), { icon: pegmanIcon })
 // Make sure the marker stays in the centre when the map is moved
 map.on("move", function () {
-  let center = markerGSV.setLatLng(map.getCenter());
+  let center = markerGSV.setLatLng(map.getCenter())
   // console.log(center)
-});
+})
 
 //  Control Groups et overlays
 const baseMaps = {
@@ -1257,7 +1235,7 @@ const baseMaps = {
   //   "Google Terrain": googleTerrain ,
   //   "ISRI Streets": esriTile,
   //   "Open Street Map": osm,
-};
+}
 
 const overlayMaps = {
   //   "Contrat 1093":C1093_Layer,
@@ -1277,7 +1255,7 @@ const overlayMaps = {
   //   Inspecteurs: inspecteursLayer,
   //   Horticulteurs: horticulteursLayer,
   //   "Google Street View": markerGSV,
-};
+}
 
 // L.control.layers(baseMaps, overlayMaps, { collapsed: true }).addTo(map);
 
@@ -1291,7 +1269,7 @@ const baseTree = {
     { label: "ISRI Streets", layer: esriTile },
     { label: "Open Street Map", layer: osm },
   ],
-};
+}
 
 // const layers2023 = L.featureGroup([
 //   C_PRR_Layer,
@@ -1373,7 +1351,7 @@ const overlaysTree = {
       ],
     },
   ],
-};
+}
 
 const lay = L.control.layers.tree(baseTree, overlaysTree, {
   namedToggle: true,
@@ -1383,16 +1361,18 @@ const lay = L.control.layers.tree(baseTree, overlaysTree, {
   collapseAll: "Réduire tout",
   expandAll: "Développer tout",
   collapsed: false,
-});
+})
 
-lay.addTo(map).collapseTree(true).expandSelected(true);
+lay.addTo(map).collapseTree(true).expandSelected(true)
 
-L.control.locate({
-  flyTo: true,
-  strings: {
-    title: "Montre-moi où je suis !",
-  },
-}).addTo(map);
+L.control
+  .locate({
+    flyTo: true,
+    strings: {
+      title: "Montre-moi où je suis !",
+    },
+  })
+  .addTo(map)
 
 map.addControl(
   new L.Control.Fullscreen({
@@ -1401,10 +1381,10 @@ map.addControl(
       true: "Quitter le plein écran",
     },
   })
-);
+)
 
 // Google Street View
-L.streetView({ position: "topright" }).addTo(map);
+L.streetView({ position: "topright" }).addTo(map)
 
 // Draw Tools
 // const drawnItems = new L.FeatureGroup();
@@ -1450,152 +1430,148 @@ L.streetView({ position: "topright" }).addTo(map);
 //   drawnItems.addLayer(layer);
 // });
 
-let arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider({ countries: "CA" });
+let arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider({ countries: "CA" })
 const searchControl = L.esri.Geocoding.geosearch({
   // collapseAfterResult: false,
   placeholder: "Rechercher des lieux ou des adresses...",
   title: "Recherche d'emplacement",
   providers: [arcgisOnline],
-}).addTo(map);
+}).addTo(map)
 
 searchControl.on("results", function (data) {
-  results.clearLayers();
+  results.clearLayers()
   for (let i = data.results.length - 1; i >= 0; i--) {
-    results.addLayer(L.marker(data.results[i].latlng, { icon: travIcon }));
+    results.addLayer(L.marker(data.results[i].latlng, { icon: travIcon }))
   }
-});
+})
 
 // Échelle à droite en bas
-L.control.scale({ position: "bottomleft" }).addTo(map);
+L.control.scale({ position: "bottomleft" }).addTo(map)
 
-const legend1 = L.control
-  .Legend({
-    position: "bottomleft",
-    title: "Légende (Corpo 2023)",
-    collapsed: false,
-    symbolWidth: 24,
-    opacity: 1,
-    column: 2,
-    legends: [
-      {
-        label: "ESP",
-        type: "polyline",
-        layers: C_ESP_Layer,
-        color: "#f50d12",
-        fillColor: "#f50d12",
-        weight: 6,
-      },
-      {
-        label: "PCPR-PRCPR",
-        type: "polyline",
-        layers: C_PCPR_Layer,
-        color: "#504C43",
-        fillColor: "#504C43",
-        weight: 4,
-      },
-      {
-        label: "Rehab AQ",
-        type: "polyline",
-        layers: C_RAQ_Layer,
-        color: "#3388ff",
-        fillColor: "#3388ff",
-        weight: 6,
-      },
-      {
-        label: "Rehab EG",
-        type: "polyline",
-        layers: C_REG_Layer,
-        color: "#964b00",
-        fillColor: "#964b00",
-        weight: 6,
-      },
-      {
-        label: "BRV",
-        type: "image",
-        url: "../img/brv1.jpg",
-        layers: C_BRV_Layer,
-      },
-      {
-        label: "Éclairage",
-        type: "polyline",
-        layers: C_ECL_Layer,
-        color: "#810081",
-        fillColor: "#810081",
-        weight: 6,
-      },
-    ],
-  })
-  .addTo(map);
+const legend1 = L.control.Legend({
+  position: "bottomleft",
+  title: "Légende (Corpo 2023)",
+  collapsed: false,
+  symbolWidth: 24,
+  opacity: 1,
+  column: 2,
+  legends: [
+    {
+      label: "ESP",
+      type: "polyline",
+      layers: C_ESP_Layer,
+      color: "#f50d12",
+      fillColor: "#f50d12",
+      weight: 6,
+    },
+    {
+      label: "PCPR-PRCPR",
+      type: "polyline",
+      layers: C_PCPR_Layer,
+      color: "#504C43",
+      fillColor: "#504C43",
+      weight: 4,
+    },
+    {
+      label: "Rehab AQ",
+      type: "polyline",
+      layers: C_RAQ_Layer,
+      color: "#3388ff",
+      fillColor: "#3388ff",
+      weight: 6,
+    },
+    {
+      label: "Rehab EG",
+      type: "polyline",
+      layers: C_REG_Layer,
+      color: "#964b00",
+      fillColor: "#964b00",
+      weight: 6,
+    },
+    {
+      label: "BRV",
+      type: "image",
+      url: "../img/brv1.jpg",
+      layers: C_BRV_Layer,
+    },
+    {
+      label: "Éclairage",
+      type: "polyline",
+      layers: C_ECL_Layer,
+      color: "#810081",
+      fillColor: "#810081",
+      weight: 6,
+    },
+  ],
+})
 
-const legend2 = L.control
-  .Legend({
-    position: "bottomright",
-    title: "Légende (Arrond. 2023)",
-    collapsed: false,
-    symbolWidth: 24,
-    opacity: 1,
-    column: 2,
-    legends: [
-      {
-        label: "PRR Lapierre",
-        type: "polyline",
-        layers: C_PRR_Layer,
-        color: "#65fe08",
-        fillColor: "#65fe08",
-        weight: 6,
-      },
-      {
-        label: "Déminéralisation Place Pierre",
-        type: "polyline",
-        layers: C_PlacePierre_Layer,
-        color: "green",
-        fillColor: "green",
-        weight: 6,
-      },
-      {
-        label: "Amén. Place l'Archevêque",
-        type: "polyline",
-        layers: C_PlaceArchev_Layer,
-        color: "#FCC330",
-        fillColor: "#FCC330",
-        weight: 6,
-      },
-      {
-        label: "Pavé Alvéolé Ruelle verte",
-        type: "polyline",
-        layers: C_PaveRV_Layer,
-        color: "#89BC81",
-        fillColor: "#89BC81",
-        weight: 6,
-      },
-      {
-        label: "Végét. Saillie 1104",
-        type: "image",
-        layers: C_Saillie_1104_Layer,
-        url: "./img/arbre1.png",
-      },
-      {
-        label: "Végét. Saillie 1108",
-        type: "image",
-        layers: C_Saillie_1108_Layer,
-        url: "./img/arbre2.jpg",
-      },
-      {
-        label: "Install. Clôture Parc Oscar",
-        type: "polyline",
-        layers: C_Cloture_Layer,
-        color: "#30FCB6",
-        fillColor: "#30FCB6",
-        weight: 6,
-      },
-      {
-        label: "Mini forêt",
-        type: "polyline",
-        layers: C_Foret_Layer,
-        color: "#20b2aa",
-        fillColor: "#20b2aa",
-        weight: 6,
-      },
-    ],
-  })
-  .addTo(map);
+const legend2 = L.control.Legend({
+  position: "bottomright",
+  title: "Légende (Arrond. 2023)",
+  collapsed: false,
+  symbolWidth: 24,
+  opacity: 1,
+  column: 2,
+  legends: [
+    {
+      label: "PRR Lapierre",
+      type: "polyline",
+      layers: C_PRR_Layer,
+      color: "#65fe08",
+      fillColor: "#65fe08",
+      weight: 6,
+    },
+    {
+      label: "Déminéralisation Place Pierre",
+      type: "polyline",
+      layers: C_PlacePierre_Layer,
+      color: "green",
+      fillColor: "green",
+      weight: 6,
+    },
+    {
+      label: "Amén. Place l'Archevêque",
+      type: "polyline",
+      layers: C_PlaceArchev_Layer,
+      color: "#FCC330",
+      fillColor: "#FCC330",
+      weight: 6,
+    },
+    {
+      label: "Pavé Alvéolé Ruelle verte",
+      type: "polyline",
+      layers: C_PaveRV_Layer,
+      color: "#89BC81",
+      fillColor: "#89BC81",
+      weight: 6,
+    },
+    {
+      label: "Végét. Saillie 1104",
+      type: "image",
+      layers: C_Saillie_1104_Layer,
+      url: "./img/arbre1.png",
+    },
+    {
+      label: "Végét. Saillie 1108",
+      type: "image",
+      layers: C_Saillie_1108_Layer,
+      url: "./img/arbre2.jpg",
+    },
+    {
+      label: "Install. Clôture Parc Oscar",
+      type: "polyline",
+      layers: C_Cloture_Layer,
+      color: "#30FCB6",
+      fillColor: "#30FCB6",
+      weight: 6,
+    },
+    {
+      label: "Mini forêt",
+      type: "polyline",
+      layers: C_Foret_Layer,
+      color: "#20b2aa",
+      fillColor: "#20b2aa",
+      weight: 6,
+    },
+  ],
+})
