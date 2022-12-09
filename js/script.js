@@ -1503,7 +1503,7 @@ const legend1 = L.control.Legend({
       weight: 6,
     },
   ],
-})
+}).addTo(map);
 
 const legend2 = L.control.Legend({
   position: "bottomright",
@@ -1574,4 +1574,4 @@ const legend2 = L.control.Legend({
       weight: 6,
     },
   ],
-})
+}).addTo(map);
