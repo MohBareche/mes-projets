@@ -1398,8 +1398,8 @@ const overlaysTree = {
         { label: "Casernes pompiers", layer: casernesMarkers },
         { label: "Bornes de recharge", layer: BRMarkers },
         { label: "Secteurs des Collectes", layer: collectesLayer },
-	{ label: "Secteurs Arboriculture", layer: sectArboLayer }
-        { label: "Google Street View", layer: markerGSV },
+	{ label: "Secteurs Arboriculture", layer: sectArboLayer },
+        { label: "Google Street View", layer: markerGSV }
       ],
     },
   ],
