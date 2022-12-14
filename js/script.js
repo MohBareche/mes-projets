@@ -1393,7 +1393,7 @@ const overlaysTree = {
       children: [
         { label: "Secteurs d'inspection", layer: inspectionLayer },
         { label: "Réseau RAAV", layer: raavLayer },
-        // { label: "Camionnage", layer: camionnageLayer },
+        // { label: "Camionnage", layer: camionnageLayer }
         { label: "Arrondissements", layer: arrondissementsLayer },
         { label: "Casernes pompiers", layer: casernesMarkers },
         { label: "Bornes de recharge", layer: BRMarkers },
