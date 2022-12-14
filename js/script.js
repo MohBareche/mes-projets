@@ -755,8 +755,8 @@ function styleArbo(feature) {
     fillOpacity: 0.4,
   }
 }
-const collectesLayer = L.geoJson(sect_arbo, {
-  style: styleCollectes,
+const sectArboLayer = L.geoJson(sect_arbo, {
+  style: styleArbo,
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
         <p style='margin:0; padding:0;'><strong>Secteur : </strong>${feature.properties.name}</p>
@@ -1380,7 +1380,7 @@ const overlaysTree = {
                 { label: "Végét. Saillie 1104", layer: C_Saillie_1104_Layer },
                 { label: "Végét. Saillie 1108", layer: C_Saillie_1108_Layer },
                 { label: "Inst. clôture Parc Oscar", layer: C_Cloture_Layer },
-                { label: "Mini fôret", layer: C_Foret_Layer },
+                { label: "Mini fôret", layer: C_Foret_Layer }
               ],
             },
           ],
@@ -1398,6 +1398,7 @@ const overlaysTree = {
         { label: "Casernes pompiers", layer: casernesMarkers },
         { label: "Bornes de recharge", layer: BRMarkers },
         { label: "Secteurs des Collectes", layer: collectesLayer },
+	{ label: "Secteurs Arboriculture", layer: sectArboLayer }
         { label: "Google Street View", layer: markerGSV },
       ],
     },
