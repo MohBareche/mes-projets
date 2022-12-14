@@ -749,8 +749,8 @@ function getColorArbo(feature) {
 }
 function styleArbo(feature) {
   return {
-    color: getColorCollectes(feature.properties.name),
-    fillColor: getColorCollectes(feature.properties.name),
+    color: getColorArbo(feature.properties.name),
+    fillColor: getColorArbo(feature.properties.name),
     opacity: 1,
     fillOpacity: 0.4,
   }
