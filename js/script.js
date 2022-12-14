@@ -743,7 +743,7 @@ function getColorArbo(feature) {
       return "#9004e0"
     case 7:
       return "#9004e0"
-    case 8
+    case 8:
       return "#9004e0"
   }
 }
