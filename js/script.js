@@ -745,6 +745,14 @@ function getColorArbo(feature) {
       return "#9004e0"
     case 8:
       return "#9004e0"
+    case 9:
+      return "#9004e0"
+    case 10:
+      return "#9004e0"
+    case 11:
+      return "#9004e0"
+    case 12:
+      return "#9004e0"
   }
 }
 function styleArbo(feature) {
