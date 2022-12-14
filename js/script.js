@@ -729,29 +729,29 @@ const collectesLayer = L.geoJson(collectes, {
 // Secteurs Arboriculture
 function getColorArbo(feature) {
   switch (feature) {
-    case 1:
+    case "Secteur 1":
       return "#704709"
-    case 2:
+    case "Secteur 2":
       return "#0B7A75"
-    case 3:
+    case "Secteur 3":
       return "#940043"
-    case 4:
+    case "Secteur 4":
       return "#9004e0"
-    case 5:
+    case "Secteur 5":
       return "#9004e0"
-    case 6:
+    case "Secteur 6":
       return "#9004e0"
-    case 7:
+    case "Secteur 7":
       return "#9004e0"
-    case 8:
+    case "Secteur 8":
       return "#9004e0"
-    case 9:
+    case "Secteur 9":
       return "#9004e0"
-    case 10:
+    case "Secteur 10":
       return "#9004e0"
-    case 11:
+    case "Secteur 11":
       return "#9004e0"
-    case 12:
+    case "Secteur 12":
       return "#9004e0"
   }
 }
