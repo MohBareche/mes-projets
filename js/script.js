@@ -726,6 +726,57 @@ const collectesLayer = L.geoJson(collectes, {
 })
 
 /* ***************************************************************************************************************************************************** */
+// Secteurs Arboriculture
+function getColorArbo(feature) {
+  switch (feature) {
+    case 1:
+      return "#704709"
+    case 2:
+      return "#0B7A75"
+    case 3:
+      return "#940043"
+    case 4:
+      return "#9004e0"
+    case 5:
+      return "#9004e0"
+    case 6:
+      return "#9004e0"
+    case 7:
+      return "#9004e0"
+    case 8
+      return "#9004e0"
+  }
+}
+function styleArbo(feature) {
+  return {
+    color: getColorCollectes(feature.properties.name),
+    fillColor: getColorCollectes(feature.properties.name),
+    opacity: 1,
+    fillOpacity: 0.4,
+  }
+}
+const collectesLayer = L.geoJson(sect_arbo, {
+  style: styleCollectes,
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+        <p style='margin:0; padding:0;'><strong>Secteur : </strong>${feature.properties.name}</p>
+      `)
+    layer.on("mouseover", function () {
+      this.setStyle({
+        fillOpacity: 0.2,
+        opacity: 1,
+      })
+    })
+    layer.on("mouseout", function () {
+      this.setStyle({
+        fillOpacity: 0.4,
+        opacity: 1,
+      })
+    })
+  },
+})
+
+/* ***************************************************************************************************************************************************** */
 //   Ruelles vertes
 // const ruellesVertesLayer = L.geoJson(ruelles_vertes, {
 //   onEachFeature: function (feature, layer) {
