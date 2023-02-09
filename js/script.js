@@ -468,8 +468,8 @@ const C_PRR_Layer = L.geoJson(prr, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "#65fe08",
-        weight: 6,
+        color: "red",
+        weight: 10,
       })
     }
     layer.bindPopup(`
