@@ -1,4 +1,4 @@
-let RAAV = {
+{
     "type": "FeatureCollection",
     "features": [
         {
