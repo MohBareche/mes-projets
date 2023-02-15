@@ -59,7 +59,7 @@ const esriTile = L.esri.basemapLayer("Streets")
 // });
 
 // create an empty layer group to store the results and add it to the map
-// const results = L.layerGroup().addTo(map);
+const results = L.layerGroup().addTo(map);
 // L.easyPrint({
 //   sizeModes: ["Current", "A4Landscape", "A4Portrait", ""],
 //   filename: "Ma carte",
