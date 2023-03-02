@@ -347,11 +347,11 @@ const fossesSailliesLayer = L.geoJson(fossesSaillies, {
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
    	<div>
-         <p style='margin:0; padding:0; color:#4ef54a; background-color: black; padding:0 5px; border-radius:5px'><strong>Nom :</strong> ${feature.properties.Nom}</p>
+         <p style='text-align:center;margin:0; padding:0; color:#4ef54a; background-color: black; padding:0 5px; border-radius:5px'><strong>Nom :</strong> ${feature.properties.Nom}</p>
 	 <p style='margin:0; padding:0;'><strong>Année:</strong> ${feature.properties.Année}</p>
 	 <p style='margin:0; padding:0;'><strong>Description :</strong> ${feature.properties.Description}</p>
 	 <p style='margin:0; padding:0;'><strong>Nom plan :</strong> ${feature.properties.NomPlan}</p>
-	 <p style='margin:0; padding:0;'><strong>Lien :</strong> ${feature.properties.Lien}</p>
+	 <p style='margin:0; padding:0;'><strong>Lien :</strong><a href=${feature.properties.Lien}>Cliquez-ici</a></p>
 	 <p style='margin:0; padding:0;'><strong>Date d'entrée :</strong> ${feature.properties.DateSaisie}</p>
         </div>
     `)
