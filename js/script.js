@@ -339,6 +339,25 @@ const C1106_Layer = L.geoJson(C1106, {
 })
 
 /* ***************************************************************************************************************************************************** */
+//   FOSSES ET SAILLIES
+const fossesSaillies_Layer = L.geoJson(fossesSaillies, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, { icon: icon_APA_1104 })
+  },
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+    <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px; text-align:center'><strong>Nom : </strong> ${
+      feature.properties.nom
+    }</p>
+    `)
+
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+})
+
+/* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO ESP */
 const C_ESP_Layer = L.geoJson(esp, {
   onEachFeature: function (feature, layer) {
