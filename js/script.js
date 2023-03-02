@@ -340,7 +340,7 @@ const C1106_Layer = L.geoJson(C1106, {
 
 /* ***************************************************************************************************************************************************** */
 //   FOSSES ET SAILLIES
-const fossesSaillies_Layer = L.geoJson(fossesSaillies, {
+const fossesSailliesLayer = L.geoJson(fossesSaillies, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, { icon: icon_APA_1104 })
   },
@@ -1426,6 +1426,7 @@ const overlaysTree = {
         { label: "Bornes de recharge", layer: BRMarkers },
         { label: "Secteurs des Collectes", layer: collectesLayer },
 	{ label: "Secteurs Arboriculture", layer: sectArboLayer },
+	{ label: "Fosses et saillies", layer: fossesSailliesLayer },
         { label: "Google Street View", layer: markerGSV }
       ],
     },
