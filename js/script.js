@@ -351,7 +351,7 @@ const fossesSailliesLayer = L.geoJson(fossesSaillies, {
 	 <p style='margin:0; padding:0;'><strong>Année:</strong> ${feature.properties.Année}</p>
 	 <p style='margin:0; padding:0;'><strong>Description :</strong> ${feature.properties.Description}</p>
 	 <p style='margin:0; padding:0;'><strong>Nom plan :</strong> ${feature.properties.NomPlan}</p>
-	 <p style='margin:0; padding:0;'><strong>Lien :</strong><a href=${feature.properties.Lien}>Cliquez-ici</a></p>
+	 <p style='margin:0; padding:0;'><strong>Plan :</strong><a target="_blank" href=${feature.properties.Lien}> Cliquez-ici</a></p>
 	 <p style='margin:0; padding:0;'><strong>Date d'entrée :</strong> ${feature.properties.DateSaisie}</p>
         </div>
     `)
