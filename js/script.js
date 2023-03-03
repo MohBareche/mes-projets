@@ -140,6 +140,18 @@ const icon_APA_1108 = L.icon({
   iconAnchor: [15, 15],
 })
 
+const icon_Fosse = L.icon({
+  iconUrl: "../img/traverse_fosse.png",
+  iconSize: [30, 30],
+  iconAnchor: [15, 15],
+})
+
+const icon_Saillie = L.icon({
+  iconUrl: "../img/traverse_saillie.png",
+  iconSize: [30, 30],
+  iconAnchor: [15, 15],
+})
+
 /* ************************************************************************************************************************************************ */
 //   C1096
 const C1096_Layer = L.geoJson(C1096, {
@@ -342,7 +354,7 @@ const C1106_Layer = L.geoJson(C1106, {
 //   FOSSES ET SAILLIES
 const fossesSailliesLayer = L.geoJson(fossesSaillies, {
   pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, { icon: icon_APA_1104 })
+    return L.marker(latlng, { icon: icon_Fosse })
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
