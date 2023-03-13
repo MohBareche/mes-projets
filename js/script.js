@@ -393,7 +393,7 @@ const fossesSailliesLayer = L.geoJson(fossesSaillies, {
 				    ? "#F37900"
 				    : "#000"
             		}
-                    const geojsonLayer = L.geoJSON(chaussee, {
+                    const chausseeLayer = L.geoJSON(chaussee, {
 			    
                         style: function (feature) {
                             return {
@@ -422,7 +422,7 @@ const fossesSailliesLayer = L.geoJson(fossesSaillies, {
                             // Ajouter la popup à la couche de données
                             layer.bindPopup(popupContent)
                         },
-                    }).addTo(map)
+                    })
 
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO ESP */
@@ -1487,6 +1487,7 @@ const overlaysTree = {
       children: [
         { label: "Secteurs d'inspection", layer: inspectionLayer },
         { label: "Réseau RAAV", layer: raavLayer },
+	{ label: "Renseignements Chaussée", layer: chausseeLayer},
         // { label: "Camionnage", layer: camionnageLayer }
         { label: "Arrondissements", layer: arrondissementsLayer },
         { label: "Casernes pompiers", layer: casernesMarkers },
