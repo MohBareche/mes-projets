@@ -375,6 +375,39 @@ const fossesSailliesLayer = L.geoJson(fossesSaillies, {
 })
 
 /* ***************************************************************************************************************************************************** */
+/* @OTHER - RENSEIGNEMENTS CHAUSSÉES 2023*/
+
+                    const geojsonLayer = L.geoJSON(chaussee, {
+                        style: function (feature) {
+                            return {
+                                weight: 2,
+                                color: getColor(feature.properties.EPAISSEUR_CHAUSSEE),
+                                opacity: 1,
+                            }
+                        },
+
+                        onEachFeature: function (feature, layer) {
+                            // Créer une table HTML pour la popup
+                            var popupContent = "<table>"
+
+                            popupContent += `<tr style="background-color:silver; font-weight: bold;"><td>ID_TRC </td><td>${feature.properties.ID_TRC}</td></tr>`
+                            popupContent += "<tr><td>Sur </td><td>" + feature.properties["GEOBASE_V.SUR"] + "</td></tr>"
+                            popupContent += "<tr><td>De </td><td>" + feature.properties["GEOBASE_V.DE"] + "</td></tr>"
+                            popupContent += "<tr><td>À </td><td>" + feature.properties["GEOBASE_V.A"] + "</td></tr>"
+                            popupContent += "<tr><td>Matériaux </td><td>" + feature.properties["VOI_CHAUSSEE_JMAP_V.MATERIAUCHAUSSEE_REF"] + "</td></tr>"
+                            popupContent += "<tr><td>Type fondation </td><td>" + feature.properties["VOI_CHAUSSEE_JMAP_V.TYPEFONDATION_REF"] + "</td></tr>"
+                            popupContent += "<tr><td>Superficie (m²)</td><td>" + feature.properties["VOI_CHAUSSEE_JMAP_V.SUPERFICIE"] + "</td></tr>"
+                            popupContent += "<tr><td>Longueur estimée (m)</td><td>" + feature.properties["VOI_CHAUSSEE_JMAP_V.LONGUEURESTIMEE"] + "</td></tr>"
+                            popupContent += "<tr><td>Largeur estimée (m)</td><td>" + feature.properties["VOI_CHAUSSEE_JMAP_V.LARGEURESTIMEE"] + "</td></tr>"
+                            popupContent += "<tr><td>Épaisseur chaussée (mm)</td><td>" + feature.properties["EPAISSEUR_CHAUSSEE"] + "</td></tr>"
+
+                            popupContent += "</table>"
+                            // Ajouter la popup à la couche de données
+                            layer.bindPopup(popupContent)
+                        },
+                    }).addTo(map)
+
+/* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO ESP */
 const C_ESP_Layer = L.geoJson(esp, {
   onEachFeature: function (feature, layer) {
