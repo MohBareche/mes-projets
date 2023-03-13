@@ -378,6 +378,24 @@ const fossesSailliesLayer = L.geoJson(fossesSaillies, {
 /* @OTHER - RENSEIGNEMENTS CHAUSSÉES 2023*/
 
                     const geojsonLayer = L.geoJSON(chaussee, {
+			    
+			function getColor(EPAISSEUR_CHAUSSEE) {
+				return EPAISSEUR_CHAUSSEE == 80
+				    ? "#AAA"
+				    : EPAISSEUR_CHAUSSEE == 100
+				    ? "#00F"
+				    : EPAISSEUR_CHAUSSEE == 140
+				    ? "#0F0"
+				    : EPAISSEUR_CHAUSSEE == 150
+				    ? "#41A5E1"
+				    : EPAISSEUR_CHAUSSEE == 200
+				    ? "#FF0"
+				    : EPAISSEUR_CHAUSSEE == 225
+				    ? "#F00"
+				    : EPAISSEUR_CHAUSSEE == 240
+				    ? "#F37900"
+				    : "#000"
+            		}
                         style: function (feature) {
                             return {
                                 weight: 2,
