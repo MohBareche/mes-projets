@@ -1333,17 +1333,6 @@ const raavLayer = L.geoJson(RAAV, {
   },
 })
 
-raavLayer.onAdd = function(map) {
-  // create and add your legend to the map
-  var legend = L.control({ position: 'bottomright' });
-  legend.onAdd = function(map) {
-    var div = L.DomUtil.create('div', 'legend');
-    // add content to your legend
-    div.innerHTML = '<h4>My Legend</h4><p>Some description here</p>';
-    return div;
-  };
-  legend.addTo(map);
-};
 
 /* ***************************************************************************************************************************************************** */
 
@@ -1608,10 +1597,10 @@ searchControl.on("results", function (data) {
 // Échelle à droite en bas
 L.control.scale({ position: "bottomleft" }).addTo(map)
 
-const legend1 = L.control.Legend({
-  position: "bottomleft",
+const legendCorpo = L.control.Legend({
+  position: "bottomright",
   title: "Légende (Corpo 2023)",
-  collapsed: false,
+  collapsed: true,
   symbolWidth: 24,
   opacity: 1,
   column: 2,
@@ -1663,12 +1652,12 @@ const legend1 = L.control.Legend({
       weight: 6,
     },
   ],
-});
+}).addTo(map);
 
-const legend2 = L.control.Legend({
+const legendArrond = L.control.Legend({
   position: "bottomright",
   title: "Légende (Arrond. 2023)",
-  collapsed: false,
+  collapsed: true,
   symbolWidth: 24,
   opacity: 1,
   column: 2,
@@ -1734,20 +1723,30 @@ const legend2 = L.control.Legend({
       weight: 6,
     },
   ],
-});
+}).addTo(map);
 
 
-C_PRR_Layer.on('add', function() {
-  legend2.addTo(map)
-});
+// C_PRR_Layer.on('add', function() {
+//   legend2.addTo(map)
+// });
 	       
-C_PRR_Layer.on('remove', function(){
-  map.removeControl(legend2)
-});
+// C_PRR_Layer.on('remove', function(){
+//   map.removeControl(legend2)
+// });
 
-C_ESP_Layer.on('add', function(){
-  legend1.addTo(map)
-});
-C_ESP_Layer.on('remove', function(){
-  map.removeControl(legend1)
-});	       
+// C_ESP_Layer.on('add', function(){
+//   legend1.addTo(map)
+// });
+// C_ESP_Layer.on('remove', function(){
+//   map.removeControl(legend1)
+// });	
+
+chausseeLayer.on('add', function(){
+   map.removeControl(legend1);
+   map.removeControl(legend2);
+}
+		 
+chausseeLayer.on('remove', function(){
+   legend1.addTo(map);
+   legend2.addTo(map);
+}
