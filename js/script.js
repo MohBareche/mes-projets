@@ -1741,7 +1741,7 @@ C_PRR_Layer.on('add', function() {
   legend2.addTo(map)
 });
 	       
-C_PRR.on('remove', function(){
+C_PRR_Layer.on('remove', function(){
   map.removeContrl(legend2)
 });
 
