@@ -1744,9 +1744,9 @@ const legendArrond = L.control.Legend({
 chausseeLayer.on('add', function(){
    map.removeControl(legend1);
    map.removeControl(legend2);
-}
+});
 		 
 chausseeLayer.on('remove', function(){
    legend1.addTo(map);
    legend2.addTo(map);
-}
+});
