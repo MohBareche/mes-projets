@@ -1754,3 +1754,36 @@ chausseeLayer.on('remove', function(){
    legend1.addTo(map);
    legend2.addTo(map);
 });
+
+
+function getColor(ep) {
+        return ep === '80mm pavage (3")'  ? "#AAA" :
+               ep === '100mm pavage (4")'  ? "#00F" :
+               ep === '140mm pavage (5 ½")' ? "#0F0" :
+	       ep === '150mm pavage (6")' ? "#0F0" :
+	       ep === '200mm pavage (8")' ? "#FF0" :
+	       ep === '225mm Béton + 80mm pavage' ? "#F00" :
+	       ep === 'Pavage 240mm en 3 couches' ? "#F37900" :
+               ep === 'Roadside Hazards' ? "#984ea3" :
+                            "#000";
+    }
+
+var legend = L.control({position: 'bottomright'});
+    legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend');
+    labels = ['<strong>Épaisseurs</strong>'],
+    categories = ['Pavage 240mm en 3 couches','225mm Béton + 80mm pavage','200mm pavage (8")','150mm pavage (6")','140mm pavage (5 ½")','100mm pavage (4")', '80mm pavage (3")'];
+
+    for (var i = 0; i < categories.length; i++) {
+
+            div.innerHTML += 
+            labels.push(
+		 `<i class="circle" style="background: ${getColor(categories[i])}></i> 
+            (${categories[i]} ? ${categories[i]} : + ))`;
+
+        }
+        div.innerHTML = labels.join('<br>');
+    return div;
+    };
+    legend.addTo(map);
