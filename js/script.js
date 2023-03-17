@@ -1746,13 +1746,11 @@ const legendCorpo = L.control.Legend({
 // });	
 
 chausseeLayer.on('add', function(){
-   map.removeControl(legend1);
-   map.removeControl(legend2);
+   legend.addTo(map)
 });
 		 
 chausseeLayer.on('remove', function(){
-   legend1.addTo(map);
-   legend2.addTo(map);
+   map.removeControl(legend);
 });
 
 
@@ -1786,4 +1784,3 @@ var legend = L.control({position: 'bottomright'});
         div.innerHTML = labels.join('<br>');
     return div;
     };
-    legend.addTo(map);
