@@ -1758,7 +1758,7 @@ function getColor(ep) {
         return ep === '80mm pavage (3")'  ? "#AAA" :
                ep === '100mm pavage (4")'  ? "#00F" :
                ep === '140mm pavage (5 ½")' ? "#0F0" :
-	       ep === '150mm pavage (6")' ? "#0F0" :
+	       ep === '150mm pavage (6")' ? "#41A5E1" :
 	       ep === '200mm pavage (8")' ? "#FF0" :
 	       ep === '225mm Béton + 80mm pavage' ? "#F00" :
 	       ep === 'Pavage 240mm en 3 couches' ? "#F37900" :
@@ -1777,7 +1777,7 @@ var legend = L.control({position: 'bottomright'});
 
             div.innerHTML += 
             labels.push(
-		 `<svg><line x1="0" y1="0" x2="100" y2="100" stroke=${getColor(categories[i])} stroke-width="2"/></svg>   
+		 `<svg><line x1="0" y1="0" x2="50" y2="0" stroke=${getColor(categories[i])} stroke-width="2"/></svg>   
             ${categories[i]} ? ${categories[i]} `);
         }
         div.innerHTML = labels.join('<br>');
