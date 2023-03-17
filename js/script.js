@@ -1780,7 +1780,7 @@ var legend = L.control({position: 'bottomright'});
 		 `<svg width="50" height="10">
 		 <rect width="50" height="10" style="fill:${getColor(categories[i])};stroke-width:3;stroke:rgb(0,0,0)" />
 		  </svg>   
-            ${categories[i]} ? ${categories[i]} `);
+            ${categories[i]} `);
         }
         div.innerHTML = labels.join('<br>');
     return div;
