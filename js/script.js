@@ -1777,7 +1777,7 @@ var legend = L.control({position: 'bottomright'});
 
             div.innerHTML += 
             labels.push(
-		 `<i class="fas fa-minus" style="background: ${getColor(categories[i])}"></i> <i class="fas fa-minus" style="background: ${getColor(categories[i])}"></i> 
+		 `<i class="fas fa-minus fa-3x" style="background: ${getColor(categories[i])}"></i> 
             ${categories[i]} ? ${categories[i]} `);
         }
         div.innerHTML = labels.join('<br>');
