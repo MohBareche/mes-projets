@@ -1770,7 +1770,7 @@ var legend = L.control({position: 'bottomright'});
     legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'legend');
-    labels = ['<strong>Épaisseurs</strong>'],
+    labels = ['<h4>Épaisseurs</h4>'],
     categories = ['Pavage 240mm en 3 couches','225mm Béton + 80mm pavage','200mm pavage (8")','150mm pavage (6")','140mm pavage (5 ½")','100mm pavage (4")', '80mm pavage (3")'];
 
     for (var i = 0; i < categories.length; i++) {
