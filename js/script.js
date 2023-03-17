@@ -1742,12 +1742,12 @@ C_PRR_Layer.on('add', function() {
 });
 	       
 C_PRR_Layer.on('remove', function(){
-  map.removeContrl(legend2)
+  map.removeControl(legend2)
 });
 
 C_ESP_Layer.on('add', function(){
   legend1.addTo(map)
 });
 C_ESP_Layer.on('remove', function(){
-  map.removeContrl(legend1)
+  map.removeControl(legend1)
 });	       
