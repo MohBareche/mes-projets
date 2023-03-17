@@ -1778,7 +1778,7 @@ var legend = L.control({position: 'bottomright'});
             div.innerHTML += 
             labels.push(
 		 `<i class="bi bi-circle-fill" style="background: ${getColor(categories[i])}"></i> 
-            (${categories[i]} ? ${categories[i]} : + )`);
+            ${categories[i]} ? ${categories[i]} : `);
         }
         div.innerHTML = labels.join('<br>');
     return div;
