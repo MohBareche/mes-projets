@@ -1611,7 +1611,7 @@ L.control.scale({ position: "bottomleft" }).addTo(map)
 const legend1 = L.control.Legend({
   position: "bottomleft",
   title: "Légende (Corpo 2023)",
-  collapsed: true,
+  collapsed: false,
   symbolWidth: 24,
   opacity: 1,
   column: 2,
@@ -1663,12 +1663,12 @@ const legend1 = L.control.Legend({
       weight: 6,
     },
   ],
-}).addTo(map);
+});
 
 const legend2 = L.control.Legend({
   position: "bottomright",
   title: "Légende (Arrond. 2023)",
-  collapsed: true,
+  collapsed: false,
   symbolWidth: 24,
   opacity: 1,
   column: 2,
@@ -1734,17 +1734,13 @@ const legend2 = L.control.Legend({
       weight: 6,
     },
   ],
-}).addTo(map);
+});
 
 
-// myLayer.onAdd = function(map) {
-//   // create and add your legend to the map
-//   var legend = L.control({ position: 'bottomright' });
-//   legend.onAdd = function(map) {
-//     var div = L.DomUtil.create('div', 'legend');
-//     // add content to your legend
-//     div.innerHTML = '<h4>My Legend</h4><p>Some description here</p>';
-//     return div;
-//   };
-//   legend.addTo(map);
-// };
+C_PRR_Layer.onAdd = function(map) {
+  legend2.addTo(map);
+};
+
+C_ESP_Layer.onAdd = function(map) {
+  legend1.addTo(map);
+};
