@@ -1597,67 +1597,11 @@ searchControl.on("results", function (data) {
 // Échelle à droite en bas
 L.control.scale({ position: "bottomleft" }).addTo(map)
 
-const legendCorpo = L.control.Legend({
-  position: "bottomleft",
-  title: "Légende (Corpo 2023)",
-  collapsed: true,
-  symbolWidth: 24,
-  opacity: 1,
-  column: 2,
-  legends: [
-    {
-      label: "ESP",
-      type: "polyline",
-      layers: C_ESP_Layer,
-      color: "#f50d12",
-      fillColor: "#f50d12",
-      weight: 6,
-    },
-    {
-      label: "PCPR-PRCPR",
-      type: "polyline",
-      layers: C_PCPR_Layer,
-      color: "#504C43",
-      fillColor: "#504C43",
-      weight: 4,
-    },
-    {
-      label: "Rehab AQ",
-      type: "polyline",
-      layers: C_RAQ_Layer,
-      color: "#3388ff",
-      fillColor: "#3388ff",
-      weight: 6,
-    },
-    {
-      label: "Rehab EG",
-      type: "polyline",
-      layers: C_REG_Layer,
-      color: "#964b00",
-      fillColor: "#964b00",
-      weight: 6,
-    },
-    {
-      label: "BRV",
-      type: "image",
-      url: "../img/brv1.jpg",
-      layers: C_BRV_Layer,
-    },
-    {
-      label: "Éclairage",
-      type: "polyline",
-      layers: C_ECL_Layer,
-      color: "#810081",
-      fillColor: "#810081",
-      weight: 6,
-    },
-  ],
-}).addTo(map);
 
 const legendArrond = L.control.Legend({
   position: "bottomleft",
   title: "Légende (Arrond. 2023)",
-  collapsed: true,
+  collapsed: false,
   symbolWidth: 24,
   opacity: 1,
   column: 2,
@@ -1724,6 +1668,66 @@ const legendArrond = L.control.Legend({
     },
   ],
 }).addTo(map);
+
+
+const legendCorpo = L.control.Legend({
+  position: "bottomleft",
+  title: "Légende (Corpo 2023)",
+  collapsed: true,
+  symbolWidth: 24,
+  opacity: 1,
+  column: 2,
+  legends: [
+    {
+      label: "ESP",
+      type: "polyline",
+      layers: C_ESP_Layer,
+      color: "#f50d12",
+      fillColor: "#f50d12",
+      weight: 6,
+    },
+    {
+      label: "PCPR-PRCPR",
+      type: "polyline",
+      layers: C_PCPR_Layer,
+      color: "#504C43",
+      fillColor: "#504C43",
+      weight: 4,
+    },
+    {
+      label: "Rehab AQ",
+      type: "polyline",
+      layers: C_RAQ_Layer,
+      color: "#3388ff",
+      fillColor: "#3388ff",
+      weight: 6,
+    },
+    {
+      label: "Rehab EG",
+      type: "polyline",
+      layers: C_REG_Layer,
+      color: "#964b00",
+      fillColor: "#964b00",
+      weight: 6,
+    },
+    {
+      label: "BRV",
+      type: "image",
+      url: "../img/brv1.jpg",
+      layers: C_BRV_Layer,
+    },
+    {
+      label: "Éclairage",
+      type: "polyline",
+      layers: C_ECL_Layer,
+      color: "#810081",
+      fillColor: "#810081",
+      weight: 6,
+    },
+  ],
+}).addTo(map);
+
+
 
 
 // C_PRR_Layer.on('add', function() {
