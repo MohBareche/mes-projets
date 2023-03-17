@@ -1777,7 +1777,7 @@ var legend = L.control({position: 'bottomright'});
             div.innerHTML += 
             labels.push(
 		 `<svg width="60" height="10">
-		 <rect width="60" height="10" style="fill:${getColor(categories[i])};stroke-width:3;stroke:rgb(0,0,0)" />
+		 <rect width="60" height="10" style="fill:${getColor(categories[i])};stroke-width:1;stroke:rgb(0,0,0)" />
 		  </svg>   
             ${categories[i]}`);
         }
