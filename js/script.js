@@ -1598,7 +1598,7 @@ searchControl.on("results", function (data) {
 L.control.scale({ position: "bottomleft" }).addTo(map)
 
 const legendCorpo = L.control.Legend({
-  position: "bottomright",
+  position: "bottomleft",
   title: "Légende (Corpo 2023)",
   collapsed: true,
   symbolWidth: 24,
@@ -1655,7 +1655,7 @@ const legendCorpo = L.control.Legend({
 }).addTo(map);
 
 const legendArrond = L.control.Legend({
-  position: "bottomright",
+  position: "bottomleft",
   title: "Légende (Arrond. 2023)",
   collapsed: true,
   symbolWidth: 24,
