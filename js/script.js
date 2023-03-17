@@ -1599,7 +1599,7 @@ L.control.scale({ position: "bottomleft" }).addTo(map)
 const legend1 = L.control.Legend({
   position: "bottomleft",
   title: "Légende (Corpo 2023)",
-  collapsed: false,
+  collapsed: true,
   symbolWidth: 24,
   opacity: 1,
   column: 2,
@@ -1656,7 +1656,7 @@ const legend1 = L.control.Legend({
 const legend2 = L.control.Legend({
   position: "bottomright",
   title: "Légende (Arrond. 2023)",
-  collapsed: false,
+  collapsed: true,
   symbolWidth: 24,
   opacity: 1,
   column: 2,
