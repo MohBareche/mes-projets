@@ -1333,6 +1333,18 @@ const raavLayer = L.geoJson(RAAV, {
   },
 })
 
+raavLayer.onAdd = function(map) {
+  // create and add your legend to the map
+  var legend = L.control({ position: 'bottomright' });
+  legend.onAdd = function(map) {
+    var div = L.DomUtil.create('div', 'legend');
+    // add content to your legend
+    div.innerHTML = '<h4>My Legend</h4><p>Some description here</p>';
+    return div;
+  };
+  legend.addTo(map);
+};
+
 /* ***************************************************************************************************************************************************** */
 
 //   Camionnage 15/11/2022
@@ -1723,3 +1735,16 @@ const legend2 = L.control.Legend({
     },
   ],
 }).addTo(map);
+
+
+// myLayer.onAdd = function(map) {
+//   // create and add your legend to the map
+//   var legend = L.control({ position: 'bottomright' });
+//   legend.onAdd = function(map) {
+//     var div = L.DomUtil.create('div', 'legend');
+//     // add content to your legend
+//     div.innerHTML = '<h4>My Legend</h4><p>Some description here</p>';
+//     return div;
+//   };
+//   legend.addTo(map);
+// };
