@@ -1737,10 +1737,16 @@ const legend2 = L.control.Legend({
 });
 
 
-C_PRR_Layer.onAdd = function(map) {
+C_PRR_Layer.on('add', function() {
   legend2.addTo(map);
 };
-
-C_ESP_Layer.onAdd = function(map) {
-  legend1.addTo(map);
+C_PRR.on('remove', function(){
+  map.removeContrl(legend2)
 };
+
+C_ESP_Layer.on('add', function(){
+  legend1.addTo(map)
+};
+C_ESP_Layer.on('remove', function(){
+  map.removeContrl(legend1)
+}	       
