@@ -1319,8 +1319,9 @@ function styleESP(feature) {
 /* calcul nombre total des entrées de service en plomb */
 let nbTotalESP = entreesPlomb.features.length
 console.log('Total ESP:', nbTotalESP)
-let plomb = entreesPlomb.keys(STATUT_SIMPLE == 'PLOMB').length
-console.log(plomb)
+let plomb = entreesPlomb.features.filter(function (feature) { feature.properties.STATUT_SIMPLE == 'PLOMB'})
+console.log(plomb.length)
+
 const entreesPlombLayer = L.geoJson(entreesPlomb, {
   style: styleESP,
   onEachFeature: function (feature, layer) {
