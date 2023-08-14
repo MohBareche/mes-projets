@@ -1290,6 +1290,63 @@ const geoJsonLayerBR = L.geoJson(BR, {
 const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
 // map.fitBounds(markersBR.getBounds());
 
+
+
+
+
+/* ***************************************************************************************************************************************************** */
+// ENTRÉES DE SERVICE EN PLOMB 2023-08-13
+function getColorESP(feature) {
+  switch (feature) {
+    case 1:
+      return "green"
+    case 2:
+      return "red"
+    case 3:
+      return "orange"
+    case 4:
+      return "cyan"
+  }
+}
+function styleCollectes(feature) {
+  return {
+    color: getColorESP(feature.properties.Secteur),
+    fillColor: getColorESP(feature.properties.Secteur),
+    opacity: 1,
+    fillOpacity: 0.6,
+  }
+}
+const collectesLayer = L.geoJson(entrees_, {
+  style: styleCollectes,
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+        <p style='margin:0; padding:0;'><strong>Secteur : </strong>${feature.properties.Secteur}</p>
+        <p style='margin:0; padding:0'><strong>Recyclage :</strong> ${feature.properties.Recyclage}</p>
+        <p style='margin:0; padding:0'><strong>Ordures ménagères :</strong> ${feature.properties.OrduresMenageres}</p>
+        <p style='margin:0; padding:0'><strong>Résidus alimentaires :</strong> ${feature.properties.ResidusAlimentaires}</p>
+	      <p style='margin:0; padding:0'><strong>Encombrants :</strong> ${feature.properties.Encombrants}</p>
+	      <p style='margin:0; padding:0'><strong>Résidus verts :</strong> ${feature.properties.ResidusVerts}</p>
+	      <p style='margin:0; padding:0'><strong>9 Logements + :</strong> ${feature.properties.NeufLogements}</p>
+      `)
+    layer.on("mouseover", function () {
+      this.setStyle({
+        fillOpacity: 0.2,
+        opacity: 1,
+      })
+    })
+    layer.on("mouseout", function () {
+      this.setStyle({
+        fillOpacity: 0.4,
+        opacity: 1,
+      })
+    })
+  },
+})
+
+
+
+
+
 /* ***************************************************************************************************************************************************** */
 
 //   RAAV 15/11/2022
