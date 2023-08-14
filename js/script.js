@@ -1841,11 +1841,11 @@ var legend = L.control({position: 'bottomright'});
 
 
 entreesPlombLayer.on('add', function(){
-   legend.addTo(map)
+   legendESP.addTo(map)
 });
 		 
 entreesPlombLayer.on('remove', function(){
-   map.removeControl(legend);
+   map.removeControl(legendESP);
 });
 function getColorESP(statut) {
         return statut === 'PAS PLOMB'  ? "green" :
