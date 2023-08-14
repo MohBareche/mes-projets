@@ -1289,44 +1289,41 @@ const geoJsonLayerBR = L.geoJson(BR, {
 
 const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
 // map.fitBounds(markersBR.getBounds());
-
-
-
-
-
+/* ***************************************************************************************************************************************************** */
+/* ***************************************************************************************************************************************************** */
+/* ***************************************************************************************************************************************************** */
+/* ***************************************************************************************************************************************************** */
+/* ***************************************************************************************************************************************************** */
 /* ***************************************************************************************************************************************************** */
 // ENTRÉES DE SERVICE EN PLOMB 2023-08-13
 function getColorESP(feature) {
   switch (feature) {
-    case 1:
+    case "PAS PLOMB":
       return "green"
-    case 2:
+    case "PLOMB":
       return "red"
-    case 3:
+    case "POSSIBILITÉ DE PLOMB":
       return "orange"
-    case 4:
+    case "CONTACTEZ DRE":
       return "cyan"
   }
 }
-function styleCollectes(feature) {
+function styleESP(feature) {
   return {
-    color: getColorESP(feature.properties.Secteur),
-    fillColor: getColorESP(feature.properties.Secteur),
+    color: getColorESP(feature.properties.STATUT_SIMPLE),
+    fillColor: getColorESP(feature.properties.STATUT_SIMPLE),
     opacity: 1,
     fillOpacity: 0.6,
   }
 }
-const collectesLayer = L.geoJson(entrees_, {
-  style: styleCollectes,
+const entreesPlombLayer = L.geoJson(entreesPlomb, {
+  style: styleESP,
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-        <p style='margin:0; padding:0;'><strong>Secteur : </strong>${feature.properties.Secteur}</p>
-        <p style='margin:0; padding:0'><strong>Recyclage :</strong> ${feature.properties.Recyclage}</p>
-        <p style='margin:0; padding:0'><strong>Ordures ménagères :</strong> ${feature.properties.OrduresMenageres}</p>
-        <p style='margin:0; padding:0'><strong>Résidus alimentaires :</strong> ${feature.properties.ResidusAlimentaires}</p>
-	      <p style='margin:0; padding:0'><strong>Encombrants :</strong> ${feature.properties.Encombrants}</p>
-	      <p style='margin:0; padding:0'><strong>Résidus verts :</strong> ${feature.properties.ResidusVerts}</p>
-	      <p style='margin:0; padding:0'><strong>9 Logements + :</strong> ${feature.properties.NeufLogements}</p>
+        <p style='margin:0; padding:0;'><strong>Numéro civique : </strong>${feature.properties.NO_CIVIQUE}</p>
+        <p style='margin:0; padding:0'><strong>Rue :</strong> ${feature.properties.NOM_RUE}</p>
+	<p style='margin:0; padding:0'><strong>Nombre logements :</strong> ${feature.properties.NB_LOGEMENT_ROLE}</p>
+	<p style='margin:0; padding:0'><strong>Statut :</strong> ${feature.properties.STATUT_SIMPLE}</p>
       `)
     layer.on("mouseover", function () {
       this.setStyle({
@@ -1342,11 +1339,11 @@ const collectesLayer = L.geoJson(entrees_, {
     })
   },
 })
-
-
-
-
-
+/* ***************************************************************************************************************************************************** */
+/* ***************************************************************************************************************************************************** */
+/* ***************************************************************************************************************************************************** */
+/* ***************************************************************************************************************************************************** */
+/* ***************************************************************************************************************************************************** */
 /* ***************************************************************************************************************************************************** */
 
 //   RAAV 15/11/2022
