@@ -1313,7 +1313,7 @@ function styleESP(feature) {
     color: getColorESP(feature.properties.STATUT_SIMPLE),
     fillColor: getColorESP(feature.properties.STATUT_SIMPLE),
     opacity: 1,
-    fillOpacity: 0.6,
+    fillOpacity: 1,
   }
 }
 const entreesPlombLayer = L.geoJson(entreesPlomb, {
