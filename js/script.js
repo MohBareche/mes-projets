@@ -1807,7 +1807,6 @@ chausseeLayer.on('remove', function(){
    map.removeControl(legend);
 });
 
-
 function getColor(ep) {
         return ep === '80mm pavage (3")'  ? "#AAA" :
                ep === '100mm pavage (4")'  ? "#00F" :
@@ -1832,6 +1831,43 @@ var legend = L.control({position: 'bottomright'});
             labels.push(
 		 `<svg width="60" height="10">
 		 <rect width="60" height="10" style="fill:${getColor(categories[i])};stroke-width:1;stroke:rgb(0,0,0)" />
+		  </svg>   
+            ${categories[i]}`);
+        }
+        div.innerHTML = labels.join('<br>');
+    return div;
+    };
+
+
+
+entreesPlombLayer.on('add', function(){
+   legend.addTo(map)
+});
+		 
+entreesPlombLayer.on('remove', function(){
+   map.removeControl(legend);
+});
+function getColorESP(statut) {
+        return statut === 'PAS PLOMB'  ? "green" :
+               statut === 'PLOMB'  ? "red" :
+               statut === 'POSSIBILITÉ DE PLOMB' ? "orange" :
+	       statut === 'CONTACTEZ DRE' ? "cyan" :
+	       statut === 'AUCUNE INFO' ? "gray" :
+                            "#000";
+    }
+
+var legendESP = L.control({position: 'bottomright'});
+    legendESP.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'legendESP');
+    labels = ['<h4>STATUT DES ENTRÉES EN PLOMB</h4>'],
+    categories = ['PAS PLOMB','PLOMB','POSSIBILITÉ DE PLOMB','CONTACTEZ DRE','AUCUNE INFO'];
+
+    for (var i = 0; i < categories.length; i++) {
+            div.innerHTML += 
+            labels.push(
+		 `<svg width="60" height="10">
+		 <rect width="60" height="10" style="fill:${getColorESP(categories[i])};stroke-width:1;stroke:rgb(0,0,0)" />
 		  </svg>   
             ${categories[i]}`);
         }
