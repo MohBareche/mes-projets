@@ -1333,7 +1333,7 @@ const entreesPlombLayer = L.geoJson(entreesPlomb, {
     })
     layer.on("mouseout", function () {
       this.setStyle({
-        fillOpacity: 0.4,
+        fillOpacity: 0.2,
         opacity: 1,
       })
     })
