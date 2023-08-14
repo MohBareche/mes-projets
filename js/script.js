@@ -6,7 +6,7 @@ const map = L.mapbox
     rotateControl: {
       closeOnZeroBearing: false,
     },
-    bearing: 45,
+    bearing: 60,
   })
   .setView([45.60187729035522, -73.63153768308611], 14)
 const zoomHome = L.Control.zoomHome().addTo(map)
