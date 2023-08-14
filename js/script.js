@@ -1861,7 +1861,7 @@ var legendESP = L.control({position: 'bottomright'});
 
     var div = L.DomUtil.create('div', 'legendESP');
     labels = ['<h4>STATUT DES ENTRÉES EN PLOMB</h4>'],
-    categories = ['PAS PLOMB','PLOMB','POSSIBILITÉ DE PLOMB','CONTACTEZ DRE','AUCUNE INFO'];
+    categories = ['PAS DE PLOMB','PLOMB','POSSIBILITÉ DE PLOMB','CONTACTEZ DRE','AUCUNE INFO'];
 
     for (var i = 0; i < categories.length; i++) {
             div.innerHTML += 
