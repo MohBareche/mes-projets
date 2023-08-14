@@ -1316,7 +1316,7 @@ function styleESP(feature) {
     fillOpacity: 0.2,
   }
 }
-console.log(entreesPlomb.feature.length)
+console.log(entreesPlomb.features.length)
 const entreesPlombLayer = L.geoJson(entreesPlomb, {
   style: styleESP,
   onEachFeature: function (feature, layer) {
