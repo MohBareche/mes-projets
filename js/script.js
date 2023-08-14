@@ -1313,7 +1313,7 @@ function styleESP(feature) {
     color: getColorESP(feature.properties.STATUT_SIMPLE),
     fillColor: getColorESP(feature.properties.STATUT_SIMPLE),
     opacity: 1,
-    fillOpacity: 1,
+    fillOpacity: 0.2,
   }
 }
 const entreesPlombLayer = L.geoJson(entreesPlomb, {
@@ -1327,13 +1327,13 @@ const entreesPlombLayer = L.geoJson(entreesPlomb, {
       `)
     layer.on("mouseover", function () {
       this.setStyle({
-        fillOpacity: 0.2,
+        fillOpacity: 0.4,
         opacity: 1,
       })
     })
     layer.on("mouseout", function () {
       this.setStyle({
-        fillOpacity: 1,
+        fillOpacity: 0.2,
         opacity: 1,
       })
     })
