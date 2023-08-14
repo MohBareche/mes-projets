@@ -1852,8 +1852,7 @@ function getColorESP(statut) {
                statut === 'PLOMB'  ? "red" :
                statut === 'POSSIBILITÉ DE PLOMB' ? "orange" :
 	       statut === 'CONTACTEZ DRE' ? "cyan" :
-	       statut === 'AUCUNE INFO' ? "gray" :
-                            "#000";
+	       statut === 'AUCUNE INFO' ? "gray";
     }
 
 var legendESP = L.control({position: 'bottomright'});
