@@ -1859,7 +1859,7 @@ function getColorESP(statut) {
 var legendESP = L.control({position: 'bottomright'});
     legendESP.onAdd = function (map) {
 
-    var div = L.DomUtil.create('div', 'legendESP');
+    var div = L.DomUtil.create('div', 'legend');
     labels = ['<h4>STATUT DES ENTRÉES EN PLOMB</h4>'],
     categories = ['PAS PLOMB','PLOMB','POSSIBILITÉ DE PLOMB','CONTACTEZ DRE','AUCUNE INFO'];
 
