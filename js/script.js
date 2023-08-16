@@ -1317,22 +1317,22 @@ function styleESP(feature) {
   }
 }
 /* calcul nombre total des entrées de service en plomb */
-let nbTotalESP = entreesPlomb.features.length
+let nbTotalESP = entrees_Plomb.features.length
 console.log('Total ESP:', nbTotalESP)
 
-let plombFiltered = entreesPlomb.features.filter(feature => feature.properties.STATUT_SIMPLE === 'PLOMB')
+let plombFiltered = entrees_Plomb.features.filter(feature => feature.properties.STATUT_SIMPLE === 'PLOMB')
 console.log('Plomb: ', plombFiltered.length)
 
-let pasDePlombFiltered = entreesPlomb.features.filter(feature => feature.properties.STATUT_SIMPLE === 'PAS PLOMB')
+let pasDePlombFiltered = entrees_Plomb.features.filter(feature => feature.properties.STATUT_SIMPLE === 'PAS PLOMB')
 console.log('Pas Plomb: ', pasDePlombFiltered.length)
 
-let possibiliteDePlombFiltered = entreesPlomb.features.filter(feature => feature.properties.STATUT_SIMPLE === 'POSSIBILITÉ DE PLOMB')
+let possibiliteDePlombFiltered = entrees_Plomb.features.filter(feature => feature.properties.STATUT_SIMPLE === 'POSSIBILITÉ DE PLOMB')
 console.log('Possibilité de Plomb: ', possibiliteDePlombFiltered.length)
 
-let contactezDREFiltered = entreesPlomb.features.filter(feature => feature.properties.STATUT_SIMPLE === 'CONTACTEZ DRE')
+let contactezDREFiltered = entrees_Plomb.features.filter(feature => feature.properties.STATUT_SIMPLE === 'CONTACTEZ DRE')
 console.log('Contactez DRE: ', contactezDREFiltered.length)
 
-let aucuneInfoFiltered = entreesPlomb.features.filter(feature => feature.properties.STATUT_SIMPLE === '')
+let aucuneInfoFiltered = entrees_Plomb.features.filter(feature => feature.properties.STATUT_SIMPLE === '')
 console.log('Aucune info: ', aucuneInfoFiltered.length)
 
 
