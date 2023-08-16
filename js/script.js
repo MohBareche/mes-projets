@@ -1336,7 +1336,7 @@ let aucuneInfoFiltered = entreesPlomb.features.filter(feature => feature.propert
 console.log('Aucune info: ', aucuneInfoFiltered.length)
 
 
-const entreesPlombLayer = L.geoJson(entreesPlomb, {
+const entreesPlombLayer = L.geoJson(entrees_Plomb, {
   style: styleESP,
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
