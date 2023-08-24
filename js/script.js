@@ -406,7 +406,7 @@ const fossesSailliesLayer = L.geoJson(fossesSaillies, {
 //  ESP GBEau
 const ESP_GBEauLayer = L.geoJson(ESP_GBEau, {
   pointToLayer: function (feature, latlng) {
-    	if (feature.properties.Statut_Plomb_Dépistage === "Aucun plomb - Confirmé par Palintest") return L.marker(latlng, { icon: geenIcon })
+    	if (feature.properties.Statut_Plomb_Dépistage === "Aucun plomb - Confirmé par Palintest") return L.marker(latlng, { icon: greenIcon })
     	if (feature.properties.Statut_Plomb_Dépistage === "Aucun plomb - Grand bâtiment") return L.marker(latlng, { icon: greenIcon })
     	if (feature.properties.Statut_Plomb_Dépistage === "Dépistage incomplet") return L.marker(latlng, { icon: orangeIcon })
     	if (feature.properties.Statut_Plomb_Dépistage === "Plomb - Confirmé par Palintest") return L.marker(latlng, { icon: redIcon })
