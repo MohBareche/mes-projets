@@ -152,6 +152,34 @@ const icon_Saillie = L.icon({
   iconAnchor: [15, 15],
 })
 
+const greenIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+const redIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+const orangeIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+
 /* ************************************************************************************************************************************************ */
 //   C1096
 const C1096_Layer = L.geoJson(C1096, {
@@ -373,6 +401,34 @@ const fossesSailliesLayer = L.geoJson(fossesSaillies, {
     })
   },
 })
+
+/* ***************************************************************************************************************************************************** */
+//  ESP GBEau
+const ESP_GBEauLayer = L.geoJson(ESP_GBEau, {
+  pointToLayer: function (feature, latlng) {
+    	if (feature.properties.Statut_Plomb_Dépistage === "Aucun plomb - Confirmé par Palintest") return L.marker(latlng, { icon: geenIcon })
+    	if (feature.properties.Statut_Plomb_Dépistage === "Aucun plomb - Grand bâtiment") return L.marker(latlng, { icon: greenIcon })
+    	if (feature.properties.Statut_Plomb_Dépistage === "Dépistage incomplet") return L.marker(latlng, { icon: orangeIcon })
+    	if (feature.properties.Statut_Plomb_Dépistage === "Plomb - Confirmé par Palintest") return L.marker(latlng, { icon: redIcon })
+    	if (feature.properties.Statut_Plomb_Dépistage === "Plomb - Tuyau intérieur bâtiment") return L.marker(latlng, { icon: redIcon })  
+    	if (feature.properties.Statut_Plomb_Dépistage === "Possibilité de plomb - Eau trop froide") return L.marker(latlng, { icon: orangeIcon })
+	if (feature.properties.Statut_Plomb_Dépistage === "Possibilité de plomb - Palintest non concluant") return L.marker(latlng, { icon: orangeIcon })
+  },
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+   	<div>
+	 <p style='margin:0; padding:0;'><strong>Adresse:</strong> ${feature.properties.Adresses_alimentées}</p>
+	 <p style='margin:0; padding:0;'><strong>Statut :</strong> ${feature.properties.Statut_Plomb_Dépistage}</p>
+        </div>
+    `)
+
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+})
+
+
 
 /* ***************************************************************************************************************************************************** */
 /* @OTHER - RENSEIGNEMENTS CHAUSSÉES 2023*/
@@ -1564,6 +1620,7 @@ const overlaysTree = {
         { label: "Réseau RAAV", layer: raavLayer },
 	{ label: "Renseignements Chaussée", layer: chausseeLayer},
         { label: "Entrées en plomb", layer: entreesPlombLayer},
+	{ label: "ESP GBEau", layer: ESP_GBEauLayer},
         { label: "Arrondissements", layer: arrondissementsLayer },
         { label: "Casernes pompiers", layer: casernesMarkers },
         { label: "Bornes de recharge", layer: BRMarkers },
