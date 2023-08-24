@@ -179,6 +179,23 @@ const orangeIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
+const blueIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+const blackIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-black.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
 /* ************************************************************************************************************************************************ */
 //   C1096
@@ -406,13 +423,13 @@ const fossesSailliesLayer = L.geoJson(fossesSaillies, {
 //  ESP GBEau
 const ESP_GBEauLayer = L.geoJson(ESP_GBEau, {
   pointToLayer: function (feature, latlng) {
-    	if (feature.properties.Statut_Plomb_Dépistage === "Aucun plomb - Confirmé par Palintest") return L.marker(latlng, { icon: greenIcon })
-    	if (feature.properties.Statut_Plomb_Dépistage === "Aucun plomb - Grand bâtiment") return L.marker(latlng, { icon: greenIcon })
-    	if (feature.properties.Statut_Plomb_Dépistage === "Dépistage incomplet") return L.marker(latlng, { icon: orangeIcon })
-    	if (feature.properties.Statut_Plomb_Dépistage === "Plomb - Confirmé par Palintest") return L.marker(latlng, { icon: redIcon })
-    	if (feature.properties.Statut_Plomb_Dépistage === "Plomb - Tuyau intérieur bâtiment") return L.marker(latlng, { icon: redIcon })  
-    	if (feature.properties.Statut_Plomb_Dépistage === "Possibilité de plomb - Eau trop froide") return L.marker(latlng, { icon: orangeIcon })
-	if (feature.properties.Statut_Plomb_Dépistage === "Possibilité de plomb - Palintest non concluant") return L.marker(latlng, { icon: orangeIcon })
+    	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Aucun Plomb - avec intervention") return L.marker(latlng, { icon: greenIcon })
+    	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Aucun Plomb - sans intervention") return L.marker(latlng, { icon: greenIcon })
+    	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Contactez DRE") return L.marker(latlng, { icon: blueIcon })
+    	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Plomb") return L.marker(latlng, { icon: redIcon })
+    	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Aucun statut") return L.marker(latlng, { icon: blackIcon })  
+    	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Possibilité de Plomb - avec intervention") return L.marker(latlng, { icon: orangeIcon })
+	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Possibilité de Plomb - sans intervention") return L.marker(latlng, { icon: orangeIcon })
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
