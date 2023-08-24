@@ -437,7 +437,7 @@ const ESP_GBEauLayer = L.geoJson(ESP_GBEau, {
     layer.bindPopup(`
    	<div>
 	 <p style='margin:0; padding:0;'><strong>Adresse:</strong> ${feature.properties.Adresses_alimentées}</p>
-	 <p style='margin:0; padding:0;'><strong>Statut :</strong> ${feature.properties.Statut_Plomb_Dépistage}</p>
+	 <p style='margin:0; padding:0;'><strong>Statut :</strong> ${feature.properties.Statut_Plomb_Branchement_d_eau}</p>
         </div>
     `)
 
