@@ -155,8 +155,8 @@ const icon_Saillie = L.icon({
 const greenIcon = new L.Icon({
   iconUrl: '../img/green-circle-icon.svg',
   // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 25],
-  iconAnchor: [12, 12]
+  iconSize: [10, 10],
+  iconAnchor: [5, 5]
   });
 
 const redIcon = new L.Icon({
