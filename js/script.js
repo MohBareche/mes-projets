@@ -1623,7 +1623,7 @@ const overlaysTree = {
         { label: "Secteurs d'inspection", layer: inspectionLayer },
         { label: "Réseau RAAV", layer: raavLayer },
 	{ label: "Renseignements Chaussée", layer: chausseeLayer},
-        { label: "Entrées en plomb", layer: entreesPlombLayer},
+        { label: "ESP sigMTL", layer: entreesPlombLayer},
 	{ label: "ESP GBEau", layer: ESP_GBEauLayer},
         { label: "Arrondissements", layer: arrondissementsLayer },
         { label: "Casernes pompiers", layer: casernesMarkers },
