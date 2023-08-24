@@ -427,7 +427,8 @@ const ESP_GBEauLayer = L.geoJson(ESP_GBEau, {
     	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Aucun Plomb - sans intervention") return L.marker(latlng, { icon: greenIcon })
     	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Contactez DRE") return L.marker(latlng, { icon: blueIcon })
     	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Plomb") return L.marker(latlng, { icon: redIcon })
-    	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Aucun statut") return L.marker(latlng, { icon: blackIcon })  
+    	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Aucun statut") return L.marker(latlng, { icon: blackIcon })
+	if (feature.properties.Statut_Plomb_Branchement_d_eau === "-") return L.marker(latlng, { icon: blackIcon })  
     	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Possibilité de Plomb - avec intervention") return L.marker(latlng, { icon: orangeIcon })
 	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Possibilité de Plomb - sans intervention") return L.marker(latlng, { icon: orangeIcon })
   },
