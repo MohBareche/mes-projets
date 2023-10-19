@@ -1373,7 +1373,7 @@ function styleESP(feature) {
     color: "black",
     fillColor: getColorESP(feature.properties.STATUT_SIMPLE),
     opacity: 1,
-    fillOpacity: 0.2,
+    fillOpacity: 0.5,
   }
 }
 /* calcul nombre total des entrées de service en plomb */
