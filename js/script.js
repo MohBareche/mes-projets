@@ -1370,7 +1370,7 @@ function getColorESP(feature) {
 }
 function styleESP(feature) {
   return {
-    color: "black",
+    color: getColorESP(feature.properties.STATUT_SIMPLE),
     fillColor: getColorESP(feature.properties.STATUT_SIMPLE),
     opacity: 1,
     fillOpacity: 0.5,
