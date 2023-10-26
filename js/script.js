@@ -1370,10 +1370,11 @@ function getColorESP(feature) {
 }
 function styleESP(feature) {
   return {
-    color: getColorESP(feature.properties.STATUT_SIMPLE),
+    color: 'black',
+    weight: 1,    
     fillColor: getColorESP(feature.properties.STATUT_SIMPLE),
-    opacity: 1,
-    fillOpacity: 0.5,
+    opacity: 0.7,
+    fillOpacity: 0.4,
   }
 }
 /* calcul nombre total des entrées de service en plomb */
