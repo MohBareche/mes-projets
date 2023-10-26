@@ -1361,19 +1361,19 @@ function getColorESP(feature) {
     case "PAS PLOMB":
       return "green"
     case "PLOMB":
-      return "orange"
+      return "red"
     case "POSSIBILITÉ DE PLOMB":
-      return "white"
+      return "orange"
     case "CONTACTEZ DRE":
       return "cyan"
   }
 }
 function styleESP(feature) {
   return {
-    color: 'black',
+    color: getColorESP(feature.properties.STATUT_SIMPLE),
     weight: 1,    
     fillColor: getColorESP(feature.properties.STATUT_SIMPLE),
-    opacity: 0.7,
+    opacity: 1,
     fillOpacity: 0.4,
   }
 }
