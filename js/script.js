@@ -1931,8 +1931,8 @@ entreesPlombLayer.on('remove', function(){
 });
 function getColorESP(statut) {
         return statut === 'PAS PLOMB'  ? "green" :
-               statut === 'PLOMB'  ? "orange" :
-               statut === 'POSSIBILITÉ DE PLOMB' ? "white" :
+               statut === 'PLOMB'  ? "red" :
+               statut === 'POSSIBILITÉ DE PLOMB' ? "orange" :
 	       statut === 'CONTACTEZ DRE' ? "cyan" :
 	       statut === 'AUCUNE INFO' ? "gray" :
 		"#000";
