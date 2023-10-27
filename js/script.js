@@ -1992,7 +1992,7 @@ var legendESP = L.control({position: 'bottomright'});
     legendESP.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'legend');
-    labels = ['<h4>STATUT DES ENTRÉES EN PLOMB</h4>'],
+    labels = ['<h4>Statut des entrées en plomb (ESP)</h4>'],
     categories = ['PAS PLOMB','PLOMB','POSSIBILITÉ DE PLOMB','CONTACTEZ DRE','AUCUNE INFO'];
 
     for (var i = 0; i < categories.length; i++) {
