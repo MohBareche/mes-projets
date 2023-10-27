@@ -1930,6 +1930,7 @@ const legendCorpo = L.control.Legend({
 //   map.removeControl(legend1)
 // });	
 
+/***********************************************************************************************************************/
 chausseeLayer.on('add', function(){
    legend.addTo(map)
 });
@@ -1969,7 +1970,7 @@ var legend = L.control({position: 'bottomright'});
     return div;
     };
 
-
+/***********************************************************************************************************************/
 
 entreesPlombLayer.on('add', function(){
    legendESP.addTo(map)
@@ -2005,3 +2006,44 @@ var legendESP = L.control({position: 'bottomright'});
         div.innerHTML = labels.join('<br>');
     return div;
     };
+/***********************************************************************************************************************/
+
+/***********************************************************************************************************************/
+pciChausseeLayer.on('add', function(){
+   legendPCI.addTo(map)
+});
+		 
+pciChausseeLayer.on('remove', function(){
+   map.removeControl(legendPCI);
+});
+
+function getColorPCI(Indice_PCI) {
+        return Indice_PCI === 'Excellent'  ? "#00CC99" :
+               Indice_PCI === 'Bon'  ? "#92D050" :
+               Indice_PCI === 'Moyen' ? "#FF0" :
+	       Indice_PCI === 'Mauvais' ? "#FFC000" :
+	       Indice_PCI === 'Très mauvais' ? "#F00" :
+	       Indice_PCI === 'Non-ausculté' ? "#656565" :
+                            "#000";
+    }
+
+var legendPCI = L.control({position: 'bottomright'});
+    legendPCI.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'legend');
+    labels = ['<h4>État de la chaussée (Indice PCI 2022)</h4>'],
+    categories = ['Excellent','Bon','Moyen','Mauvais','Très mauvais','Non-ausculté'];
+
+    for (var i = 0; i < categories.length; i++) {
+            div.innerHTML += 
+            labels.push(
+		 `<svg width="60" height="10">
+		 <rect width="60" height="10" style="fill:${getColorPCI(categories[i])};stroke-width:1;stroke:rgb(0,0,0)" />
+		  </svg>   
+            ${categories[i]}`);
+        }
+        div.innerHTML = labels.join('<br>');
+    return div;
+    };
+
+/***********************************************************************************************************************/
