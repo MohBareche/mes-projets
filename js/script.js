@@ -1355,12 +1355,18 @@ const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
 /* ***************************************************************************************************************************************************** */
 /* @OTHER - PCI CHAUSSÉES 2022*/
 			function getColorPCI(Etat_PCI) {
-				return Etat_PCI == 'Bon'
-				    ? "orange"
-				    : Etat_PCI == 'Excellent'
-				    ? "green"
-				    : Etat_PCI == 'Mauvais'
-				    ? "red"
+				return Etat_PCI === 'Excellent'
+				    ? "#002299"
+				    : Etat_PCI === 'Bon'
+				    ? "#92d050"
+				    : Etat_PCI === 'Moyen'
+				    ? "ffff00"
+				    : Etat_PCI === 'Mauvais'
+				    ? "ffc000"
+				    : Etat_PCI === 'Très mauvais'
+				    ? "ff0000"
+				    : Etat_PCI === 'Non-ausculté'
+				    ? "#656565"
 				    : "#000"
             		}
                     const pciChausseeLayer = L.geoJSON(pci2022, {
@@ -1381,8 +1387,10 @@ const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
                             popupContent += "<tr><td>Sur </td><td>" + feature.properties.Rue + "</td></tr>"
                             popupContent += "<tr><td>De </td><td>" + feature.properties.De + "</td></tr>"
                             popupContent += "<tr><td>À </td><td>" + feature.properties.A + "</td></tr>"
+			    popupContent += "<tr><td>État PCI</td><td>" + feature.properties.Etat_PCI + "</td></tr>"
                             popupContent += "<tr><td>Indice PCI</td><td>" + feature.properties.Indice_PCI + "</td></tr>"
-
+			    popupContent += "<tr><td>État PCI</td><td>" + feature.properties.Etat_IRI + "</td></tr>"
+                            popupContent += "<tr><td>Indice PCI</td><td>" + feature.properties.Indice_IRI + "</td></tr>"
                             popupContent += "</table>"
                             // Ajouter la popup à la couche de données
                             layer.bindPopup(popupContent)
