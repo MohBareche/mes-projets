@@ -1351,7 +1351,46 @@ const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
 // map.fitBounds(markersBR.getBounds());
 /* ***************************************************************************************************************************************************** */
 /* ***************************************************************************************************************************************************** */
+
 /* ***************************************************************************************************************************************************** */
+/* @OTHER - PCI CHAUSSÉES 2022*/
+			function getColorPCI(Etat_PCI) {
+				return Etat_PCI == 'Bon'
+				    ? "orange"
+				    : Etat_PCI == 'Excellent'
+				    ? "green"
+				    : Etat_PCI == 'Mauvais'
+				    ? "red"
+				    : "#000"
+            		}
+                    const pciChausseeLayer = L.geoJSON(pci2022, {
+			    
+                        style: function (feature) {
+                            return {
+                                weight: 3,
+                                color: getColorPCI(feature.properties.Etat_PCI),
+                                opacity: 1,
+                            }
+                        },
+
+                        onEachFeature: function (feature, layer) {
+                            // Créer une table HTML pour la popup
+                            var popupContent = "<table>"
+
+                            popupContent += `<tr style="background-color:silver; font-weight: bold;"><td>ID_TRC </td><td>${feature.properties.ID_TRC}</td></tr>`
+                            popupContent += "<tr><td>Sur </td><td>" + feature.properties.Rue + "</td></tr>"
+                            popupContent += "<tr><td>De </td><td>" + feature.properties.De + "</td></tr>"
+                            popupContent += "<tr><td>À </td><td>" + feature.properties.A + "</td></tr>"
+                            popupContent += "<tr><td>Indice PCI</td><td>" + feature.properties.Indice_PCI + "</td></tr>"
+
+                            popupContent += "</table>"
+                            // Ajouter la popup à la couche de données
+                            layer.bindPopup(popupContent)
+                        },
+                    })
+
+
+
 /* ***************************************************************************************************************************************************** */
 /* ***************************************************************************************************************************************************** */
 /* ***************************************************************************************************************************************************** */
@@ -1624,6 +1663,7 @@ const overlaysTree = {
         { label: "Secteurs d'inspection", layer: inspectionLayer },
         { label: "Réseau RAAV", layer: raavLayer },
 	{ label: "Renseignements Chaussée", layer: chausseeLayer},
+	{ label: "Indice PCI Chaussée 2022", layer: pciChausseeLayer},
         { label: "ESP sigMTL", layer: entreesPlombLayer},
 	{ label: "ESP GBEau", layer: ESP_GBEauLayer},
         { label: "Arrondissements", layer: arrondissementsLayer },
