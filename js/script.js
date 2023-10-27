@@ -1389,8 +1389,8 @@ const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
                             popupContent += "<tr><td>À </td><td>" + feature.properties.A + "</td></tr>"
 			    popupContent += "<tr><td>État PCI</td><td>" + feature.properties.Etat_PCI + "</td></tr>"
                             popupContent += "<tr><td>Indice PCI</td><td>" + feature.properties.Indice_PCI + "</td></tr>"
-			    popupContent += "<tr><td>État PCI</td><td>" + feature.properties.Etat_IRI + "</td></tr>"
-                            popupContent += "<tr><td>Indice PCI</td><td>" + feature.properties.Indice_IRI + "</td></tr>"
+			    popupContent += "<tr><td>État IRI</td><td>" + feature.properties.Etat_IRI + "</td></tr>"
+                            popupContent += "<tr><td>Indice IRI</td><td>" + feature.properties.Indice_IRI + "</td></tr>"
                             popupContent += "</table>"
                             // Ajouter la popup à la couche de données
                             layer.bindPopup(popupContent)
