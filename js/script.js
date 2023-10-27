@@ -1356,15 +1356,15 @@ const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
 /* @OTHER - PCI CHAUSSÉES 2022*/
 			function getColorPCI(Etat_PCI) {
 				return Etat_PCI === 'Excellent'
-				    ? "#002299"
+				    ? "#00CC99"
 				    : Etat_PCI === 'Bon'
-				    ? "#92d050"
+				    ? "#92D050"
 				    : Etat_PCI === 'Moyen'
-				    ? "ffff00"
+				    ? "#FF0"
 				    : Etat_PCI === 'Mauvais'
-				    ? "ffc000"
+				    ? "#FFC000"
 				    : Etat_PCI === 'Très mauvais'
-				    ? "ff0000"
+				    ? "#F00"
 				    : Etat_PCI === 'Non-ausculté'
 				    ? "#656565"
 				    : "#000"
