@@ -1711,6 +1711,7 @@ map.addControl(
 // Google Street View
 L.streetView({ position: "topright" }).addTo(map)
 
+
 // Draw Tools
 // const drawnItems = new L.FeatureGroup();
 // map.addLayer(drawnItems);
