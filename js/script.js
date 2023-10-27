@@ -1662,7 +1662,7 @@ const overlaysTree = {
       children: [
         { label: "Secteurs d'inspection", layer: inspectionLayer },
         { label: "Réseau RAAV", layer: raavLayer },
-	{ label: "Renseignements Chaussée", layer: chausseeLayer},
+	{ label: "Épaisseur Chaussée", layer: chausseeLayer},
 	{ label: "Indice PCI Chaussée 2022", layer: pciChausseeLayer},
         { label: "ESP sigMTL", layer: entreesPlombLayer},
 	{ label: "ESP GBEau", layer: ESP_GBEauLayer},
