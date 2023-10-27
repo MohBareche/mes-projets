@@ -1993,7 +1993,7 @@ var legendESP = L.control({position: 'bottomright'});
 
     var div = L.DomUtil.create('div', 'legend');
     labels = ['<h4>Statut des entrées en plomb (ESP)</h4>'],
-    categories = ['PAS PLOMB','PLOMB','POSSIBILITÉ DE PLOMB','CONTACTEZ DRE','AUCUNE INFO'];
+    categories = ['Pas de Plomb','Plomb','Possibilité de plomb','Contactez RDE','Aucune info'];
 
     for (var i = 0; i < categories.length; i++) {
             div.innerHTML += 
@@ -2031,7 +2031,7 @@ var legendPCI = L.control({position: 'bottomright'});
     legendPCI.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'legend');
-    labels = ['<h4>État de la chaussée (Indice PCI 2022)</h4>'],
+    labels = ['<h4>État de chaussée (Indice PCI 2022)</h4>'],
     categories = ['Excellent','Bon','Moyen','Mauvais','Très mauvais','Non-ausculté'];
 
     for (var i = 0; i < categories.length; i++) {
