@@ -1384,13 +1384,13 @@ const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
                             var popupContent = "<table>"
 
                             popupContent += `<tr style="background-color:silver; font-weight: bold;"><td>ID_TRC </td><td>${feature.properties.ID_TRC}</td></tr>`
-                            popupContent += "<tr><td>Sur </td><td>" + feature.properties.Rue + "</td></tr>"
-                            popupContent += "<tr><td>De </td><td>" + feature.properties.De + "</td></tr>"
-                            popupContent += "<tr><td>À </td><td>" + feature.properties.A + "</td></tr>"
-			    popupContent += "<tr><td>État PCI</td><td>" + feature.properties.Etat_PCI + "</td></tr>"
-                            popupContent += "<tr><td>Indice PCI</td><td>" + feature.properties.Indice_PCI + "</td></tr>"
-			    popupContent += "<tr><td>État IRI</td><td>" + feature.properties.Etat_IRI + "</td></tr>"
-                            popupContent += "<tr><td>Indice IRI</td><td>" + feature.properties.Indice_IRI + "</td></tr>"
+                            popupContent += `<tr><td>Sur </td><td> ${feature.properties.Rue} </td></tr>`
+                            popupContent += `<tr><td>De </td><td> ${feature.properties.De} </td></tr>`
+                            popupContent += `<tr><td>À </td><td> ${feature.properties.A} </td></tr>`
+			    popupContent += `<tr><td>État PCI</td><td> <strong> ${feature.properties.Etat_PCI} </strong> </td></tr>`
+                            popupContent += `<tr><td>Indice PCI</td><td> ${feature.properties.Indice_PCI} </td></tr>`
+			    popupContent += `<tr><td>État IRI</td><td> ${feature.properties.Etat_IRI} </td></tr>`
+                            popupContent += `<tr><td>Indice IRI</td><td> ${feature.properties.Indice_IRI} </td></tr>`
                             popupContent += "</table>"
                             // Ajouter la popup à la couche de données
                             layer.bindPopup(popupContent)
