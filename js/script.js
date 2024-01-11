@@ -552,7 +552,7 @@ const C_PCPR_Layer = L.geoJson(pcpr, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO REHAB AQ */
 const C_RAQ_Layer = L.geoJson(rehabaq, {
@@ -573,7 +573,7 @@ const C_RAQ_Layer = L.geoJson(rehabaq, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO REHAB EG */
 const C_REG_Layer = L.geoJson(rehabeg, {
@@ -594,7 +594,7 @@ const C_REG_Layer = L.geoJson(rehabeg, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO BRV */
 const C_BRV_Layer = L.geoJson(brv, {
@@ -612,7 +612,7 @@ const C_BRV_Layer = L.geoJson(brv, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 /* @2023 - CORPO ÉCLAIRAGE */
 const C_ECL_Layer = L.geoJson(eclairage, {
@@ -633,7 +633,7 @@ const C_ECL_Layer = L.geoJson(eclairage, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. PRR Lapierre */
@@ -655,7 +655,7 @@ const C_PRR_Layer = L.geoJson(prr, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. Place Pierre */
 const C_PlacePierre_Layer = L.geoJson(place_pierre, {
@@ -676,7 +676,7 @@ const C_PlacePierre_Layer = L.geoJson(place_pierre, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. PAVÉ ALVÉOLÉ RUELLE VERTE */
 const C_PaveRV_Layer = L.geoJson(paveRV, {
@@ -697,7 +697,7 @@ const C_PaveRV_Layer = L.geoJson(paveRV, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. AMÉNAGEMENT PLACE ARCHEVÊQUE */
 const C_PlaceArchev_Layer = L.geoJson(place_Archev, {
@@ -718,7 +718,7 @@ const C_PlaceArchev_Layer = L.geoJson(place_Archev, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. INSTALLATION CLÔTURE PARC OSCAR */
 const C_Cloture_Layer = L.geoJson(cloture, {
@@ -739,7 +739,7 @@ const C_Cloture_Layer = L.geoJson(cloture, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. SAILLIES 1104 */
 const C_Saillie_1104_Layer = L.geoJson(saillie_1104, {
@@ -757,7 +757,7 @@ const C_Saillie_1104_Layer = L.geoJson(saillie_1104, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 /* @2023 - ARROND. SAILLIES 1104 */
 const C_Foret_Layer = L.geoJson(foret, {
@@ -796,7 +796,7 @@ const C_Saillie_1108_Layer = L.geoJson(saillie_1108, {
       this.openPopup()
     })
   },
-}).addTo(map)
+})
 /* ***************************************************************************************************************************************************** */
 
 //   Inspecteurs cadre bati
