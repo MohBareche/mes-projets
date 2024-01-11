@@ -394,8 +394,8 @@ const C1137_Layer = L.geoJson(C1137, {
     }
     layer.bindPopup(`
         <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
-        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1137/1108-${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
-        <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2024/1137/1108_Cahier des charges .pdf" target="_blank">${feature.properties.Devis}</a></p>
+        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1137/1137-${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
+        <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2024/1137/1137_Cahier des charges.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	      <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	      <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
       `)
