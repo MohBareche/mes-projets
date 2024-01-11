@@ -380,6 +380,33 @@ const C1106_Layer = L.geoJson(C1106, {
   },
 })
 
+//   C1137
+const C1137_Layer = L.geoJson(C1137, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, { icon: dosDaneIcon1108 })
+  },
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#3388ff",
+        weight: 5,
+      })
+    }
+    layer.bindPopup(`
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1137/1108-${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
+        <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2024/1137/1108_Cahier des charges .pdf" target="_blank">${feature.properties.Devis}</a></p>
+	      <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
+	      <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
+      `)
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+})
+
+
+
 /* ***************************************************************************************************************************************************** */
 //   FOSSES ET SAILLIES
 const fossesSailliesLayer = L.geoJson(fossesSaillies, {
@@ -1657,6 +1684,32 @@ const overlaysTree = {
                 { label: "Végét. Saillie 1104", layer: C_Saillie_1104_Layer },
                 { label: "Végét. Saillie 1108", layer: C_Saillie_1108_Layer },
                 { label: "Inst. clôture Parc Oscar", layer: C_Cloture_Layer },
+                { label: "Mini fôret", layer: C_Foret_Layer }
+              ],
+            },
+          ],
+        },
+	              {
+          label: "2024",
+          selectAllCheckbox: true,
+          children: [
+            {
+              label: "Corpo",
+              selectAllCheckbox: true,
+              children: [
+                // { label: "ESP", layer: C_ESP_Layer },
+                // { label: "PCPR-PRCPR", layer: C_PCPR_Layer },
+                // { label: "Rehab AQ", layer: C_RAQ_Layer },
+                // { label: "Rehab EG", layer: C_REG_Layer },
+                // { label: "BRV", layer: C_BRV_Layer },
+                // { label: "Voirie-Éclairage", layer: C_ECL_Layer },
+              ],
+            },
+            {
+              label: "Arrondissement",
+              selectAllCheckbox: true,
+              children: [
+                { label: "1137", layer: C_1137_Layer },
                 { label: "Mini fôret", layer: C_Foret_Layer }
               ],
             },
