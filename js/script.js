@@ -1684,7 +1684,7 @@ const overlaysTree = {
                 { label: "Végét. Saillie 1104", layer: C_Saillie_1104_Layer },
                 { label: "Végét. Saillie 1108", layer: C_Saillie_1108_Layer },
                 { label: "Inst. clôture Parc Oscar", layer: C_Cloture_Layer },
-                { label: "Mini fôret", layer: C_Foret_Layer }
+                // { label: "Mini fôret", layer: C_Foret_Layer }
               ],
             },
           ],
