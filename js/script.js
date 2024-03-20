@@ -134,7 +134,7 @@ const icon_APA_1104 = L.icon({
   iconAnchor: [15, 15],
 })
 
-const icon_wifi = L.icon({
+const icon_Wifi = L.icon({
   iconUrl: "../img/wifi.png",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
