@@ -134,6 +134,12 @@ const icon_APA_1104 = L.icon({
   iconAnchor: [15, 15],
 })
 
+const icon_Wifi = L.icon({
+  iconUrl: "../img/wifi.png",
+  iconSize: [30, 30],
+  iconAnchor: [15, 15],
+})
+
 const icon_APA_1108 = L.icon({
   iconUrl: "../img/arbre2.jpg",
   iconSize: [30, 30],
@@ -1386,6 +1392,9 @@ const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
 //  MTL Wifi
 const markersMTLWifi = L.markerClusterGroup()
 const geoJsonLayerWifi = L.geoJson(wifi, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, { icon: icon_Wifi })
+  },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
       <div>
