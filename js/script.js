@@ -1345,6 +1345,8 @@ const geoJsonLayerCasernes = L.geoJson(casernes, {
 const casernesMarkers = markersCasernes.addLayer(geoJsonLayerCasernes)
 // map.fitBounds(markersCasernes.getBounds());
 
+
+
 /* ***************************************************************************************************************************************************** */
 //    Bornes de recharges
 //    BR_15_11_2022
@@ -1756,6 +1758,7 @@ const overlaysTree = {
         { label: "Secteurs des Collectes", layer: collectesLayer },
 	{ label: "Secteurs Arboriculture", layer: sectArboLayer },
 	{ label: "Fosses et saillies", layer: fossesSailliesLayer },
+	{ label: "MTL Wifi", layer: geoJsonLayerWifi },
         { label: "Google Street View", layer: markerGSV }
       ],
     },
