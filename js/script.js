@@ -1379,6 +1379,27 @@ const geoJsonLayerBR = L.geoJson(BR, {
 const BRMarkers = markersBR.addLayer(geoJsonLayerBR)
 // map.fitBounds(markersBR.getBounds());
 /* ***************************************************************************************************************************************************** */
+
+/* ***************************************************************************************************************************************************** */
+//  MTL Wifi
+const markersMTLWifi = L.markerClusterGroup()
+const geoJsonLayerWifi = L.geoJson(wifi, {
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+      <div>
+        <p><strong>Type:</strong> ${feature.properties.Type}</p>
+        <p><strong>Lieu: </strong> ${feature.properties.Lieu}</p>
+      </div>`)
+
+    layer.on("mouseover", function () {
+      this.openPopup()
+    })
+    layer.on("mouseout", function () {
+      this.closePopup()
+    })
+  },
+})
+const wifiMarkers = markersMTLWifi.addLayer(geoJsonLayerWifi)
 /* ***************************************************************************************************************************************************** */
 
 /* ***************************************************************************************************************************************************** */
