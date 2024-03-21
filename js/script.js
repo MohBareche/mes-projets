@@ -1065,7 +1065,7 @@ const arrondLayer = L.geoJson(limites_arr, {
   style: {
     weight: 2,
     opacity: 0.8,
-    color: "grey",
+    color: "black",
     dashArray: "5",
     fillOpacity: 0,
     fill: false,
