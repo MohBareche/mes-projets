@@ -182,8 +182,8 @@ const blueIcon = new L.Icon({
   iconAnchor: [5, 5]
 });
 
-const blackIcon = new L.Icon({
-  iconUrl: '../img/black-circle-icon.svg',
+const greyIcon = new L.Icon({
+  iconUrl: '../img/grey-circle-icon.svg',
   iconSize: [10, 10],
   iconAnchor: [5, 5]
 });
@@ -248,7 +248,7 @@ const C1093_Layer = L.geoJson(C1093, {
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-            <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+            <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
             <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2022/1093/1093-${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
             <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1093/1093_AO.pdf" target="_blank">${feature.properties.Devis}</a></p>
             <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
@@ -271,7 +271,7 @@ const C1104_Layer = L.geoJson(C1104, {
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-            <p style='margin:0; padding:0; color:#4ef54a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+            <p style='margin:0; padding:0; color:#4ef54a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
             <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2022/1104/1104-${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
             <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1104/1104_Cahier_Charges .pdf" target="_blank">${feature.properties.Devis}</a></p>
 	    <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
@@ -291,7 +291,7 @@ const C1105_Layer = L.geoJson(C1105, {
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-            <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+            <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
             <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2022/1105/1105-${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
             <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1105/1105_Cahier_Charges .pdf" target="_blank">${feature.properties.Devis}</a></p>
 	    <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
@@ -317,7 +317,7 @@ const C1108_Layer = L.geoJson(C1108, {
       })
     }
     layer.bindPopup(`
-        <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
         <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2022/1108/1108-${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
         <p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2022/1108/1108_Cahier des charges .pdf" target="_blank">${feature.properties.Devis}</a></p>
 	      <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
@@ -338,7 +338,7 @@ const C1106_Layer = L.geoJson(C1106, {
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
-    <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px; text-align:center'><strong>Contrat : </strong> ${
+    <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px; text-align:center'><strong>Contrat : </strong> ${
       feature.properties.Contrat
     }</p>
     <table class="table1">
@@ -399,7 +399,7 @@ const C1137_Layer = L.geoJson(C1137, {
       })
     }
     layer.bindPopup(`
-        <p style='margin:0; padding:0; color:#f5df4a; background-color: black; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
         <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1137/${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
         <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1137/1137_Cahier des charges.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	<p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2024/1137/DTSI_Voirie_1137.pdf" target="_blank">DTSI-V Voirie</a></p>
@@ -424,7 +424,7 @@ const fossesSailliesLayer = L.geoJson(fossesSaillies, {
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
    	<div>
-         <p style='text-align:center;margin:0; padding:0; color:#4ef54a; background-color: black; padding:0 5px; border-radius:5px'><strong>Nom :</strong> ${feature.properties.Nom}</p>
+         <p style='text-align:center;margin:0; padding:0; color:#4ef54a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Nom :</strong> ${feature.properties.Nom}</p>
 	 <p style='margin:0; padding:0;'><strong>Année:</strong> ${feature.properties.Année}</p>
 	 <p style='margin:0; padding:0;'><strong>Description :</strong> ${feature.properties.Description}</p>
 	 <p style='margin:0; padding:0;'><strong>Nom plan :</strong> ${feature.properties.NomPlan}</p>
@@ -447,9 +447,9 @@ const ESP_GBEauLayer = L.geoJson(ESP_GBEau, {
     	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Aucun Plomb - sans intervention") return L.marker(latlng, { icon: greenIcon })
     	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Contactez DRE") return L.marker(latlng, { icon: blueIcon })
     	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Plomb") return L.marker(latlng, { icon: redIcon })
-    	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Aucun statut") return L.marker(latlng, { icon: blackIcon })
-	if (feature.properties.Statut_Plomb_Branchement_d_eau === "-") return L.marker(latlng, { icon: blackIcon })  
-	if (feature.properties.Statut_Plomb_Branchement_d_eau === "") return L.marker(latlng, { icon: blackIcon })  
+    	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Aucun statut") return L.marker(latlng, { icon: greyIcon })
+	if (feature.properties.Statut_Plomb_Branchement_d_eau === "-") return L.marker(latlng, { icon: greyIcon })  
+	if (feature.properties.Statut_Plomb_Branchement_d_eau === "") return L.marker(latlng, { icon: greyIcon })  
     	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Possibilité de Plomb - avec intervention") return L.marker(latlng, { icon: orangeIcon })
 	if (feature.properties.Statut_Plomb_Branchement_d_eau === "Possibilité de Plomb - sans intervention") return L.marker(latlng, { icon: orangeIcon })
   },
@@ -1065,7 +1065,7 @@ const arrondLayer = L.geoJson(limites_arr, {
   style: {
     weight: 2,
     opacity: 0.8,
-    color: "black",
+    color: "grey",
     dashArray: "5",
     fillOpacity: 0,
     fill: false,
@@ -1169,7 +1169,7 @@ const arrondissementsLayer = L.geoJson(arrondissements, {
 //     case "F":
 //       return "#147ec9";
 //     case "G":
-//       return "black";
+//       return "grey";
 //     case "H":
 //       return "#8cc720";
 //   }
@@ -1224,7 +1224,7 @@ const arrondissementsLayer = L.geoJson(arrondissements, {
 //     case "F":
 //       return "#147ec9";
 //     case "G":
-//       return "black";
+//       return "grey";
 //     case "H":
 //       return "#8cc720";
 //   }
@@ -1361,7 +1361,7 @@ const geoJsonLayerBR = L.geoJson(BR, {
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
        <div>
-         <p style='margin:0; padding:0; color:#4ef54a; background-color: black; padding:0 5px; border-radius:5px'><strong>Nom de la borne :</strong> ${feature.properties.Nom_Borne}</p>
+         <p style='margin:0; padding:0; color:#4ef54a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Nom de la borne :</strong> ${feature.properties.Nom_Borne}</p>
 	 <p style='margin:0; padding:0;'><strong>Nom_du_parc :</strong> ${feature.properties.Nom_du_parc}</p>
 	 <p style='margin:0; padding:0;'><strong>Adresse :</strong> ${feature.properties.Adresse}</p>
 	 <p style='margin:0; padding:0;'><strong>Rue :</strong> ${feature.properties.Rue}</p>
