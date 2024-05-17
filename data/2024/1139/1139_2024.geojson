@@ -8,7 +8,10 @@ let C1139 = {
         "Plan": "Plans_1139",
         "Devis": "Devis_1139",
         "Debut": "2024-06-03",
-        "Fin": "2024-10-06"
+        "Fin": "2024-10-06",
+        "Entrepreneur":"Eurovia Québec Const.", 
+        "Contact":"Steve Lelièvre", 
+        "Telephone":"514-239-7634"
       },
       "geometry": {
         "coordinates": [
@@ -25,8 +28,8 @@ let C1139 = {
         "Contrat": "1139",
         "Plan": "Plans_1139",
         "Devis": "Devis_1139",
-        "Debut": "2024-05-27",
-        "Fin": "2024-11-15",
+        "Debut": "2024-06-03",
+        "Fin": "2024-10-06",
         "Entrepreneur":"Eurovia Québec Const.", 
         "Contact":"Steve Lelièvre", 
         "Telephone":"514-239-7634"
