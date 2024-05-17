@@ -413,7 +413,30 @@ const C1137_Layer = L.geoJson(C1137, {
   },
 }).addTo(map)
 
+/* ***************************************************************************************************************************************************** */
 
+//   C1139
+const C1139_Layer = L.geoJson(C1139, {
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#3388ff",
+        weight: 5,
+      })
+    }
+    layer.bindPopup(`
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1139/1139_Plans pour soumission.pdf" target="_blank">${feature.properties.Plan}</a></p>
+        <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1139/Cahier_charges_1139_signé.pdf" target="_blank">${feature.properties.Devis}</a></p>
+	      <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
+	      <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
+      `)
+	  
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+}).addTo(map)
 
 /* ***************************************************************************************************************************************************** */
 //   FOSSES ET SAILLIES
@@ -1744,6 +1767,7 @@ const overlaysTree = {
               selectAllCheckbox: true,
               children: [
                 { label: "1137", layer: C1137_Layer },
+		{ label: "1139", layer: C1139_Layer },
                 { label: "Mini fôret", layer: C_Foret_Layer }
               ],
             },
