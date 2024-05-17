@@ -3,10 +3,6 @@ const map = L.mapbox.map("mapDIV", null, {
     rotate: true,
     touchRotate: true,
     rotateControl: {
-    zoomControl: false,
-    rotate: true,
-    touchRotate: true,
-    rotateControl: {
       closeOnZeroBearing: false,
     },
     bearing: 60,
