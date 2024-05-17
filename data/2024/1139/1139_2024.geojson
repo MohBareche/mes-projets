@@ -26,7 +26,10 @@ let C1139 = {
         "Plan": "Plans_1139",
         "Devis": "Devis_1139",
         "Debut": "2024-05-27",
-        "Fin": "2024-11-15"
+        "Fin": "2024-11-15",
+        "Entrepreneur":"Eurovia Québec Const.", 
+        "Contact":"Steve Lelièvre", 
+        "Téléphone":"514-239-7634"
       },
       "geometry": {
         "coordinates": [
