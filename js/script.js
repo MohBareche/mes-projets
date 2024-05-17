@@ -10,7 +10,6 @@ const map = L.mapbox.map("mapDIV", null, {
 const zoomHome = L.Control.zoomHome().addTo(map)
 // L.mapbox.accessToken =
 //   "pk.eyJ1IjoibWJhcmVjaGUiLCJhIjoiY2pkbHpqZjQ3MGVibzJycWhka203dDNtYiJ9.GLpfZW2gcYULhuIa6vwgFw";
-
 L.mapbox.accessToken = "pk.eyJ1IjoiYWJlbmZhdHRvdW0iLCJhIjoiY2ozY3l6MWV5MDAwZjMybnc0NmdhNDBpeSJ9.oYZEToeffGVafaQRotTLVg"
 
 const Light = L.mapbox.styleLayer("mapbox://styles/mapbox/light-v10").addTo(map)
