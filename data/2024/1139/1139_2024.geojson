@@ -17,8 +17,8 @@ let C1139 = {
       "type": "Feature",
       "properties": {
         "Contrat": "1139",
-        "Plan": "1139",
-        "Devis": "devis_1139",
+        "Plan": "Plans_1139",
+        "Devis": "Devis_1139",
         "Debut": "2024-05-27",
         "Fin": "2024-11-15"
       },
