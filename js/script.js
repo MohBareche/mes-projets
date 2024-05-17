@@ -404,7 +404,7 @@ const C1137_Layer = L.geoJson(C1137, {
 	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
  	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
   	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
-   	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Téléphone}</p>
+   	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
       `)
 	  
     layer.on("click", function () {
@@ -432,7 +432,7 @@ const C1139_Layer = L.geoJson(C1139, {
 	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
  	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
   	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
-   	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Téléphone}</p>
+   	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
       `)
 	  
     layer.on("click", function () {
