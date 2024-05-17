@@ -384,6 +384,8 @@ const C1106_Layer = L.geoJson(C1106, {
 })
 
 //   C1137
+
+console.log(C1137)
 const C1137_Layer = L.geoJson(C1137, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, { icon: dosDaneIcon1108 })
