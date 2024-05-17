@@ -394,7 +394,7 @@ const C1137_Layer = L.geoJson(C1137, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "#3388ff",
+        color: "green",
         weight: 5,
       })
     }
@@ -420,13 +420,13 @@ const C1139_Layer = L.geoJson(C1139, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "#3388ff",
+        color: "green",
         weight: 5,
       })
     }
     layer.bindPopup(`
         <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
-        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1139/1139_Plans pour soumission.pdf" target="_blank">${feature.properties.Plan}</a></p>
+        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1139/1139_Plans pour construction-17-05-2024.pdf" target="_blank">${feature.properties.Plan}</a></p>
         <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1139/Cahier_charges_1139_signé.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	      <p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	      <p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
