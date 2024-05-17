@@ -434,7 +434,6 @@ const C1139_Layer = L.geoJson(C1139, {
   	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
    	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
       `)
-	  
     layer.on("click", function () {
       this.openPopup()
     })
