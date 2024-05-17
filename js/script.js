@@ -1,10 +1,8 @@
-const map = L.mapbox
-  .map("mapDIV", null, {
+const map = L.mapbox.map("mapDIV", null, {
     zoomControl: false,
     rotate: true,
     touchRotate: true,
-    rotateControl: {const map = L.mapbox
-  .map("mapDIV", null, {
+    rotateControl: {
     zoomControl: false,
     rotate: true,
     touchRotate: true,
