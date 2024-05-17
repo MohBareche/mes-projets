@@ -3,7 +3,13 @@ let C1139 = {
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "Contrat": "1139",
+        "Plan": "Plans_1139",
+        "Devis": "Devis_1139",
+        "Debut": "2024-05-27",
+        "Fin": "2024-11-15"
+      },
       "geometry": {
         "coordinates": [
           [-73.61801810570049, 45.600045140689986],
