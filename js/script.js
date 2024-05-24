@@ -445,7 +445,7 @@ const C1139_Layer = L.geoJson(C1139, {
 /* ***************************************************************************************************************************************************** */
 
 //   C1146
-console.log(C1146)
+
 const C1146_Layer = L.geoJson(C1146, {
   pointToLayer: function (feature, latlng) {
     if (feature.properties.Statut === "En cours") return L.marker(latlng, { icon: dosDaneIcon1106 })
@@ -459,23 +459,23 @@ const C1146_Layer = L.geoJson(C1146, {
       <caption><h5>Identification et documents</h5></caption>
 	<tr>
 	  <th># Dos-d'âne</th>
-	    <td>${feature.properties.Numero}</td>
+	    <td>${feature.properties.Numéro}</td>
         </tr>
         <tr>
 	  <th>Devis</th>
-	    <td><a href="./data/2022/1106/1106_Cahier_Charges.pdf" target="_blank">${feature.properties.Devis}</a></td>
+	    <td></td>
 	</tr>
 	<tr>
 	  <th>Début travaux</th>
-	     <td>${feature.properties.Debut}</td>
+	     <td>${feature.properties["Début Travaux"]}</td>
 	</tr>
 	<tr>
 	  <th>Fin travaux</th>
-	    <td>${feature.properties.Fin}</td>
+	    <td>${feature.properties["Fin Travaux"]}</td>
         </tr>
         <tr>
 	  <th>Status</th>
-	    <td>${feature.properties.status}</td>
+	    <td>${feature.properties.Statut}</td>
         <tr>
       </table>
       <br>
