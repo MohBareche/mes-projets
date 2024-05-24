@@ -443,6 +443,63 @@ const C1139_Layer = L.geoJson(C1139, {
 }).addTo(map)
 
 /* ***************************************************************************************************************************************************** */
+
+//   C1146
+const C1146_Layer = L.geoJson(C1146, {
+  pointToLayer: function (feature, latlng) {
+    if (feature.properties.Status === "En cours") return L.marker(latlng, { icon: dosDaneIcon1106 })
+  },
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+    <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px; text-align:center'><strong>Contrat : </strong> ${
+      feature.properties.Contrat
+    }</p>
+      <table class="table1">
+      <caption><h5>Identification et documents</h5></caption>
+	<tr>
+	  <th># Dos-d'âne</th>
+	    <td>${feature.properties.Numero}</td>
+        </tr>
+        <tr>
+	  <th>Devis</th>
+	    <td><a href="./data/2022/1106/1106_Cahier_Charges.pdf" target="_blank">${feature.properties.Devis}</a></td>
+	</tr>
+	<tr>
+	  <th>Début travaux</th>
+	     <td>${feature.properties.Debut}</td>
+	</tr>
+	<tr>
+	  <th>Fin travaux</th>
+	    <td>${feature.properties.Fin}</td>
+        </tr>
+        <tr>
+	  <th>Status</th>
+	    <td>${feature.properties.status}</td>
+        <tr>
+      </table>
+      <br>
+      <table class="table2">
+        <caption><h5>Coordonnées du centre de dos-d'âne</h5></caption>
+        <tr>
+	   <th colspan="2">NAD83 MTM Zone 8</th>
+	      <td><strong>X </strong>${feature.properties.X}</td>
+	      <td><strong>Y </strong>${feature.properties.Y}</td>
+	</tr>
+	<tr>
+	   <th colspan="2">WGS 84 (GPS)</th>
+	     <td><strong>Latitude </strong>${feature.geometry.coordinates[1].toFixed(7)}</td>
+	     <td><strong>Longitude </strong>${feature.geometry.coordinates[0].toFixed(7)}</td>
+	</tr>
+      </table>
+    `)
+
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+})
+
+/* ***************************************************************************************************************************************************** */
 //   FOSSES ET SAILLIES
 const fossesSailliesLayer = L.geoJson(fossesSaillies, {
   pointToLayer: function (feature, latlng) {
@@ -1772,6 +1829,7 @@ const overlaysTree = {
               children: [
                 { label: "1137", layer: C1137_Layer },
 		{ label: "1139", layer: C1139_Layer },
+		{ label: "1146", layer: C1146_Layer },
                 { label: "Mini fôret", layer: C_Foret_Layer }
               ],
             },
