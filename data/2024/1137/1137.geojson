@@ -1,6 +1,6 @@
 let C1137 = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{
   "Contrat":"1137",
-  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et section de trottoirs",
+  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et sections de trottoirs",
   "Plan":"1137-01",
   "Devis":"devis_1137",
   "Debut":"2024-05-06",
@@ -10,7 +10,7 @@ let C1137 = {"type":"FeatureCollection","features":[{"type":"Feature","propertie
   "Telephone":"514-883-5080" },"geometry":{"coordinates":[-73.63604135083264,45.58154947216883],"type":"Point"}},{"type":"Feature","properties":{
   
   "Contrat":"1137",
-  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et section de trottoirs",
+  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et sections de trottoirs",
   "Plan":"1137-02",
   "Devis":"devis_1137",
   "Debut":"2024-05-27",
@@ -20,7 +20,7 @@ let C1137 = {"type":"FeatureCollection","features":[{"type":"Feature","propertie
   "Telephone":"514-883-5080"},"geometry":{"coordinates":[-73.63538451229958,45.58189998699831],"type":"Point"}},{"type":"Feature","properties":{
   
   "Contrat":"1137",
-  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et section de trottoirs",
+  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et sections de trottoirs",
   "Plan":"1137-03",
   "Devis":"devis_1137",
   "Debut":"2024-05-27",
@@ -30,7 +30,7 @@ let C1137 = {"type":"FeatureCollection","features":[{"type":"Feature","propertie
   "Telephone":"514-883-5080"},"geometry":{"coordinates":[-73.6380806211995,45.58346750126438],"type":"Point"}},{"type":"Feature","properties":{
 
   "Contrat":"1137",
-  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et section de trottoirs",
+  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et sections de trottoirs",
   "Plan":"1137-04",
   "Devis":"devis_1137",
   "Debut":"2024-05-27",
@@ -40,7 +40,7 @@ let C1137 = {"type":"FeatureCollection","features":[{"type":"Feature","propertie
   "Telephone":"514-883-5080"},"geometry":{"coordinates":[-73.63742088125541,45.583812412275876],"type":"Point"}},{"type":"Feature","properties":{
 
   "Contrat":"1137",
-  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et section de trottoirs",
+  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et sections de trottoirs",
   "Plan":"1137-05",
   "Devis":"devis_1137",
   "Debut":"2024-05-27",
@@ -50,7 +50,7 @@ let C1137 = {"type":"FeatureCollection","features":[{"type":"Feature","propertie
   "Telephone":"514-883-5080"},"geometry":{"coordinates":[-73.63433198411832,45.60453304414048],"type":"Point"}},{"type":"Feature","properties":{
 
   "Contrat":"1137",
-  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et section de trottoirs",
+  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et sections de trottoirs",
   "Plan":"1137-06",
   "Devis":"devis_1137",
   "Debut":"2024-05-27",
@@ -60,7 +60,7 @@ let C1137 = {"type":"FeatureCollection","features":[{"type":"Feature","propertie
   "Telephone":"514-883-5080"},"geometry":{"coordinates":[-73.63542926140305,45.60558467128962],"type":"Point"}},{"type":"Feature","properties":{
 
   "Contrat":"1137",
-  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et section de trottoirs",
+  "Description":"Travaux de construction des dos d'âne, des avancées de trottoirs et des fosses de plantation et sections de trottoirs",
   "Plan":"1137-07",
   "Devis":"devis_1137",
   "Debut":"2024-05-27",
