@@ -406,7 +406,7 @@ const C1137_Layer = L.geoJson(C1137, {
 	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
  	<p style='margin:0; padding:0'><strong>Chargé de projet : </strong> ${feature.properties.Chargé_projet}</p>
-  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél.}</p>
+  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél}</p>
  	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
   	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
    	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
@@ -437,7 +437,7 @@ const C1139_Layer = L.geoJson(C1139, {
 	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
   	<p style='margin:0; padding:0'><strong>Chargé de projet : </strong> ${feature.properties.Chargé_projet}</p>
-  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél.}</p>
+  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél}</p>
  	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
   	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
    	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
@@ -482,7 +482,7 @@ const C1146_Layer = L.geoJson(C1146, {
         </tr>
 	<tr>
 	  <th>Téléphone</th>
-	    <td>${feature.properties.Tél.}</td>
+	    <td>${feature.properties.Tél}</td>
         </tr>
 	<tr>
 	  <th>Entrepreneur</th>
