@@ -357,7 +357,7 @@ const C1106_Layer = L.geoJson(C1106, {
 						<td>${feature.properties.Fin}</td>
             </tr>
             <tr>
-						<th>Status</th>
+						<th>Statut</th>
 						<td>${feature.properties.status}</td>
             <tr>
             </table>
@@ -410,7 +410,7 @@ const C1137_Layer = L.geoJson(C1137, {
  	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
   	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
    	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
-    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Status}</p>
+    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Statut}</p>
       `)
 	  
     layer.on("click", function () {
@@ -441,7 +441,7 @@ const C1139_Layer = L.geoJson(C1139, {
  	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
   	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
    	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
-    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Status}</p>
+    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Statut}</p>
       `)
     layer.on("click", function () {
       this.openPopup()
@@ -497,7 +497,7 @@ const C1146_Layer = L.geoJson(C1146, {
 	    <td>${feature.properties.Telephone}</td>
         </tr>
         <tr>
-	  <th>Status</th>
+	  <th>Statut</th>
 	    <td>${feature.properties.Statut}</td>
         <tr>
       </table>
