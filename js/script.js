@@ -455,7 +455,7 @@ const C1146_Layer = L.geoJson(C1146, {
     layer.bindPopup(`
     <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px; text-align:center'><strong>Contrat : </strong> ${
       feature.properties.Contrat
-    } Dos d'âne 2024</p>
+    } | Dos d'âne 2024</p>
       <table class="table1">
       <caption><h5>Identification et documents</h5></caption>
 	<tr>
