@@ -405,9 +405,12 @@ const C1137_Layer = L.geoJson(C1137, {
 	<p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2024/1137/DTSI_Voirie_1137.pdf" target="_blank">DTSI-V Voirie</a></p>
 	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
+ 	<p style='margin:0; padding:0'><strong>Chargé de projet : </strong> ${feature.properties.Chargé_projet}</p>
+  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél.}</p>
  	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
   	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
    	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
+    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Status}</p>
       `)
 	  
     layer.on("click", function () {
@@ -433,9 +436,12 @@ const C1139_Layer = L.geoJson(C1139, {
         <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1139/Cahier_charges_1139_signé.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
+  	<p style='margin:0; padding:0'><strong>Chargé de projet : </strong> ${feature.properties.Chargé_projet}</p>
+  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél.}</p>
  	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
   	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
    	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
+    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Status}</p>
       `)
     layer.on("click", function () {
       this.openPopup()
@@ -473,6 +479,26 @@ const C1146_Layer = L.geoJson(C1146, {
 	<tr>
 	  <th>Fin travaux</th>
 	    <td>${feature.properties.Fin}</td>
+        </tr>
+	<tr>
+	  <th>Chargé de projet</th>
+	    <td>${feature.properties.Chargé_projet}</td>
+        </tr>
+	<tr>
+	  <th>Téléphone</th>
+	    <td>${feature.properties.Tél.}</td>
+        </tr>
+	<tr>
+	  <th>Entrepreneur</th>
+	    <td>${feature.properties.Entrepreneur}</td>
+        </tr>
+	<tr>
+	  <th>Contact</th>
+	    <td>${feature.properties.Contact}</td>
+        </tr>
+	<tr>
+	  <th>Téléphone</th>
+	    <td>${feature.properties.Telephone}</td>
         </tr>
         <tr>
 	  <th>Status</th>
