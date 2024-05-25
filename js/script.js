@@ -494,7 +494,7 @@ const C1146_Layer = L.geoJson(C1146, {
         </tr>
 	<tr>
 	  <th>Téléphone</th>
-	    <td>${feature.properties.Telephone}</td>
+	    <td>${feature.properties.Téléphone}</td>
         </tr>
         <tr>
 	  <th>Statut</th>
