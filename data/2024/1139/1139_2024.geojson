@@ -10,9 +10,12 @@ let C1139 = {
         "Devis": "Devis_1139",
         "Debut": "2024-06-03",
         "Fin": "2024-10-06",
+        "Chargé_projet": "Mailin Diaz",
+        "Tél.": "514 707-0080",
         "Entrepreneur":"Eurovia Québec Const.", 
         "Contact":"Steve Lelièvre", 
-        "Telephone":"514-239-7634"
+        "Telephone":"514-239-7634",
+        "Statut":"En cours"
       },
       "geometry": {
         "coordinates": [
@@ -32,9 +35,12 @@ let C1139 = {
         "Devis": "Devis_1139",
         "Debut": "2024-06-03",
         "Fin": "2024-10-06",
+        "Chargé_projet": "Mailin Diaz",
+        "Tél.": "514 707-0080",
         "Entrepreneur":"Eurovia Québec Const.", 
         "Contact":"Steve Lelièvre", 
-        "Telephone":"514-239-7634"
+        "Telephone":"514-239-7634",
+        "Statut":"En cours"
       },
       "geometry": {
         "coordinates": [
