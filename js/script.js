@@ -468,10 +468,6 @@ const C1146_Layer = L.geoJson(C1146, {
 	  <th># Dos-d'âne</th>
 	    <td>${feature.properties.Numéro}</td>
         </tr>
-        <tr>
-	  <th>Devis</th>
-	    <td></td>
-	</tr>
 	<tr>
 	  <th>Début travaux</th>
 	     <td>${feature.properties.Début}</td>
