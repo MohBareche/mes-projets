@@ -1984,7 +1984,7 @@ L.control.scale({ position: "bottomleft" }).addTo(map)
 const legendArrond = L.control.Legend({
   position: "bottomleft",
   title: "Légende (Arrond. 2023)",
-  collapsed: true,
+  collapsed: false,
   symbolWidth: 24,
   opacity: 1,
   column: 2,
@@ -2056,7 +2056,7 @@ const legendArrond = L.control.Legend({
 const legendCorpo = L.control.Legend({
   position: "bottomleft",
   title: "Légende (Corpo 2023)",
-  collapsed: true,
+  collapsed: false,
   symbolWidth: 24,
   opacity: 1,
   column: 2,
@@ -2113,20 +2113,20 @@ const legendCorpo = L.control.Legend({
 
 
 
-// C_PRR_Layer.on('add', function() {
-//   legend2.addTo(map)
-// });
+C_PRR_Layer.on('add', function() {
+  legend2.addTo(map)
+});
 	       
-// C_PRR_Layer.on('remove', function(){
-//   map.removeControl(legend2)
-// });
+C_PRR_Layer.on('remove', function(){
+  map.removeControl(legend2)
+});
 
-// C_ESP_Layer.on('add', function(){
-//   legend1.addTo(map)
-// });
-// C_ESP_Layer.on('remove', function(){
-//   map.removeControl(legend1)
-// });	
+C_ESP_Layer.on('add', function(){
+  legend1.addTo(map)
+});
+C_ESP_Layer.on('remove', function(){
+  map.removeControl(legend1)
+});	
 
 /***********************************************************************************************************************/
 chausseeLayer.on('add', function(){
