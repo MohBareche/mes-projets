@@ -341,40 +341,40 @@ const C1106_Layer = L.geoJson(C1106, {
     <table class="table1">
     <caption><h5>Identification et documents</h5></caption>
 	<tr>
-						<th># Dos-d'âne</th>
-						<td>${feature.properties.Numero}</td>
-            </tr>
-            <tr>
-						<th>Devis</th>
-						<td><a href="./data/2022/1106/1106_Cahier_Charges.pdf" target="_blank">${feature.properties.Devis}</a></td>
-					</tr>
-					<tr>
-						<th>Début travaux</th>
-						<td>${feature.properties.Debut}</td>
-					</tr>
-					<tr>
-						<th>Fin travaux</th>
-						<td>${feature.properties.Fin}</td>
-            </tr>
-            <tr>
-						<th>Statut</th>
-						<td>${feature.properties.status}</td>
-            <tr>
-            </table>
-            <br>
-            <table class="table2">
-            <caption><h5>Coordonnées du centre de dos-d'âne</h5></caption>
-            <tr>
-						<th colspan="2">NAD83 MTM Zone 8</th>
-						<td><strong>X </strong>${feature.properties.X}</td>
-						<td><strong>Y </strong>${feature.properties.Y}</td>
-					</tr>
-					<tr>
-						<th colspan="2">WGS 84 (GPS)</th>
-						<td><strong>Latitude </strong>${feature.geometry.coordinates[1].toFixed(7)}	</td>
-						<td><strong>Longitude </strong>${feature.geometry.coordinates[0].toFixed(7)}</td>
-					</tr>
-          </table>
+	  <th># Dos-d'âne</th>
+	  <td>${feature.properties.Numero}</td>
+        </tr>
+        <tr>
+	  <th>Devis</th>
+	  <td><a href="./data/2022/1106/1106_Cahier_Charges.pdf" target="_blank">${feature.properties.Devis}</a></td>
+	</tr>
+	<tr>
+	  <th>Début travaux</th>
+	  <td>${feature.properties.Debut}</td>
+	</tr>
+	<tr>
+	  <th>Fin travaux</th>
+	  <td>${feature.properties.Fin}</td>
+        </tr>
+        <tr>
+	  <th>Statut</th>
+	  <td>${feature.properties.status}</td>
+        <tr>
+     </table>
+        <br>
+     <table class="table2">
+       <caption><h5>Coordonnées du centre de dos-d'âne</h5></caption>
+       <tr>
+	 <th colspan="2">NAD83 MTM Zone 8</th>
+	 <td><strong>X </strong>${feature.properties.X}</td>
+	 <td><strong>Y </strong>${feature.properties.Y}</td>
+	</tr>
+	<tr>
+	 <th colspan="2">WGS 84 (GPS)</th>
+	 <td><strong>Latitude </strong>${feature.geometry.coordinates[1].toFixed(7)}	</td>
+	 <td><strong>Longitude </strong>${feature.geometry.coordinates[0].toFixed(7)}</td>
+	</tr>
+      </table>
           `)
 
     layer.on("click", function () {
@@ -466,39 +466,39 @@ const C1146_Layer = L.geoJson(C1146, {
       <caption><h5>Identification et documents</h5></caption>
 	<tr>
 	  <th># Dos-d'âne</th>
-	    <td>${feature.properties.Numéro}</td>
+	  <td>${feature.properties.Numéro}</td>
         </tr>
 	<tr>
 	  <th>Début travaux</th>
-	     <td>${feature.properties.Début}</td>
+	  <td>${feature.properties.Début}</td>
 	</tr>
 	<tr>
 	  <th>Fin travaux</th>
-	    <td>${feature.properties.Fin}</td>
+	  <td>${feature.properties.Fin}</td>
         </tr>
 	<tr>
 	  <th>Chargé de projet</th>
-	    <td>${feature.properties.Chargé_projet}</td>
+	  <td>${feature.properties.Chargé_projet}</td>
         </tr>
 	<tr>
 	  <th>Téléphone</th>
-	    <td>${feature.properties.Tél}</td>
+	  <td>${feature.properties.Tél}</td>
         </tr>
 	<tr>
 	  <th>Entrepreneur</th>
-	    <td>${feature.properties.Entrepreneur}</td>
+	  <td>${feature.properties.Entrepreneur}</td>
         </tr>
 	<tr>
 	  <th>Contact</th>
-	    <td>${feature.properties.Contact}</td>
+	  <td>${feature.properties.Contact}</td>
         </tr>
 	<tr>
 	  <th>Téléphone</th>
-	    <td>${feature.properties.Téléphone}</td>
+	  <td>${feature.properties.Téléphone}</td>
         </tr>
         <tr>
 	  <th>Statut</th>
-	    <td>${feature.properties.Statut}</td>
+	  <td>${feature.properties.Statut}</td>
         <tr>
       </table>
       <br>
@@ -506,8 +506,8 @@ const C1146_Layer = L.geoJson(C1146, {
         <caption><h5>Coordonnées du centre de dos-d'âne</h5></caption>
         <tr>
 	   <th colspan="2">NAD83 MTM Zone 8</th>
-	      <td><strong>X </strong>${feature.properties.X}</td>
-	      <td><strong>Y </strong>${feature.properties.Y}</td>
+	     <td><strong>X </strong>${feature.properties.X}</td>
+	     <td><strong>Y </strong>${feature.properties.Y}</td>
 	</tr>
 	<tr>
 	   <th colspan="2">WGS 84 (GPS)</th>
