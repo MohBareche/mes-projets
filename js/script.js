@@ -340,7 +340,7 @@ const C1106_Layer = L.geoJson(C1106, {
     }</p>
     <table class="table1">
     <caption><h5>Identification et documents</h5></caption>
-					<tr>
+	<tr>
 						<th># Dos-d'âne</th>
 						<td>${feature.properties.Numero}</td>
             </tr>
