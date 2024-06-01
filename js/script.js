@@ -2114,7 +2114,7 @@ const legendArrond = L.control.Legend({
    {
       label: "PCPR Industriel",
       type: "polyline",
-      layers: C_1139_Layer,
+      layers: C1139_Layer,
       color: "#20b2aa",
       fillColor: "#20b2aa",
       weight: 6,
@@ -2122,7 +2122,7 @@ const legendArrond = L.control.Legend({
    {
       label: "Dos d'âne 2024",
       type: "polyline",
-      layers: C_1146_Layer,
+      layers: C1146_Layer,
       color: "#20b2aa",
       fillColor: "#20b2aa",
       weight: 6,
@@ -2130,7 +2130,7 @@ const legendArrond = L.control.Legend({
    {
       label: "PSAE 2024",
       type: "polyline",
-      layers: C_1137_Layer,
+      layers: C1137_Layer,
       color: "#20b2aa",
       fillColor: "#20b2aa",
       weight: 6,
