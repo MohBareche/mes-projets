@@ -1027,9 +1027,7 @@ const C_BRVE_2024_Layer = L.geoJson(brve_2024, {
 }).addTo(map)
 
 
-
 /* ***************************************************************************************************************************************************** */
-
 
 
 //   Inspecteurs cadre bati
@@ -2109,6 +2107,30 @@ const legendArrond = L.control.Legend({
       label: "Mini forêt",
       type: "polyline",
       layers: C_Foret_Layer,
+      color: "#20b2aa",
+      fillColor: "#20b2aa",
+      weight: 6,
+    },
+   {
+      label: "PCPR Industriel",
+      type: "polyline",
+      layers: C_1139_Layer,
+      color: "#20b2aa",
+      fillColor: "#20b2aa",
+      weight: 6,
+    },  
+   {
+      label: "Dos d'âne 2024",
+      type: "polyline",
+      layers: C_1146_Layer,
+      color: "#20b2aa",
+      fillColor: "#20b2aa",
+      weight: 6,
+    },  
+   {
+      label: "PSAE 2024",
+      type: "polyline",
+      layers: C_1137_Layer,
       color: "#20b2aa",
       fillColor: "#20b2aa",
       weight: 6,
