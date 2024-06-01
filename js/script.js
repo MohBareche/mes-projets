@@ -920,6 +920,28 @@ const C_Saillie_1108_Layer = L.geoJson(saillie_1108, {
   },
 })
 
+/* ***************************************************************************************************************************************************** */
+/* @2024 - CORPO PMIR */
+const C_PMIR_2024_Layer = L.geoJson(pmir_2024, {
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#504C43",
+        weight: 4,
+      })
+    }
+    layer.bindPopup(`
+      <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> PCPR/PRCPR - Programme Complémentaire par Planage-Revêtement</p>
+    `)
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+})
+
 
 
 /* ***************************************************************************************************************************************************** */
