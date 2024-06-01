@@ -940,7 +940,7 @@ const C_PMIR_2024_Layer = L.geoJson(pmir_2024, {
       this.openPopup()
     })
   },
-})
+}).addTo(map)
 
 
 
@@ -964,7 +964,7 @@ const C_PCPR_2024_Layer = L.geoJson(pcpr_2024, {
       this.openPopup()
     })
   },
-})
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2024 - CORPO REHAB AQ */
 const C_RAQ_2024_Layer = L.geoJson(rehab_aq_2024, {
@@ -985,7 +985,7 @@ const C_RAQ_2024_Layer = L.geoJson(rehab_aq_2024, {
       this.openPopup()
     })
   },
-})
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2024 - CORPO REHAB EG */
 const C_REG_2024_Layer = L.geoJson(rehab_eg_2024, {
@@ -1006,7 +1006,7 @@ const C_REG_2024_Layer = L.geoJson(rehab_eg_2024, {
       this.openPopup()
     })
   },
-})
+}).addTo(map)
 /* ***************************************************************************************************************************************************** */
 /* @2024 - CORPO BRVE */
 const C_BRVE_2024_Layer = L.geoJson(brve_2024, {
@@ -1024,7 +1024,7 @@ const C_BRVE_2024_Layer = L.geoJson(brve_2024, {
       this.openPopup()
     })
   },
-})
+}).addTo(map)
 
 
 
