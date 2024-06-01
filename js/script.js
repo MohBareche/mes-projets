@@ -385,7 +385,7 @@ const C1106_Layer = L.geoJson(C1106, {
 
 //   C1137
 
-console.log(C1137)
+
 const C1137_Layer = L.geoJson(C1137, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, { icon: dosDaneIcon1108 })
@@ -881,7 +881,7 @@ const C_Saillie_1104_Layer = L.geoJson(saillie_1104, {
   },
 })
 /* ***************************************************************************************************************************************************** */
-/* @2023 - ARROND. SAILLIES 1104 */
+/* @2024 - ARROND. MINI-FORET */
 const C_Foret_Layer = L.geoJson(foret, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
@@ -1026,6 +1026,37 @@ const C_BRVE_2024_Layer = L.geoJson(brve_2024, {
   },
 }).addTo(map)
 
+
+
+/* ***************************************************************************************************************************************************** */
+
+/* @2023 - ARROND. SAILLIES 1104 */
+const C1143_Layer = L.geoJson(C1143, {
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#20b2aa",
+        weight: 6,
+      })
+    }
+    layer.bindPopup(`
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1139/1139_Plans pour construction-17-05-2024.pdf" target="_blank">${feature.properties.Plan}</a></p>
+        <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1139/Cahier_charges_1139_signé.pdf" target="_blank">${feature.properties.Devis}</a></p>
+	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
+	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
+  	<p style='margin:0; padding:0'><strong>Chargé de projet : </strong> ${feature.properties.Chargé_projet}</p>
+  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél}</p>
+ 	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
+  	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
+   	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
+    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Statut}</p>
+    `)
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+}).addTo(map)
 
 /* ***************************************************************************************************************************************************** */
 
@@ -1752,10 +1783,7 @@ const entreesPlombLayer = L.geoJson(entrees_Plomb, {
   },
 })
 /* ***************************************************************************************************************************************************** */
-/* ***************************************************************************************************************************************************** */
-/* ***************************************************************************************************************************************************** */
-/* ***************************************************************************************************************************************************** */
-/* ***************************************************************************************************************************************************** */
+
 /* ***************************************************************************************************************************************************** */
 
 //   RAAV 15/11/2022
@@ -1965,10 +1993,11 @@ const overlaysTree = {
               label: "Arrondissement",
               selectAllCheckbox: true,
               children: [
+                { label: "1127", layer: C_Foret_Layer },
                 { label: "1137", layer: C1137_Layer },
 		{ label: "1139", layer: C1139_Layer },
-		{ label: "1146", layer: C1146_Layer },
-                { label: "Mini fôret", layer: C_Foret_Layer }
+	        { label: "1142-1143", layer: C1143_Layer },
+		{ label: "1146", layer: C1146_Layer }
               ],
             },
           ],
@@ -2134,6 +2163,14 @@ const legendArrond = L.control.Legend({
       fillColor: "#3388ff",
       weight: 6,
     },
+   {
+      label: "Terrain soccer HB",
+      type: "polyline",
+      layers: C1143_Layer,
+      color: "#3388ff",
+      fillColor: "#3388ff",
+      weight: 6,
+    }
   ],
 }).addTo(map);
 
