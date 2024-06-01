@@ -934,7 +934,7 @@ const C_PMIR_2024_Layer = L.geoJson(pmir_2024, {
       <p class='corpo-title'>Projet : ${feature.properties.type}</p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
       <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
-      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> PCPR/PRCPR - Programme Complémentaire par Planage-Revêtement</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> PMIR Arrêt d'autobus - Réfection </p>
     `)
     layer.on("click", function () {
       this.openPopup()
