@@ -2152,7 +2152,7 @@ const legendCorpo = L.control.Legend({
       layers: C_PCPR_2024_Layer,
       color: "#504C43",
       fillColor: "#504C43",
-      weight: 4,
+      weight: 6,
     },
     {
       label: "Rehab AQ",
