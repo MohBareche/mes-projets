@@ -971,7 +971,7 @@ const C_RAQ_2024_Layer = L.geoJson(rehab_aq_2024, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "#3388ff",
+        color: "#01008a",
         weight: 6,
       })
     }
@@ -2158,8 +2158,8 @@ const legendCorpo = L.control.Legend({
       label: "Rehab AQ",
       type: "polyline",
       layers: C_RAQ_2024_Layer,
-      color: "#3388ff",
-      fillColor: "#3388ff",
+      color: "#01008a",
+      fillColor: "#01008a",
       weight: 6,
     },
     {
