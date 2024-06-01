@@ -524,6 +524,12 @@ const C1146_Layer = L.geoJson(C1146, {
 }).addTo(map)
 
 /* ***************************************************************************************************************************************************** */
+
+
+
+
+
+/* ***************************************************************************************************************************************************** */
 //   FOSSES ET SAILLIES
 const fossesSailliesLayer = L.geoJson(fossesSaillies, {
   pointToLayer: function (feature, latlng) {
@@ -913,7 +919,96 @@ const C_Saillie_1108_Layer = L.geoJson(saillie_1108, {
     })
   },
 })
+
+
+
 /* ***************************************************************************************************************************************************** */
+/* @2024 - CORPO PCPR */
+const C_PCPR_2024_Layer = L.geoJson(pcpr_2024, {
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#504C43",
+        weight: 4,
+      })
+    }
+    layer.bindPopup(`
+      <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> PCPR/PRCPR - Programme Complémentaire par Planage-Revêtement</p>
+    `)
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+})
+/* ***************************************************************************************************************************************************** */
+/* @2024 - CORPO REHAB AQ */
+const C_RAQ_2024_Layer = L.geoJson(rehab_aq_2024, {
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#3388ff",
+        weight: 6,
+      })
+    }
+    layer.bindPopup(`
+      <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Réhabilitation Aqueduc</p>
+    `)
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+})
+/* ***************************************************************************************************************************************************** */
+/* @2024 - CORPO REHAB EG */
+const C_REG_2024_Layer = L.geoJson(rehab_eg_2024, {
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#964b00",
+        weight: 6,
+      })
+    }
+    layer.bindPopup(`
+      <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+      <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Réhabilitation Égout</p>
+    `)
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+})
+/* ***************************************************************************************************************************************************** */
+/* @2024 - CORPO BRVE */
+const C_BRVE_2024_Layer = L.geoJson(brve_2024, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, { icon: iconBRV })
+  },
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`
+        <p class='corpo-title'>Projet : ${feature.properties.type}</p>
+        <p style='margin:0; padding:0; color:#0d12f5;'><strong>Initiateur : </strong>${feature.properties.Initiateur}</p>
+        <p style='margin:0; padding:0; color:#0d12f5;'><strong># AGIR : </strong>${feature.properties.AGIR}</a></p>
+        <p style='margin:0; padding:0; color:#0d12f5;'><strong>Description : </strong> Borne de recharge pour véhicules électriques</p>
+	    `)
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+})
+
+
+
+/* ***************************************************************************************************************************************************** */
+
+
 
 //   Inspecteurs cadre bati
 function getColorInspection(feature) {
