@@ -1035,7 +1035,7 @@ const C1143_Layer = L.geoJson(C1143, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "#20b2aa",
+        color: "red",
         weight: 6,
       })
     }
@@ -2167,8 +2167,8 @@ const legendArrond = L.control.Legend({
       label: "Terrain soccer HB",
       type: "polyline",
       layers: C1143_Layer,
-      color: "#3388ff",
-      fillColor: "#3388ff",
+      color: "red",
+      fillColor: "#ff6347",
       weight: 6,
     }
   ],
