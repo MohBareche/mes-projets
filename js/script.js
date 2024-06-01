@@ -2115,8 +2115,7 @@ const legendArrond = L.control.Legend({
       label: "PCPR Industriel",
       type: "polyline",
       layers: C1139_Layer,
-      color: "#20b2aa",
-      fillColor: "#20b2aa",
+      color: "green",
       weight: 6,
     },  
    {
