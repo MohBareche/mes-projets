@@ -1,1 +1,1 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"Initiateur":"Corpo.","type":"BRVE 75100","AGIR":"P11384"},"geometry":{"coordinates":[-73.61715471314471,45.620208505514086],"type":"Point"}}]}
+let brve_2024 = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"Initiateur":"Corpo.","type":"BRVE 75100","AGIR":"P11384"},"geometry":{"coordinates":[-73.61715471314471,45.620208505514086],"type":"Point"}}]}
