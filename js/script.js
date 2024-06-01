@@ -2122,8 +2122,8 @@ const legendArrond = L.control.Legend({
       label: "Dos d'âne 2024",
       type: "polyline",
       layers: C1146_Layer,
-      color: "#20b2aa",
-      fillColor: "#20b2aa",
+      color: "#f5df4a",
+      fillColor: "#f5df4a",
       weight: 6,
     },  
    {
