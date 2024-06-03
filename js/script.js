@@ -383,9 +383,7 @@ const C1106_Layer = L.geoJson(C1106, {
   },
 })
 
-//   C1137
-
-
+//  2024 Arrondissement - C1137
 const C1137_Layer = L.geoJson(C1137, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, { icon: dosDaneIcon1108 })
@@ -432,6 +430,7 @@ const C1139_Layer = L.geoJson(C1139, {
     }
     layer.bindPopup(`
         <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+	<p style='margin:0; padding:0'><strong>Description : </strong> ${feature.properties.Description}</p>
         <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1139/1139_Plans pour construction-17-05-2024.pdf" target="_blank">${feature.properties.Plan}</a></p>
         <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1139/Cahier_charges_1139_signé.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
@@ -525,9 +524,98 @@ const C1146_Layer = L.geoJson(C1146, {
 
 /* ***************************************************************************************************************************************************** */
 
+//  2024 Arrondissement - C1140
+const C1137_Layer = L.geoJson(C1140, {
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#3388ff",
+        weight: 5,
+      })
+    }
+    layer.bindPopup(`
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+	<p style='margin:0; padding:0'><strong>Description : </strong> ${feature.properties.Description}</p>
+        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1140/${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
+        <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1140/1140_Cahier des charges.pdf" target="_blank">${feature.properties.Devis}</a></p>
+	<p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2024/1140/DTSI_Voirie_1140.pdf" target="_blank">DTSI-V Voirie</a></p>
+	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
+	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
+ 	<p style='margin:0; padding:0'><strong>Chargé de projet : </strong> ${feature.properties.Chargé_projet}</p>
+  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél}</p>
+ 	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
+  	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
+   	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
+    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Statut}</p>
+      `)
+	  
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+}).addTo(map)
 
+/* ***************************************************************************************************************************************************** */
 
-
+/* @2024 - ARROND. TERRAIN HB 1143 */
+const C1143_Layer = L.geoJson(C1143, {
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "red",
+        weight: 6,
+      })
+    }
+    layer.bindPopup(`
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+	<p style='margin:0; padding:0'><strong>Description : </strong> ${feature.properties.Description}</p>
+        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1143/1143_Plans pour construction-17-05-2024.pdf" target="_blank">${feature.properties.Plan}</a></p>
+        <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1143/Cahier_charges_1143_signé.pdf" target="_blank">${feature.properties.Devis}</a></p>
+	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
+	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
+  	<p style='margin:0; padding:0'><strong>Chargé de projet : </strong> ${feature.properties.Chargé_projet}</p>
+  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél}</p>
+ 	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
+  	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
+   	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
+    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Statut}</p>
+    `)
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+}).addTo(map)
+/* ***************************************************************************************************************************************************** */
+//  2024 Arrondissement - C1144
+const C1137_Layer = L.geoJson(C1144, {
+  onEachFeature: function (feature, layer) {
+    if (layer instanceof L.Polyline) {
+      layer.setStyle({
+        color: "#3388ff",
+        weight: 5,
+      })
+    }
+    layer.bindPopup(`
+        <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
+	<p style='margin:0; padding:0'><strong>Description : </strong> ${feature.properties.Description}</p>
+        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1144/${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
+        <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1144/1144_Cahier des charges.pdf" target="_blank">${feature.properties.Devis}</a></p>
+	<p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2024/1144/DTSI_Voirie_1144.pdf" target="_blank">DTSI-V Voirie</a></p>
+	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
+	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
+ 	<p style='margin:0; padding:0'><strong>Chargé de projet : </strong> ${feature.properties.Chargé_projet}</p>
+  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél}</p>
+ 	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
+  	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
+   	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
+    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Statut}</p>
+      `)
+	  
+    layer.on("click", function () {
+      this.openPopup()
+    })
+  },
+}).addTo(map)
 
 /* ***************************************************************************************************************************************************** */
 //   FOSSES ET SAILLIES
@@ -1030,33 +1118,6 @@ const C_BRVE_2024_Layer = L.geoJson(brve_2024, {
 
 /* ***************************************************************************************************************************************************** */
 
-/* @2023 - ARROND. SAILLIES 1104 */
-const C1143_Layer = L.geoJson(C1143, {
-  onEachFeature: function (feature, layer) {
-    if (layer instanceof L.Polyline) {
-      layer.setStyle({
-        color: "red",
-        weight: 6,
-      })
-    }
-    layer.bindPopup(`
-        <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
-        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1139/1139_Plans pour construction-17-05-2024.pdf" target="_blank">${feature.properties.Plan}</a></p>
-        <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1139/Cahier_charges_1139_signé.pdf" target="_blank">${feature.properties.Devis}</a></p>
-	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
-	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
-  	<p style='margin:0; padding:0'><strong>Chargé de projet : </strong> ${feature.properties.Chargé_projet}</p>
-  	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Tél}</p>
- 	<p style='margin:0; padding:0'><strong>Entrepreneur : </strong> ${feature.properties.Entrepreneur}</p>
-  	<p style='margin:0; padding:0'><strong>Contact : </strong> ${feature.properties.Contact}</p>
-   	<p style='margin:0; padding:0'><strong>Téléphone : </strong> ${feature.properties.Telephone}</p>
-    	<p style='margin:0; padding:0'><strong>Statut : </strong> ${feature.properties.Statut}</p>
-    `)
-    layer.on("click", function () {
-      this.openPopup()
-    })
-  },
-}).addTo(map)
 
 /* ***************************************************************************************************************************************************** */
 
