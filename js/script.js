@@ -597,9 +597,8 @@ const C1144_Layer = L.geoJson(C1144, {
     layer.bindPopup(`
         <p style='margin:0; padding:0; color:#f5df4a; background-color: grey; padding:0 5px; border-radius:5px'><strong>Contrat : </strong> ${feature.properties.Contrat}</p>
 	<p style='margin:0; padding:0'><strong>Description : </strong> ${feature.properties.Description}</p>
-        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1144/${feature.properties.Plan}.pdf" target="_blank">${feature.properties.Plan}</a></p>
-        <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1144/1144_Cahier des charges.pdf" target="_blank">${feature.properties.Devis}</a></p>
-	<p style='margin:0; padding:0'><strong>Devis : </strong> <a href="./data/2024/1144/DTSI_Voirie_1144.pdf" target="_blank">DTSI-V Voirie</a></p>
+        <p style='margin:0; padding:0'><strong>Plan : </strong> <a href="./data/2024/1144/plans-1144.pdf" target="_blank">${feature.properties.Plan}</a></p>
+        <p style='margin:0; padding:0'><strong>Cahier des charges : </strong> <a href="./data/2024/1144/devis-1144.pdf" target="_blank">${feature.properties.Devis}</a></p>
 	<p style='margin:0; padding:0'><strong>Début Travaux : </strong> ${feature.properties.Debut}</p>
 	<p style='margin:0; padding:0'><strong>Fin Travaux : </strong> ${feature.properties.Fin}</p>
  	<p style='margin:0; padding:0'><strong>Chargé de projet : </strong> ${feature.properties.Chargé_projet}</p>
