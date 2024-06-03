@@ -525,7 +525,7 @@ const C1146_Layer = L.geoJson(C1146, {
 /* ***************************************************************************************************************************************************** */
 
 //  2024 Arrondissement - C1140
-const C1137_Layer = L.geoJson(C1140, {
+const C1140_Layer = L.geoJson(C1140, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
@@ -587,7 +587,7 @@ const C1143_Layer = L.geoJson(C1143, {
 }).addTo(map)
 /* ***************************************************************************************************************************************************** */
 //  2024 Arrondissement - C1144
-const C1137_Layer = L.geoJson(C1144, {
+const C1144_Layer = L.geoJson(C1144, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
@@ -2231,7 +2231,23 @@ const legendArrond = L.control.Legend({
       color: "red",
       fillColor: "#ff6347",
       weight: 6,
-    }
+    },
+    {
+      label: "Parc Pilon Phase 1",
+      type: "polyline",
+      layers: C1140_Layer,
+      color: "magenta",
+      fillColor: "#ff6347",
+      weight: 6,
+    },
+    {
+      label: "Parc Le Carignan",
+      type: "polyline",
+      layers: C1144_Layer,
+      color: "cyan",
+      fillColor: "#ff6347",
+      weight: 6,
+    },
   ],
 }).addTo(map);
 
