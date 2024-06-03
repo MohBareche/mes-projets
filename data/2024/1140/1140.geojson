@@ -1,0 +1,63 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Contrat": "1140-Lot 1",
+        "Description": "Aménagement du parc Pilon - Phase 1",
+        "Plan": "1140",
+        "Devis": "devis_1140",
+        "Debut": "2024-08-05",
+        "Fin": "2025-08-22",
+        "Chargé_projet": "Marie-Andrée Bertrand",
+        "Tél": "438 226-1851",
+        "Entrepreneur": "Les Terrassements Multi-Paysages",
+        "Contact": "Mathieu Fafard",
+        "Telephone": "514-946-8577",
+        "Statut": "En cours"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [-73.64303705856909, 45.59321341937283],
+            [-73.64216950328358, 45.592373271505494],
+            [-73.64143750351188, 45.59274727436744],
+            [-73.64229343975288, 45.59359554698352],
+            [-73.64303705856909, 45.59321341937283]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Contrat": "1140-Lot 2",
+        "Description": "Aménagement du parc Pilon - Phase 1",
+        "Plan": "1140",
+        "Devis": "devis_1140",
+        "Debut": "2024-08-05",
+        "Fin": "2025-08-22",
+        "Chargé_projet": "Marie-Andrée Bertrand",
+        "Tél": "438 226-1851",
+        "Entrepreneur": "Les Terrassements Multi-Paysages",
+        "Contact": "Mathieu Fafard",
+        "Telephone": "514-946-8577",
+        "Statut": "En cours"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [-73.64051570452929, 45.594997293837565],
+            [-73.64144471329253, 45.59585142454549],
+            [-73.64188761281895, 45.59560576881532],
+            [-73.64095860405573, 45.59475541375289],
+            [-73.64051570452929, 45.594997293837565]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    }
+  ]
+}
