@@ -2057,7 +2057,9 @@ const overlaysTree = {
                 { label: "1127", layer: C_Foret_Layer },
                 { label: "1137", layer: C1137_Layer },
 		{ label: "1139", layer: C1139_Layer },
+		{ label: "1140", layer: C1140_Layer },
 	        { label: "1142-1143", layer: C1143_Layer },
+		{ label: "1144", layer: C1144_Layer },
 		{ label: "1146", layer: C1146_Layer }
               ],
             },
