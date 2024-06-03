@@ -1,0 +1,34 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Contrat": "1144",
+        "Description": "Conversion de la pataugeoire en aire de jeux d'eau au parc Le Carignan",
+        "Plan": "plans-1144",
+        "Devis": "devis_1144",
+        "Debut": "2024-08-05",
+        "Fin": "2024-11-18",
+        "Chargé_projet": "Marie-Andrée Bertrand",
+        "Tél": "438 226-1851",
+        "Entrepreneur": "Les Terrassements Multi-Paysages",
+        "Contact": "Mathieu Fafard",
+        "Telephone": "514-946-8577",
+        "Statut": "En cours"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [-73.61607232993664, 45.610801281645024],
+            [-73.61663246629463, 45.610507758412524],
+            [-73.61616869748183, 45.610086430514286],
+            [-73.61561458409501, 45.61037995595123],
+            [-73.61607232993664, 45.610801281645024]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    }
+  ]
+}
