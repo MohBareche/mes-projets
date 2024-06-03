@@ -455,7 +455,7 @@ const C1139_Layer = L.geoJson(C1139, {
 
 const C1146_Layer = L.geoJson(C1146, {
   pointToLayer: function (feature, latlng) {
-    if (feature.properties.Statut === "En cours") return L.marker(latlng, { icon: dosDaneIcon1106 })
+    if (feature.properties.Statut === "Terminé") return L.marker(latlng, { icon: dosDaneIcon1106 })
   },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`
