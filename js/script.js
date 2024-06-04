@@ -590,7 +590,7 @@ const C1144_Layer = L.geoJson(C1144, {
   onEachFeature: function (feature, layer) {
     if (layer instanceof L.Polyline) {
       layer.setStyle({
-        color: "cyan",
+        color: "#17ADD5",
         weight: 5,
       })
     }
