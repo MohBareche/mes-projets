@@ -1,5 +1,6 @@
-let C1143 = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"
-Contrat":"1142-1143",
+let C1143 = {"type":"FeatureCollection","features":[{"type":"Feature",
+"properties":{
+"Contrat":"1142-1143",
 "Description": "Réfection terrain de soccer et aménagement placette",
 "Plan":"Plans_1143",
 "Devis":"Devis_1143",
