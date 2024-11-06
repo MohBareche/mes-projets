@@ -2186,7 +2186,7 @@ L.control.scale({ position: "bottomleft" }).addTo(map)
 
 
 const legendArrond = L.control.Legend({
-  position: "bottomright",
+  position: "bottomleft",
   title: "Légende (Arrond. 2024)",
   collapsed: true,
   symbolWidth: 24,
