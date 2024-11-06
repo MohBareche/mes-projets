@@ -6,7 +6,7 @@ const map = L.mapbox.map("mapDIV", null, {
       closeOnZeroBearing: false
     },
     bearing: 60
-  }).setView([45.60187729035522, -73.63153768308611], 14)
+  }).setView([45.60187729035522, -73.63153768308611], 15)
 const zoomHome = L.Control.zoomHome().addTo(map)
 // L.mapbox.accessToken =
 //   "pk.eyJ1IjoibWJhcmVjaGUiLCJhIjoiY2pkbHpqZjQ3MGVibzJycWhka203dDNtYiJ9.GLpfZW2gcYULhuIa6vwgFw";
